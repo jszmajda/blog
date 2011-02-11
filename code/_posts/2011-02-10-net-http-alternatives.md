@@ -3,14 +3,11 @@ layout: post
 title: Net::HTTP Alternatives
 ---
 
-{{ page.title }}
-----------------
+Here at [Optoro](http://www.optoro.com) we've been building some external tools that interact with our website via http. For simplicity's sake, we've been using [curl][1].
 
-Here at [Optoro](http://www.optoro.com) we've been building some external tools that interact with our website via http. For simplicity's sake, we've been using <code>`curl`</code>.
+I was discussing this with some friends when someone recommended I check out [Curb][2]. I was already in the middle of transitioning to [HTTParty][3], due to its improved syntax, but I figured I'd check them all out in a head-to-head HTTP deathmatch.
 
-I was discussing this with some friends when someone recommended I check out Curb. I was already in the middle of transitioning to HTTParty, due to its improved syntax, but I figured I'd check them all out in a head-to-head HTTP deathmatch.
-
-I wrote this simple Sinatra app to hit for testing purposes:
+I wrote this simple [Sinatra][4] app to hit for testing purposes:
 
 {% highlight ruby %}
 require 'rubygems'
@@ -143,4 +140,9 @@ curl        0.110000   1.130000   1.240000 (1202.826407)
 
 </pre></code></div>
 
-Clearly, Curb is the fastest alternative. It's not all that much faster than HTTParty, though, so I think the improved syntax of HTTParty will keep me on that. What's truly interesting though is how slow shelling-out to curl is. Even though the 'total' time is negligibly more, the 'real' time it takes to open that subprocesses and execute curl is far longer, 8.7 seconds total for plain GETs, and a whopping 1202 seconds for POSTs.
+Clearly, libcurl-based [Curb][2] is the fastest alternative. It's not all that much faster than (pure-ruby) [HTTParty][3], though, so I think the improved syntax of [HTTParty][3] will keep me on that. What's truly interesting though is how slow shelling-out to curl is. Even though the 'total' time is negligibly more, the 'real' time it takes to open that subprocesses and execute [curl][1] is far longer, 8.7 seconds total for plain GETs, and a whopping 1202 seconds for POSTs.
+
+[1]: http://curl.haxx.se/
+[2]: http://rubygems.org/gems/curb
+[3]: http://httparty.rubyforge.org/
+[4]: http://www.sinatrarb.com/
