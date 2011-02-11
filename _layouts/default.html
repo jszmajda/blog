@@ -6,11 +6,13 @@ site_title: Mens Sana
 <html>
   <head>
     <title>{{ page.site_title }} | {{ page.title }}</title>
+    <link rel="alternate" title="{{ page.site_title }}" type="application/atom+xml" href="http://feeds.feedburner.com/loki/DqPy"/>
     <link rel="stylesheet" href="/css/reset.css" type="text/css"/>
     <link rel="stylesheet" href="/css/pyg_autumn.css" type="text/css"/>
     <link rel="stylesheet" href="/css/main.css" type="text/css"/>
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
 
     <script type="text/javascript">
       var _gaq = _gaq || [];
@@ -33,7 +35,8 @@ site_title: Mens Sana
       <div class="navblock">
         <h3>About Me</h3>
         <p>
-          My name is <strong>Josh Szmajda</strong>. I'm a long-time coder with experience in Ruby, Perl, Bash, PHP, and Java, as well as some exposure to Python, C, C++, VB, Lisp, Haskell, Erlang, and a bunch more. I'm big into Linux and Open-Source in general. I'm political, liberal, and open to discussion.
+        <img src="http://www.gravatar.com/avatar/8f8d83cc67582bc98ed3a111a8182d55.png" align="left" width="40" height="40"/>
+        My name is <strong>Josh Szmajda</strong>. I'm a long-time coder with experience in Ruby, Perl, Bash, PHP, and Java, as well as some exposure to Python, C, C++, VB, Lisp, Haskell, Erlang, and a bunch more. I'm big into Linux and Open-Source in general. I'm political, liberal, and open to discussion.
         </p>
       </div>
       <div class="navblock">
@@ -51,22 +54,17 @@ site_title: Mens Sana
         </ul>
       </div>
 
-      <!-- TODO
       <div class="navblock">
-        <h3>Links</h3>
-        <ul class="posts">
-          {% for post in site.posts %}
-          <li>
-            &lceil;
-            <span>{{ post.date | date_to_string }}</span> 
-            &asymp;
-            <a href="{{ post.url }}">{{ post.title }}</a>
-            &rfloor;
-          </li>
-          {% endfor %}
+        <h3>etc</h3>
+        <ul class="contact">
+          <li><a href="http://feeds.feedburner.com/loki/DqPy"><img src="/img/feed-icon-28x28.png" width="28" height="28"/></a></li>
+          <li><a href="http://github.com/joshsz"><img src="/img/github_32.png" width="28" height="28"/></a></li>
+          <li><a href="http://www.twitter.com/jszmajda"><img src="http://twitter-badges.s3.amazonaws.com/t_logo-b.png" alt="Follow jszmajda on Twitter" width="28" height="28"/></a></li>
+          <li><a href="http://facebook.com/joshsz"><img src="/img/facebook.jpg" width="28" height="28"/></a></li>
+          <li>Joshua Szmajda</li>
+          <li>joshsz@gmail.com</li>
         </ul>
       </div>
-      -->
     </div>
 
     <div id="main">

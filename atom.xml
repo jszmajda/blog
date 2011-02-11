@@ -1,0 +1,27 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>Mens Sana</title>
+ <link href="http://loki.ws/atom.xml" rel="self"/>
+ <link href="http://loki.ws/"/>
+ <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <id>http://loki.ws/</id>
+ <author>
+   <name>Joshua Szmajda</name>
+   <email>joshsz@gmail.com</email>
+ </author>
+
+ {% for post in site.posts %}
+ <entry>
+   <title>{{ post.title }}</title>
+   <link href="http://loki.ws{{ post.url }}"/>
+   <updated>{{ post.date | date_to_xmlschema }}</updated>
+   <id>http://loki.ws{{ post.id }}</id>
+   <content type="html">{{ post.content | xml_escape }}</content>
+ </entry>
+ {% endfor %}
+ 
+</feed>

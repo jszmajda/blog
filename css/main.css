@@ -13,6 +13,17 @@ body {
   cursor: pointer;
 }
 
+a {
+  text-decoration: none;
+  color: #DB4105;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active {
+  text-decoration: underline;
+}
+
 h1 {
   border-bottom: 2px solid #33332D;
   font-size: 2.5em;
@@ -44,6 +55,37 @@ strong {
 #main {
 }
 
+/* ---------- Index ---------- */
+
+ul.index-posts span {
+}
+ul.index-posts li {
+  margin-bottom: 20px;
+}
+.preview {
+  padding-left: 10px;
+  line-height: 1.2em;
+}
+
+.title-line {
+  margin-bottom: 10px;
+}
+.title-line a {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.deco {
+  font-family: "Tangerine", arial, sans-serif;
+  font-size: 3em;
+  padding: 0 0 15px 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+/* ---------- Nav ---------- */
+
 #nav {
   float: right;
   height: 100%;
@@ -71,10 +113,13 @@ strong {
 }
 
 #nav .navblock {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 #nav .navblock ul {
   padding: 5px;
+}
+#nav .navblock p img {
+  margin: 0 9px 5px 0;
 }
 #nav .navblock p {
   line-height: 1.5em;
@@ -95,13 +140,12 @@ strong {
   -webkit-box-shadow: 0px 0px 6px #33332D;
 }
 
+ul.posts span {
+  font-weight: bold;
+}
 ul.posts li {
   margin-bottom: 5px;
   padding: 5px;
-  /*background-color: #CCCC9F;*/
-  /*box-shadow: 0px 0px 6px #33332D;*/
-  /*-moz-box-shadow: 0px 0px 6px #33332D;*/
-  /*-webkit-box-shadow: 0px 0px 6px #33332D;*/
 }
 
 ul.posts li span {
@@ -111,6 +155,20 @@ ul.posts li span {
 ul.posts li a {
   margin-left: 5px;
 }
+
+ul.contact img {
+  margin-top: 5px;
+}
+ul.contact {
+  float: left;
+}
+ul.contact li {
+  margin: 5px;
+  font-size: 0.9em;
+  float: left;
+}
+
+/* ---------- Posts ---------- */
 
 #leftOfPost {
   border-left: 150px solid #CCCC9F;
@@ -122,7 +180,7 @@ ul.posts li a {
   border-left: 15px solid #DB4105;
   border-right: 5px solid #DB4105;
   padding: 15px 65px 15px 15px;
-  min-height: 800px;
+  min-height: 1000px;
 }
 
 .highlight {
@@ -144,15 +202,4 @@ code, pre {
   width: 100%;
   overflow-y: auto;
   margin-bottom: 10px;
-}
-
-a {
-  text-decoration: none;
-  color: #DB4105;
-}
-a:hover {
-  text-decoration: underline;
-}
-a:active {
-  text-decoration: underline;
 }
