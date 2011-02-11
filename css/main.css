@@ -1,0 +1,65 @@
+body {
+  font-family: "Merriweather", arial, sans-serif;
+  font-size: 1em;
+  color: #1B1E26;
+  background-color: #F2EFBD;
+}
+
+div#header {
+  height: 20px;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-shadow: 2px 2px 4px #C2BF7D;
+}
+
+p {
+  padding: 10px;
+  line-height: 1.4em;
+}
+
+div#postWrapper {
+  height: 100%;
+  clear: both;
+}
+div#leftOfPost {
+  border-left: 300px solid #70A99A;
+}
+
+div#post {
+  width: 600px;
+  border-left: 15px solid #2F6D7A;
+  padding: 15px;
+}
+
+div.highlight {
+  background-color: #EBF7D0;
+  padding: 15px;
+  overflow-x: auto;
+}
+code {
+  background-color: #EBF7D0;
+  font-family: 'Droid Sans Mono', 'Courier New', sans-serif;
+  font-size: 0.9em;
+}
+
+div.shortCode { 
+  height: 300px;
+  width: 100%;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #2F6D7A;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active {
+  text-decoration: underline;
+}
