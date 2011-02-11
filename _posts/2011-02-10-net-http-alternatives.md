@@ -4,7 +4,7 @@ title: Net::HTTP Alternatives
 ---
 
 {{ page.title }}
-================
+----------------
 
 Here at [Optoro](http://www.optoro.com) we've been building some external tools that interact with our website via http. For simplicity's sake, we've been using <code>`curl`</code>.
 
