@@ -3,6 +3,8 @@ layout: post
 title: Testing Rails Memory Usage With Valgrind
 ---
 
+**TL;DR**: Ruby 1.9.2 leaks memory with rails apps, switch to 1.9.3.
+
 We've been having some trouble running out of memory on our production
 servers ever since we upgraded our app to Rails 3.1 and Ruby 1.9.2
 (p290). Servers will gradually use up all the memory on our (m1.large)
