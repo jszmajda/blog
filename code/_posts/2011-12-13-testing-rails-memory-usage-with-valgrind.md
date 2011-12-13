@@ -7,8 +7,8 @@ title: Testing Rails Memory Usage With Valgrind
 
 We've been having some trouble running out of memory on our production
 servers ever since we upgraded our app to Rails 3.1 and Ruby 1.9.2
-(p290). Servers will gradually use up all the memory on our (m1.large)
-servers (7.5Gb of RAM) over the course of 24 hours or so.
+(p290). Our unicorn processes will gradually use up all the memory on
+our (m1.large) servers (7.5Gb) over the course of 24 hours or so.
 
 Today one of our developers came across some topics ([1][1], [2][2]) on
 StackOverflow, as well as a [post on HN][3] that mentioned it might be a
@@ -35,7 +35,7 @@ install from [source][8].
 
 I'm using RVM to manage my rubies. Ruby supports valgrind internally as
 of 1.9 with the --with-valgrind configure option. It's apparently on by
-default, but if you're paranoid, you can pass the additional configure
+default, but if you're paranoid you can pass the additional configure
 flag with RVM by doing:
 
 {% highlight text %}
@@ -52,7 +52,7 @@ loads some data into memory:
 Order.all.map{|o| o.customer }
 {% endhighlight %}
 
-To actually execute valgrind, I had to run:
+To actually execute valgrind, I ran:
 
 {% highlight text %}
 valgrind \
