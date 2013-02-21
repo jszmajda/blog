@@ -22,8 +22,8 @@ You have to have a few things installed to begin writing your mod:
   used 1.7.2)
 * Follow the ["Get CraftBukkit"][9] instructions. At the time I'm
   writing this, I needed to get the [beta build][10] to be compatible with the
-  version of Minecraft the client is running, so if you see an error
-  connecting to the server, try that---you just replace `craftbukkit.jar`
+  version of Minecraft the client was running, so if you see an error
+  connecting to the server, try that, just replace `craftbukkit.jar`
   in the instructions with the beta one.
 
 At this point you should be able to start the craftbukkit server and
@@ -222,6 +222,9 @@ I'm mostly very impressed by how simple it was to get going with this.
 Kudos to the Bukkit team for their great infrastructure, and to
 RubyBukkit for making it possible with JRuby!
 
+Update: [Evan Light][11] mentioned that using [Purugin][12] makes this
+all even easier. Give it a shot!
+
 [1]: http://coderdojodc.com/
 [2]: http://www.youtube.com/watch?v=SmBDBDRX-jg
 [3]: http://jruby.org/
@@ -232,3 +235,5 @@ RubyBukkit for making it possible with JRuby!
 [8]: http://jruby.org/download
 [9]: http://wiki.bukkit.org/Setting_up_a_server
 [10]: http://dl.bukkit.org/latest-beta/craftbukkit-beta.jar
+[11]: https://twitter.com/elight
+[12]: https://github.com/enebo/Purugin
