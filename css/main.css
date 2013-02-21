@@ -214,3 +214,13 @@ code, pre {
   border-top: 1px solid #CCC;
   padding-top: 20px;
 }
+
+#post ul {
+  list-style-type: disc;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+#post ul li {
+  margin-bottom: 10px;
+  line-height: 1.4em;
+}
