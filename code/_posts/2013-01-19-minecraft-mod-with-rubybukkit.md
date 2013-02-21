@@ -3,14 +3,14 @@ layout: post
 title: Minecraft Mod with RubyBukkit
 ---
 
-I went to [CoderDojoDC][1] and it seemed like every kid there was
-obsessed with Minecraft. I had recently interviewed [Charles Nutter][2],
-who mentioned you could mod Minecraft with [JRuby][3], and I wanted to
-get some experience with it so I could help the kids out, so I figured
-I'd give it a shot. It wasn't hard!
+The other day I went to [CoderDojoDC][1] and it seemed like every kid
+there was obsessed with Minecraft. I recently interviewed [Charles
+Nutter][2], who mentioned you could mod Minecraft with [JRuby][3]. I
+wanted to get some experience with it so I could help the kids out, so I
+figured I'd give it a shot. It wasn't hard!
 
-I did this all with Ubuntu linux. YMMV with other OS's, but it
-shouldn't be that much different.
+I did this with Ubuntu linux. YMMV with other OS's, but it shouldn't be
+that much different.
 
 ### Gather your forces
 
@@ -112,7 +112,7 @@ folder, so `plugins/RubyBukkit/awesome_dirt.rb`
 ### Digging holes
 
 Of course, even diamond pickaxes aren't fast enough sometimes, so I
-modified my code:
+modified my code to add the `/dig` command:
 
 {% highlight ruby %}
 Plugin.is {
@@ -190,6 +190,8 @@ It's not super pretty, but now when I issue the '/dig' command in
 minecraft (just type /dig into the client when connected to your
 server), a 3x3 grid of blocks directly in front of me will turn into
 air (disappear). Makes building tunnels a snap!
+
+You can see the `onCommand` callback is called for the `/dig` command.
 
 ![My lazy house](/img/hallways.png)
 
