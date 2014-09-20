@@ -41,11 +41,14 @@ h2 {
   font-weight: bold;
   letter-spacing: 0.08em;
   text-shadow: 2px 2px 4px #CFC8B3;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 #post h3 {
   font-weight: bold;
-  margin-top: 15px;
+  margin-top: 30px;
+  margin-bottom: 15px;
 }
 
 p {
