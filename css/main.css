@@ -75,6 +75,13 @@ ul.index-posts li {
   line-height: 1.2em;
 }
 
+ol > li {
+  list-style-type: decimal;
+  list-style-position: outside;
+  margin-left: 30px;
+  padding-top: 10px;
+}
+
 .title-line {
   margin-bottom: 10px;
 }

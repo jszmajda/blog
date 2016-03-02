@@ -1,4 +1,4 @@
-highlighter: pygments
+highlighter: rouge
 permalink: date
 lsi: true
 encoding: utf-8

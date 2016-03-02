@@ -1,0 +1,73 @@
+==================================================================
+https://keybase.io/joshsz
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://loki.ws
+  * I am joshsz (https://keybase.io/joshsz) on keybase.
+  * I have a public key with fingerprint 3F4F 9FA1 5EAD 8A01 42B2  53C8 4C65 2781 7347 DB14
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "3f4f9fa15ead8a0142b253c84c6527817347db14",
+            "host": "keybase.io",
+            "key_id": "4c6527817347db14",
+            "kid": "0101ddc0f9f1e9874c2f78dcf6a97aa57ef3ccd539f336cd4365e58145fe831579330a",
+            "uid": "81752c83481144ea6b0168c564d66100",
+            "username": "joshsz"
+        },
+        "service": {
+            "hostname": "loki.ws",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1420837114,
+    "expire_in": 157680000,
+    "prev": "d11a45229490e3630c65ac9e1838cdce9bdbe93f5310b27b03f7c970aac8f28b",
+    "seqno": 19,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.1
+Comment: https://keybase.io/crypto
+
+yMMzAnicbVJ7UBVVHL7IUxJFBHuAg60Wpgzt7tnnTV4DCZVCeh0jMmAfZy/L4+69
+d5d3lAI9psbJEsSmyXGAESyxQKshScERDeUxKlrClDowwnUUaIxhZBjsLGP/df45
+c77f932/3++bcz7I2xLotRVG7dVTRkK9Lndbiyw7f0iYq8BETS7DrBVYPly8FNVh
+h26nW3UYmBUDCqXwikDQUJA5AScoUiRpIHGUxNAkyxEsoFhZJCgsGsvVdFOBbERB
+hzGqhjD0yFZlhP4PP3+xgBM4IcsSjroQkOdYSiIVlpMlhRF4VhBoFipAkmQa8AoA
+jCRTgKEhzREUrUAOEDTLA4ALyK5o0Q51oEmJAxRHEBQFBUbECYaTaIaSGYbAcZOo
+Q7dDKISInafpuXo5VhmNIaxYlaAZgLnHk3qBlq/GlOhI5HRrhiZpBQjMNQyn1dQY
+ZU6TVALF7CfybFF1yCg/JCiGbl3VHJiVQEzJUE0/lB7OARZNFo3BUqfqhtmqyaBZ
+hsPRMdvAYmQpE4RA0STJUzwOAQNwlJ4g8ZDgACfJEuRFWYQ8UGhA4CLJijhQWIln
+cUGQOIXkRMxcyOXQkDeP5hTsyFNX7Q7BKHJDrPJc924fi1egxc93ifkFLIFLg//7
+GEtnVixgW445Oo9kHAuf8LUlXXnYerAjx42/NtK4qf0pngoMzVjfO3F1x18BU1Jf
+pKV5zen5cLK16/qnF69FJM5uDqk6ZffObE66aEv70lN/fKpt7H2tJ27oveCMjq7Y
++vtf2+ZCjqbcvOyJiE8+nuhjHz9Z8u2fqePTXRan4PxsZ17A1cwZ3z5P3UIpezBt
+Kqm/1z9kyTszn5S2xyxfE5iV2/PHi9m75gq68y7cqWXzapLnrqns3nsFb6S6wC5Y
+HOuJbNVHImcHv/utZ7gCWnv+lkNr70ZlVLUEfHSgJmwGfrzn1+H6dONM0IGQfi59
+4uXR7emXfhnseMXd5Z12qLt6e2vEKVdDxUvLgv0Oew0Uru05n96fcjbhrajT4uj1
+Vc+M3861hVXfvfnjpn/23bZ6qKG8jVUnEh8Ghbdryw5/cKKzbnXbWp/Y2H3EvK1j
+XfkGZbih7rn1pQlfjK2cPtpaUlzvr5fcEFZtNI7sdtmq2qYfv502eOHQ4xbjqweT
+jZ4Q/+bCV3O2LAxN1KwsH72y1VH2+3JjAIzMuH6Ka3o95V0XMZms9Je630wOe76h
+r3Fif2TOrHZjXePPOyZrmoajHlizVnwvdD/7oV1p95MH4vbcajt5JvNsp9x7Z+xe
+BD66IWHb06Rwv3r1o9r+IldNzK1v2LQsJb6yyZcCjy6NpPbOb9scnLT/8/iWxHMv
+/AvyB6Q9
+=Poht
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/joshsz
+
+==================================================================
