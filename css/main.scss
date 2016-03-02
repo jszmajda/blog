@@ -2,23 +2,67 @@
 # make sure Jekyll reads this properly?
 ---
 
-$made-to-last: #B84238;
-$lunar: #F9FBF0;
-$dingy-on-purpose: #DEDCC5;
-$aligned: #B8C9B9;
-$dark-sky: #4F686F;
+/*[> sasomething <]*/
+/*$made-to-last: #B84238;*/
+/*$lunar: #F9FBF0;*/
+/*$dingy-on-purpose: #DEDCC5;*/
+/*$aligned: #B8C9B9;*/
+/*$dark-sky: #4F686F;*/
 
-$text-color: #33332D;
-$body-background-color: #9FB4CC;
-$header-background-color: #FFF8E3;
-$body-background-left-color: #CCCC9F;
-$link-color: #DB4105;
-$h1-lower-border-color: #33332D;
+/*$text-color: darken($lunar, 90%);*/
+/*$body-background-color: $aligned;*/
+/*$header-background-color: $lunar;*/
+/*$body-background-left-color: $dingy-on-purpose;*/
+/*$link-color: $made-to-last;*/
+/*$h1-lower-border-color: darken($lunar, 80%);*/
+/*$comment-border-top: #CCCCCC;*/
+/*$post-body-color: $header-background-color;*/
+/*$nav-header-background-color: $body-background-left-color;*/
+/*$post-left-line-color: $link-color;*/
+/*$post-right-line-color: $post-left-line-color;*/
+/*[> sasomething <]*/
+
+/*[> girl things <]*/
+/*$snowblind: #FEFEFE;*/
+/*$blue-glass: #2BF5F5;*/
+/*$blue-shadows: #08B8F4;*/
+/*$marina: #0057B3;*/
+/*$polar: #B1B4AB;*/
+
+/*$text-color: darken($snowblind, 90%);*/
+/*$body-background-color: $blue-shadows;*/
+/*$header-background-color: $snowblind;*/
+/*$body-background-left-color: $marina;*/
+/*$link-color: $marina;*/
+/*$h1-lower-border-color: darken($snowblind, 80%);*/
+/*$comment-border-top: #CCCCCC;*/
+/*$post-body-color: $header-background-color;*/
+/*$nav-header-background-color: $blue-glass;*/
+/*$post-left-line-color: $blue-glass;*/
+/*$post-right-line-color: $post-left-line-color;*/
+/*[> girl things <]*/
+
+/* perfect spring */
+$snowblind: #FEFEFE;
+$love: #E2FE90;
+$early-spring: #D6F068;
+$greenclean: #83D0B0;
+$neuronaut: #778DA5;
+
+$header-background-color: $snowblind;
+$text-color: darken($snowblind, 90%);
+$h1-lower-border-color: darken($snowblind, 80%);
+
+$body-background-color: $greenclean;
+$body-background-left-color: $early-spring;
+$link-color: $neuronaut;
 $comment-border-top: #CCCCCC;
 $post-body-color: $header-background-color;
-
-$post-left-line-color: $link-color;
+$nav-header-background-color: $early-spring;
+$post-left-line-color: $love;
 $post-right-line-color: $post-left-line-color;
+/* perfect spring */
+
 
 
 $text-shadow-color: desaturate(darken($post-body-color, 15%), 50%);
@@ -140,7 +184,7 @@ ol > li {
   font-weight: bold;
   padding: 10px 8px 8px 8px;
   margin-bottom: 4px;
-  background-color: $body-background-left-color;
+  background-color: $nav-header-background-color;
   border-top-left-radius: 20px;
   border-top-right-radius: 5px;
   -webkit-border-top-left-radius: 20px;
@@ -148,7 +192,7 @@ ol > li {
   -moz-border-radius-topleft: 20px;
   -moz-border-radius-topright: 5px;
   text-align: center;
-  text-shadow: 2px 2px 4px darken($body-background-left-color, 10%);
+  text-shadow: 2px 2px 4px darken($nav-header-background-color, 10%);
   box-shadow: 0px 0px 6px $sidebar-box-shadow-color;
   -moz-box-shadow: 0px 0px 6px $sidebar-box-shadow-color;
   -webkit-box-shadow: 0px 0px 6px $sidebar-box-shadow-color;
