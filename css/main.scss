@@ -73,7 +73,7 @@ $code-border-color: darken($code-background-color, 10%);
 
 
 body {
-  font-family: "Merriweather", arial, sans-serif;
+  font-family: "Lora", arial, sans-serif;
   font-size: 1em;
   color: $text-color;
   background-color: $body-background-color;
@@ -85,6 +85,17 @@ body {
   background: -webkit-gradient(linear, 100 0, 215 0, color-stop(0.1, $body-background-left-color), color-stop(0.5, $body-background-color), color-stop(0.9, $header-background-color));
   background: -moz-linear-gradient(left, $body-background-left-color 10%, $body-background-color 20%, $header-background-color 70%);
   cursor: pointer;
+
+  h1 {
+    font-family: "Tangerine";
+    a {
+      font-size: 50px;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+  }
 }
 
 a {
@@ -143,7 +154,7 @@ ul.index-posts li {
 }
 .preview {
   padding-left: 10px;
-  line-height: 1.2em;
+  line-height: 1.5em;
 }
 
 ol > li {
@@ -282,6 +293,9 @@ code, pre {
   font-size: 0.9em;
   line-height: 1.2em;
   padding: 2px 5px 2px 5px;
+}
+pre > code {
+  padding: 0;
 }
 
 .shortCode { 
