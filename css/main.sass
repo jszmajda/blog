@@ -1,0 +1,249 @@
+---
+# make sure Jekyll reads this properly?
+---
+
+/* perfect spring
+$snowblind: #FEFEFE
+$love: #E2FE90
+$early-spring: #D6F068
+$greenclean: #83D0B0
+$neuronaut: #778DA5
+
+$header-background-color: $snowblind
+$text-color: darken($snowblind, 90%)
+$h1-lower-border-color: darken($snowblind, 80%)
+
+$body-background-color: $greenclean
+$body-background-left-color: $early-spring
+$link-color: $neuronaut
+$comment-border-top: #CCCCCC
+$post-body-color: $header-background-color
+$nav-header-background-color: $early-spring
+$post-left-line-color: $love
+$post-right-line-color: $post-left-line-color
+/* perfect spring
+
+$text-shadow-color: desaturate(darken($post-body-color, 15%), 50%)
+$sidebar-box-shadow-color: darken($body-background-color, 40%)
+
+$code-background-color: desaturate(darken($post-body-color, 5%), 60%)
+$code-border-color: darken($code-background-color, 10%)
+
+body
+  font-family: "Lora", arial, sans-serif
+  font-size: 1em
+  color: $text-color
+  background-color: $body-background-color
+
+#header
+  background-color: $header-background-color
+  text-align: right
+  background: -webkit-gradient(linear, 100 0, 215 0, color-stop(0.1, $body-background-left-color), color-stop(0.5, $body-background-color), color-stop(0.9, $header-background-color))
+  background: -moz-linear-gradient(left, $body-background-left-color 10%, $body-background-color 20%, $header-background-color 70%)
+  cursor: pointer
+
+  h1
+    font-family: "Tangerine"
+
+    a
+      font-size: 50px
+
+      &:hover
+        text-decoration: none
+
+a
+  text-decoration: none
+  color: $link-color
+
+a:hover
+  text-decoration: underline
+
+a:active
+  text-decoration: underline
+
+h1
+  border-bottom: 2px solid $h1-lower-border-color
+  font-size: 2.5em
+  font-weight: bold
+  letter-spacing: 0.08em
+  text-shadow: 2px 2px 4px $text-shadow-color
+  padding: 20px
+
+h2
+  font-size: 2em
+  font-weight: bold
+  letter-spacing: 0.08em
+  text-shadow: 2px 2px 4px $text-shadow-color
+  margin-top: 40px
+  margin-bottom: 20px
+
+p
+  padding: 10px
+  line-height: 1.4em
+
+strong
+  font-weight: bold
+
+#main
+
+/* ---------- Index ----------
+
+ul.index-posts li
+  margin-bottom: 20px
+  list-style-type: none
+
+.preview
+  padding-left: 10px
+  line-height: 1.5em
+
+ol > li
+  list-style-type: decimal
+  list-style-position: outside
+  margin-left: 30px
+  padding-top: 10px
+
+.title-line
+  margin-bottom: 10px
+
+.title-line a
+  font-weight: bold
+  font-size: 1.2em
+
+.deco
+  font-family: "Tangerine", arial, sans-serif
+  font-size: 3em
+  padding: 0 0 15px 0
+  margin: 0 auto
+  text-align: center
+
+/* ---------- Nav ----------
+
+#nav
+  float: right
+  height: 100%
+  padding: 20px 20px 10px 10px
+  width: 340px
+
+  h3
+    font-size: 1.3em
+    font-weight: bold
+    padding: 10px 8px 8px 8px
+    margin-bottom: 4px
+    background-color: $nav-header-background-color
+    border-top-left-radius: 20px
+    border-top-right-radius: 5px
+    -webkit-border-top-left-radius: 20px
+    -webkit-border-top-right-radius: 5px
+    -moz-border-radius-topleft: 20px
+    -moz-border-radius-topright: 5px
+    text-align: center
+    text-shadow: 2px 2px 4px darken($nav-header-background-color, 10%)
+    box-shadow: 0px 0px 6px $sidebar-box-shadow-color
+    -moz-box-shadow: 0px 0px 6px $sidebar-box-shadow-color
+    -webkit-box-shadow: 0px 0px 6px $sidebar-box-shadow-color
+
+  .navblock
+    margin-bottom: 20px
+
+    ul
+      padding: 5px
+
+    p
+      line-height: 1.5em
+      font-size: 0.8em
+
+      img
+        margin: 0 9px 5px 0
+
+    ul, p
+      background-color: $post-body-color
+      border: 1px solid darken($post-body-color, 10%)
+      border-bottom-left-radius: 5px
+      border-bottom-right-radius: 20px
+      -webkit-border-bottom-left-radius: 5px
+      -webkit-border-bottom-right-radius: 20px
+      -moz-border-radius-bottomleft: 5px
+      -moz-border-radius-bottomright: 20px
+      box-shadow: 0px 0px 6px $sidebar-box-shadow-color
+      -moz-box-shadow: 0px 0px 6px $sidebar-box-shadow-color
+      -webkit-box-shadow: 0px 0px 6px $sidebar-box-shadow-color
+
+ul.posts
+  span
+    font-weight: bold
+
+  li
+    padding: 5px 5px 0px 5px
+    font-size: 0.9em
+    line-height: 1.5em
+
+    span
+      margin-right: 5px
+
+    a
+      margin-left: 5px
+
+ul.contact
+  float: left
+
+  img
+    margin-top: 5px
+
+  li
+    margin: 5px
+    font-size: 0.9em
+    float: left
+
+/* ---------- Posts ----------
+
+#leftOfPost
+  border-left: 150px solid $body-background-left-color
+
+#post
+  width: 600px
+  background-color: $post-body-color
+  border-left: 15px solid $post-left-line-color
+  border-right: 5px solid $post-right-line-color
+  padding: 15px 65px 15px 15px
+  min-height: 1000px
+
+  h3
+    font-weight: bold
+    margin-top: 30px
+    margin-bottom: 15px
+
+  ul
+    list-style-type: disc
+    margin-left: 30px
+    margin-top: 10px
+
+    li
+      margin-bottom: 10px
+      line-height: 1.4em
+
+.highlight
+  background-color: $code-background-color
+  border: 1px solid $code-border-color
+  padding: 15px
+  overflow-x: auto
+
+code, pre
+  background-color: $code-background-color
+  font-family: 'Droid Sans Mono', 'Courier New', sans-serif
+  font-size: 0.9em
+  line-height: 1.2em
+  padding: 2px 5px 2px 5px
+
+pre > code
+  padding: 0
+
+.shortCode
+  height: 300px
+  width: 100%
+  overflow-y: auto
+  margin-bottom: 10px
+
+#disqus_thread
+  margin-top: 20px
+  border-top: 1px solid $comment-border-top
+  padding-top: 20px
