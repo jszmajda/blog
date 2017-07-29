@@ -14,13 +14,13 @@ and also set time frames through the week to work on those projects: like this p
 
 ----- October 14th -----
 [11:13 AM]  
-joshsz hm
+jesssz hm
 
 [11:13 AM]  
 I led a fully remote team for three years and we have remote staff here too, so I’ve thought about this for awhile
 
 [1:45 PM]  
-joshsz I think your real problem is about motivation. You can’t expect deadlines and constant questions to produce results when someone is remote (or really when they’re not too)
+jesssz I think your real problem is about motivation. You can’t expect deadlines and constant questions to produce results when someone is remote (or really when they’re not too)
 
 [1:45 PM]  
 you have to get them to intrinsically want to do it
@@ -97,7 +97,7 @@ btw what’s your approach to psychological safety? how do you apply it
 sorry for all the questions I’m just so extremely interested
 
 
-joshsz yeah no worries
+jesssz yeah no worries
 
 [12:03 PM]  
 not sure what you mean with the time between an action and consequence and talking with someone in a higher position? Can you unpack that?
@@ -129,7 +129,7 @@ I hope that better explains it.
 heesham Great read! Really helpful on how to conduct the 1-1’s. Curious to see how you keep track of the 1-1 with 70 people and remember everything about them? Is there a system you have in place?
 
 
-joshsz oh sure the nurse/doctor thing - that’s the example in the Psych Safety video, no? I think the key is to show that when you’re a leader you’re still vulnerable and human. You will make mistakes, so make sure you acknowledge that regularly with your team and set the expectation that you need their support just like you expect them to need your support. "To err is human" :slightly_smiling_face:
+jesssz oh sure the nurse/doctor thing - that’s the example in the Psych Safety video, no? I think the key is to show that when you’re a leader you’re still vulnerable and human. You will make mistakes, so make sure you acknowledge that regularly with your team and set the expectation that you need their support just like you expect them to need your support. "To err is human" :slightly_smiling_face:
 I’ve found that the essence of “being human” is what it takes to create psych safety. Empathize with your team and help them empathize with you too by getting to know you.
 
 [8:45 AM]
@@ -139,4 +139,4 @@ How does Do Not Disturb work? Learn more in this Help Center article: Do Not Dis
 Only visible to you
 
 [8:46 AM]  
-joshsz keeping track - ha, yeah I don’t remember everything! I try to remember a key point or two about folks - where they live, their families, what key interests they have outside work if I can. I ask them about those things in the 1-1, it helps them feel like I care about them (because I do!). Mostly I just try to remember it.. I probably should keep notes!
+jesssz keeping track - ha, yeah I don’t remember everything! I try to remember a key point or two about folks - where they live, their families, what key interests they have outside work if I can. I ask them about those things in the 1-1, it helps them feel like I care about them (because I do!). Mostly I just try to remember it.. I probably should keep notes!

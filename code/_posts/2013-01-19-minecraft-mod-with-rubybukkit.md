@@ -78,7 +78,7 @@ this plugin:
 Plugin.is {
   name "AwesomeDirt"
   version "0.2"
-  author "Josh"
+  author "Jess"
 }
 
 import 'org.bukkit.Material'
@@ -118,7 +118,7 @@ modified my code to add the `/dig` command:
 Plugin.is {
   name "AwesomeDirt"
   version "0.2"
-  author "Josh"
+  author "Jess"
   commands :dig => {
     :description => "digs a tunnel",
     :usage => "/dig"
