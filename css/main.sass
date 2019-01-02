@@ -197,8 +197,9 @@ ul.contact
 #leftOfPost
   border-left: 150px solid $body-background-left-color
 
+$post-width: 600px
 #post
-  width: 600px
+  width: $post-width
   background-color: $post-body-color
   border-left: 15px solid $post-left-line-color
   border-right: 5px solid $post-right-line-color
@@ -218,6 +219,9 @@ ul.contact
     li
       margin-bottom: 10px
       line-height: 1.4em
+
+  img
+    max-width: $post-width
 
 .highlight
   background-color: $code-background-color
