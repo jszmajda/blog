@@ -62,22 +62,25 @@ site_title: Mens Sana
       })();
     </script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
     <div id="header" onClick="window.location.href='/';">
-      <h1><a href="/">{{ page.site_title }}</a></h1>
+      <h1><a href="/">Mens Sana</a></h1>
     </div>
 
-    <div id="nav">
+    <div class="nav">
+
       <div class="navblock">
         <h3>About Me</h3>
         <p style="clear: left">
           <img src="/img/profile.jpg" style="float: left; border-radius: 10px" width="100" height="120"/>
-          Hey! I'm <strong>Jess Szmajda</strong>. CTO@Optoro, community builder, creator. #mom #music #leadership #politics #community #code #dctech #trans #she
+          Hey! I'm <strong>Jess Szmajda</strong>. CTO@Axios, community builder, creator. #mom #music #leadership #politics #community #code #dctech #trans #she
           <i style="clear: left; display: block"></i>
         </p>
       </div>
-      <div class="navblock">
+
+      <div class="navblock archive">
         <h3>Archive</h3>
         <ul class="posts">
           {% for post in site.posts %}
@@ -90,7 +93,7 @@ site_title: Mens Sana
         </ul>
       </div>
 
-      <div class="navblock">
+      <div class="navblock etc">
         <h3>etc</h3>
         <ul class="contact">
           <li><a href="http://feeds.feedburner.com/loki/DqPy"><img src="/img/feed-icon-28x28.png" width="28" height="28"/></a></li>
@@ -101,6 +104,7 @@ site_title: Mens Sana
           <li>gmail - jess.szmajda</li>
         </ul>
       </div>
+
     </div>
 
     <div id="main">

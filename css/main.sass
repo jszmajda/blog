@@ -29,6 +29,10 @@ $sidebar-box-shadow-color: darken($body-background-color, 40%)
 $code-background-color: desaturate(darken($post-body-color, 5%), 60%)
 $code-border-color: darken($code-background-color, 10%)
 
+$non-phone-break: "only screen and (min-width: 1000px)"
+$full-break: "screen and (min-width: 1144px)"
+
+
 body
   font-family: "Lora", arial, sans-serif
   font-size: 1em
@@ -46,7 +50,6 @@ body
     font-family: "Tangerine"
 
     a
-      font-size: 50px
 
       &:hover
         text-decoration: none
@@ -63,10 +66,12 @@ a:active
 
 h1
   border-bottom: 2px solid $h1-lower-border-color
-  font-size: 2.5em
   font-weight: bold
   text-shadow: 2px 2px 4px $text-shadow-color
   padding: 20px
+  font-size: 1.5em
+  @media #{$non-phone-break}
+    font-size: 2.5em
 
 h2
   font-size: 2em
@@ -80,9 +85,16 @@ p
   line-height: 1.4em
 
 strong
-  font-weight: bold
+  font-weight: bolder
 
 #main
+  z-index: 0
+  float: left
+  @media screen and (min-width: 1000px)
+    width: 625px
+
+  @media #{$full-break}
+    width: 400px
 
 /* ---------- Index ----------
 
@@ -116,35 +128,56 @@ ol > li
 
 /* ---------- Nav ----------
 
-#nav
-  float: right
+.nav
   height: 100%
   padding: 20px 20px 10px 10px
-  width: 340px
-
-  h3
-    font-size: 1.3em
-    font-weight: bold
-    padding: 10px 8px 8px 8px
-    margin-bottom: 4px
-    background-color: $nav-header-background-color
-    border-top-left-radius: 20px
-    border-top-right-radius: 5px
-    -webkit-border-top-left-radius: 20px
-    -webkit-border-top-right-radius: 5px
-    -moz-border-radius-topleft: 20px
-    -moz-border-radius-topright: 5px
-    text-align: center
-    text-shadow: 2px 2px 4px darken($nav-header-background-color, 10%)
-    box-shadow: 0px 0px 6px $sidebar-box-shadow-color
-    -moz-box-shadow: 0px 0px 6px $sidebar-box-shadow-color
-    -webkit-box-shadow: 0px 0px 6px $sidebar-box-shadow-color
+  width: 90%
 
   .navblock
-    margin-bottom: 20px
+    &.archive, &.etc
+      display: none
+
+  @media #{$non-phone-break}
+    z-index: 10
+    position: relative
+    float: right
+    width: 340px
+
+    .navblock
+      float: right
+
+    .navblock
+      &.archive, &.etc
+        display: block
+
+
+  .navblock
+    display: flex
+    flex-direction: column
+    margin-bottom: 5px
+    @media #{$non-phone-break}
+      margin-bottom: 20px
+
+    h3
+      font-size: 1.3em
+      font-weight: bold
+      width: 100%
+      padding: 10px 8px 8px 8px
+      margin-bottom: 4px
+      background-color: $nav-header-background-color
+      border-top-left-radius: 20px
+      border-top-right-radius: 5px
+      -webkit-border-top-left-radius: 20px
+      -webkit-border-top-right-radius: 5px
+      -moz-border-radius-topleft: 20px
+      -moz-border-radius-topright: 5px
+      text-align: center
+      text-shadow: 2px 2px 4px darken($nav-header-background-color, 10%)
+      box-shadow: 0px 0px 6px $sidebar-box-shadow-color
+      -moz-box-shadow: 0px 0px 6px $sidebar-box-shadow-color
+      -webkit-box-shadow: 0px 0px 6px $sidebar-box-shadow-color
 
     ul
-      padding: 5px
 
     p
       line-height: 1.5em
@@ -152,8 +185,15 @@ ol > li
 
       img
         margin: 0 9px 5px 0
+        width: 50px
+        height: auto
+        @media #{$non-phone-break}
+          width: 100px
 
     ul, p
+      flex-grow: 1
+      width: 100%
+      padding: 7px
       background-color: $post-body-color
       border: 1px solid darken($post-body-color, 10%)
       border-bottom-left-radius: 5px
@@ -195,11 +235,13 @@ ul.contact
 /* ---------- Posts ----------
 
 #leftOfPost
-  border-left: 150px solid $body-background-left-color
+  @media #{$full-break}
+    border-left: 150px solid $body-background-left-color
 
 $post-width: 600px
 #post
-  width: $post-width
+  @media #{$non-phone-break}
+    width: $post-width
   background-color: $post-body-color
   border-left: 15px solid $post-left-line-color
   border-right: 5px solid $post-right-line-color
@@ -217,11 +259,12 @@ $post-width: 600px
     margin-top: 10px
 
     li
-      margin-bottom: 10px
+      margin-bottom: 4px
       line-height: 1.4em
 
-  img
-    max-width: $post-width
+  @media #{$non-phone-break}
+    img
+      max-width: $post-width
 
 .highlight
   background-color: $code-background-color
