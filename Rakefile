@@ -2,7 +2,7 @@ task :default => [:build, :deploy]
 
 task :build do
   puts "building"
-  `jekyll build`
+  `bundle exec jekyll build`
 end
 
 task :deploy do

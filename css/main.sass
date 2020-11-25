@@ -177,15 +177,13 @@ ol > li
       -moz-box-shadow: 0px 0px 6px $sidebar-box-shadow-color
       -webkit-box-shadow: 0px 0px 6px $sidebar-box-shadow-color
 
-    ul
-
-    p
+    li.abtme
       line-height: 1.5em
       font-size: 0.8em
 
       img
         margin: 0 9px 5px 0
-        width: 50px
+        width: 80px
         height: auto
         @media #{$non-phone-break}
           width: 100px
@@ -206,6 +204,17 @@ ol > li
       -moz-box-shadow: 0px 0px 6px $sidebar-box-shadow-color
       -webkit-box-shadow: 0px 0px 6px $sidebar-box-shadow-color
 
+    li.contacto a
+      display: block
+      margin: 5px
+      float: left
+
+      img
+        width: 20px
+        height: auto
+        @media #{$non-phone-break}
+          width: 28px
+
 ul.posts
   span
     font-weight: bold
@@ -221,16 +230,6 @@ ul.posts
     a
       margin-left: 5px
 
-ul.contact
-  float: left
-
-  img
-    margin-top: 5px
-
-  li
-    margin: 5px
-    font-size: 0.9em
-    float: left
 
 /* ---------- Posts ----------
 
