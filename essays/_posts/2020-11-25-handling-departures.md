@@ -3,7 +3,7 @@ layout: post
 title: Handling Departures
 ---
 
-## I'm writing a book!
+### I'm writing a book!
 
 I've been working on it for a while now, and I'm over 60,000 words into my
 first draft. It's a lot of work, but I hope helpful.  A friend of mine told me
@@ -21,7 +21,7 @@ leave a comment below :)
 I wanted to start with a section from my notes on Performance Management,
 **Handling Departures**.
 
-## Handling Departures
+### Handling Departures
 
 Sometimes people leave because they’ve decided to move on and sometimes you’ve
 made the decision. Either case should be handled with grace and dignity. How
