@@ -7,5 +7,5 @@ end
 
 task :deploy do
   puts "deploying"
-  `rsync -uav --delete -e ssh _site/* josh@loki.ws:~/blog/`
+  `rsync -uav --delete -e ssh _site/* jess@loki.ws:~/blog/`
 end
