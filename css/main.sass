@@ -77,8 +77,8 @@ h2
   font-size: 2em
   font-weight: bold
   text-shadow: 2px 2px 4px $text-shadow-color
+  margin: 20px
   margin-top: 40px
-  margin-bottom: 20px
 
 p
   padding: 10px
@@ -249,8 +249,12 @@ $post-width: 600px
 
   h3
     font-weight: bold
+    margin: 10px
     margin-top: 30px
-    margin-bottom: 15px
+    font-size: 1.1em
+    text-decoration: underline darken($post-body-color, 10%)
+    text-decoration-thickness: 2px
+    text-shadow: 1px 1px darken($post-body-color, 10%)
 
   ul
     list-style-type: disc
@@ -270,6 +274,10 @@ $post-width: 600px
   border: 1px solid $code-border-color
   padding: 15px
   overflow-x: auto
+
+div.highlight:has(code)
+  margin-left: 2em
+
 
 code, pre
   background-color: $code-background-color
