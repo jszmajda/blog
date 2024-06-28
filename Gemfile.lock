@@ -66,6 +66,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-20
+  arm64-darwin-22
 
 DEPENDENCIES
   classifier-reborn
@@ -73,4 +74,4 @@ DEPENDENCIES
   rouge
 
 BUNDLED WITH
-   2.3.26
+   2.4.22
