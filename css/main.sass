@@ -2,101 +2,241 @@
 # make sure Jekyll reads this properly?
 ---
 
-/* perfect spring
-$snowblind: #FEFEFE
-$love: #E2FE90
-$early-spring: #D6F068
-$greenclean: #83D0B0
-$neuronaut: #778DA5
+// Enhanced Pastel Watercolor Theme inspired by Gris
+$pastel-purple: #D8D0E8
+$pastel-pink: #F7E1E8
+$deep-purple: darken(#8C7A99, 10%)
+$light-blue: #BFE3E8
+$soft-white: #FFF9F9
+$accent-orange: #FFCDB2
 
-$header-background-color: $snowblind
-$text-color: darken($snowblind, 90%)
-$h1-lower-border-color: darken($snowblind, 80%)
+$header-background-color: $pastel-purple
+$body-background-color: $pastel-pink
+$text-color: $deep-purple
+$link-color: darken($deep-purple, 2%)
+$accent-color: $light-blue
 
-$body-background-color: $greenclean
-$body-background-left-color: $early-spring
-$link-color: $neuronaut
-$comment-border-top: #CCCCCC
-$post-body-color: $header-background-color
-$nav-header-background-color: $early-spring
-$post-left-line-color: $love
-$post-right-line-color: $post-left-line-color
-/* perfect spring
+// Mixins for watercolor effects
+@mixin watercolor-blotch($size, $blur: 30px)
+  content: ''
+  position: absolute
+  width: $size
+  height: $size
+  border-radius: 50%
+  filter: blur($blur)
+  opacity: 0.6
+  pointer-events: none
 
-$text-shadow-color: desaturate(darken($post-body-color, 15%), 50%)
-$sidebar-box-shadow-color: darken($body-background-color, 40%)
+@mixin random-position
+  $top: random(300) - 150 + px
+  $left: random(300) - 150 + px
+  top: $top
+  left: $left
 
-$code-background-color: desaturate(darken($post-body-color, 5%), 60%)
-$code-border-color: darken($code-background-color, 10%)
-
-$non-phone-break: "only screen and (min-width: 1000px)"
-$full-break: "screen and (min-width: 1144px)"
-
-
+// Base styles
 body
-  font-family: "Lora", arial, sans-serif
-  font-size: 1em
-  color: $text-color
+  font-family: 'Lora', serif
   background-color: $body-background-color
+  color: $text-color
+  line-height: 1.6
+  position: relative
+  overflow-x: hidden
 
+// Header styles
 #header
-  background-color: $header-background-color
-  text-align: right
-  background: -webkit-gradient(linear, 100 0, 215 0, color-stop(0.1, $body-background-left-color), color-stop(0.5, $body-background-color), color-stop(0.9, $header-background-color))
-  background: -moz-linear-gradient(left, $body-background-left-color 10%, $body-background-color 20%, $header-background-color 70%)
-  cursor: pointer
+  background: linear-gradient(135deg, $pastel-purple, $pastel-pink)
+  padding: 2rem
+  text-align: center
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+  position: relative
+  overflow: hidden
+
+  &::before
+    content: ''
+    @include watercolor-blotch(200px)
+    top: -50px
+    right: -50px
 
   h1
-    font-family: "Tangerine"
+    font-family: 'Tangerine', cursive
+    font-size: 4rem
+    color: $deep-purple
+    text-shadow: 2px 2px 4px rgba($soft-white, 0.6)
+    position: relative
 
-    a
+// Layout container
+.container
+  max-width: 1100px
+  margin: 0 auto
+  padding: 2rem
+  display: flex
+  flex-direction: column
 
-      &:hover
-        text-decoration: none
+  @media screen and (min-width: 768px)
+    flex-direction: row-reverse
+
+// Navigation styles
+.nav
+  background-color: rgba($soft-white, 0.7)
+  border-radius: 10px
+  padding: 1rem
+  margin-top: 2rem
+  position: relative
+  flex: 1
+
+  @media screen and (min-width: 768px)
+    margin-left: 2rem
+    margin-top: 0
+    max-width: 300px
+
+  &::after
+    content: ''
+    @include watercolor-blotch(150px)
+    bottom: -50px
+    left: -50px
+
+  .navblock
+    margin-bottom: 2rem
+
+    h3
+      font-family: 'Tangerine', cursive
+      color: $deep-purple
+      font-size: 2.5rem
+      border-bottom: 2px solid $accent-color
+      padding-bottom: 0.5rem
+      margin-bottom: 1rem
+
+    ul
+      list-style-type: none
+      padding-left: 0
+
+      li
+        margin-bottom: 0.8rem
+
+    img
+      border-radius: 50%
+      margin-right: 15px
+      margin-bottom: 10px
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
 
 a
-  text-decoration: none
   color: $link-color
-
-a:hover
   text-decoration: underline
+  transition: color 0.3s ease
 
-a:active
-  text-decoration: underline
+  &:visited
+    color: lighten($link-color, 10%)
 
-h1
-  border-bottom: 2px solid $h1-lower-border-color
-  font-weight: bold
-  text-shadow: 2px 2px 4px $text-shadow-color
-  padding: 20px
-  font-size: 1.5em
-  @media #{$non-phone-break}
-    font-size: 2.5em
+  &:hover
+    color: darken($link-color, 15%)
 
-h2
-  font-size: 2em
-  font-weight: bold
-  text-shadow: 2px 2px 4px $text-shadow-color
-  margin: 20px
-  margin-top: 40px
-
-p
-  padding: 10px
-  line-height: 1.4em
-
-strong
-  font-weight: bolder
-
+// Main content styles
 #main
-  z-index: 0
-  float: left
-  @media screen and (min-width: 1000px)
-    width: 625px
+  background-color: rgba($soft-white, 0.9)
+  border-radius: 10px
+  padding: 2rem
+  margin-top: 2rem
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+  position: relative
+  overflow: hidden
+  flex: 2
 
-  @media #{$full-break}
-    width: 400px
+  @media screen and (min-width: 768px)
+    margin-top: 0
 
-/* ---------- Index ----------
+  &::before
+    content: ''
+    @include watercolor-blotch(250px)
+    top: -100px
+    right: -100px
+
+  &::after
+    content: ''
+    @include watercolor-blotch(200px)
+    bottom: -80px
+    left: -80px
+
+// Post styles
+#post
+  position: relative
+
+  h2, h3, h4, h5, h6
+    position: relative
+    z-index: 1
+
+    &::before, &::after
+      @include watercolor-blotch(100px, 20px)
+      @include random-position
+      z-index: -1
+
+  // Add this new class
+  .watercolor-blotch
+    position: absolute
+    z-index: -10
+    @include watercolor-blotch(600px)
+
+  h2
+    font-family: 'Tangerine', cursive
+    color: $deep-purple
+    font-size: 3rem
+    text-shadow: 1px 1px 2px rgba($pastel-pink, 0.6)
+    margin-bottom: 1.5rem
+
+    &::before
+      @include watercolor-blotch(150px, 25px)
+
+    &::after
+      @include watercolor-blotch(120px, 22px)
+
+  h3
+    font-family: 'Lora', serif
+    color: darken($deep-purple, 10%)
+    font-size: 1.8rem
+    margin-top: 2rem
+    margin-bottom: 1rem
+    border-bottom: 1px solid $accent-color
+    padding-bottom: 0.5rem
+
+    &::before
+      @include watercolor-blotch(120px, 22px)
+
+    &::after
+      @include watercolor-blotch(100px, 20px)
+
+  h4, h5, h6
+    font-family: 'Lora', serif
+    color: darken($deep-purple, 5%)
+    margin-top: 1.5rem
+    margin-bottom: 0.8rem
+
+  p
+    position: relative
+    z-index: 1
+    margin-bottom: 1.5rem
+    font-size: 1.1rem
+
+// Code block styles
+.highlight
+  background-color: rgba($pastel-purple, 0.2)
+  border-radius: 5px
+  padding: 1rem
+  margin-bottom: 1.5rem
+
+  pre
+    font-family: 'Droid Sans Mono', monospace
+    font-size: 0.9rem
+    overflow-x: auto
+
+// Watercolor background effect
+body::before
+  content: ''
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background: radial-gradient(circle at 10% 20%, rgba($pastel-pink, 0.3) 0%, transparent 50%), radial-gradient(circle at 90% 80%, rgba($pastel-purple, 0.3) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba($light-blue, 0.2) 0%, transparent 50%)
+  pointer-events: none
 
 ul.index-posts li
   margin-bottom: 20px
@@ -112,201 +252,8 @@ ol > li
   margin-left: 30px
   padding-top: 10px
 
-.title-line
-  margin-bottom: 10px
-
-  a
-    font-weight: bold
-    font-size: 1.2em
-
-.deco
-  font-family: "Tangerine", arial, sans-serif
-  font-size: 3em
-  padding: 0 0 15px 0
-  margin: 0 auto
-  text-align: center
-
-/* ---------- Nav ----------
-
-.nav
-  height: 100%
-  padding: 20px 20px 10px 10px
-  width: 90%
-
-  .navblock
-    &.archive, &.etc
-      display: none
-
-  @media #{$non-phone-break}
-    z-index: 10
-    position: relative
-    float: right
-    width: 340px
-
-    .navblock
-      float: right
-
-    .navblock
-      &.archive, &.etc
-        display: block
-
-
-  .navblock
-    display: flex
-    flex-direction: column
-    margin-bottom: 5px
-    @media #{$non-phone-break}
-      margin-bottom: 20px
-
-    h3
-      font-size: 1.3em
-      font-weight: bold
-      width: 100%
-      padding: 10px 8px 8px 8px
-      margin-bottom: 4px
-      background-color: $nav-header-background-color
-      border-top-left-radius: 20px
-      border-top-right-radius: 5px
-      -webkit-border-top-left-radius: 20px
-      -webkit-border-top-right-radius: 5px
-      -moz-border-radius-topleft: 20px
-      -moz-border-radius-topright: 5px
-      text-align: center
-      text-shadow: 2px 2px 4px darken($nav-header-background-color, 10%)
-      box-shadow: 0px 0px 6px $sidebar-box-shadow-color
-      -moz-box-shadow: 0px 0px 6px $sidebar-box-shadow-color
-      -webkit-box-shadow: 0px 0px 6px $sidebar-box-shadow-color
-
-    li.abtme
-      line-height: 1.5em
-      font-size: 0.8em
-
-      img
-        margin: 0 9px 5px 0
-        width: 80px
-        height: auto
-        @media #{$non-phone-break}
-          width: 100px
-
-    ul, p
-      flex-grow: 1
-      width: 100%
-      padding: 7px
-      background-color: $post-body-color
-      border: 1px solid darken($post-body-color, 10%)
-      border-bottom-left-radius: 5px
-      border-bottom-right-radius: 20px
-      -webkit-border-bottom-left-radius: 5px
-      -webkit-border-bottom-right-radius: 20px
-      -moz-border-radius-bottomleft: 5px
-      -moz-border-radius-bottomright: 20px
-      box-shadow: 0px 0px 6px $sidebar-box-shadow-color
-      -moz-box-shadow: 0px 0px 6px $sidebar-box-shadow-color
-      -webkit-box-shadow: 0px 0px 6px $sidebar-box-shadow-color
-
-    li.contacto a
-      display: block
-      margin: 5px
-      float: left
-
-      img
-        width: 20px
-        height: auto
-        @media #{$non-phone-break}
-          width: 28px
-
-ul.posts
-  span
-    font-weight: bold
-
-  li
-    padding: 5px 5px 0px 5px
-    font-size: 0.9em
-    line-height: 1.5em
-
-    span
-      margin-right: 5px
-
-    a
-      margin-left: 5px
-
-
-/* ---------- Posts ----------
-
-#leftOfPost
-  @media #{$full-break}
-    border-left: 150px solid $body-background-left-color
-
-$post-width: 600px
-#post
-  @media #{$non-phone-break}
-    width: $post-width
-  background-color: $post-body-color
-  border-left: 15px solid $post-left-line-color
-  border-right: 5px solid $post-right-line-color
-  padding: 15px 65px 15px 15px
-  min-height: 1000px
-
-  h3
-    font-weight: bold
-    margin: 10px
-    margin-top: 30px
-    font-size: 1.1em
-    text-decoration: underline darken($post-body-color, 10%)
-    text-decoration-thickness: 2px
-    text-shadow: 1px 1px darken($post-body-color, 10%)
-
-  ul
-    list-style-type: disc
-    margin-left: 30px
-    margin-top: 10px
-
-    li
-      margin-bottom: 4px
-      line-height: 1.4em
-
-  @media #{$non-phone-break}
-    img
-      max-width: $post-width
-
-.highlight
-  background-color: $code-background-color
-  border: 1px solid $code-border-color
-  padding: 15px
-  overflow-x: auto
-
-div.highlight:has(code)
-  margin-left: 2em
-
-
-code, pre
-  background-color: $code-background-color
-  font-family: 'Droid Sans Mono', 'Courier New', sans-serif
-  font-size: 0.9em
-  line-height: 1.2em
-  padding: 2px 5px 2px 5px
-
-pre > code
-  padding: 0
-
-.shortCode
-  height: 300px
-  width: 100%
-  overflow-y: auto
-  margin-bottom: 10px
-
-#disqus_thread
-  margin-top: 20px
-  border-top: 1px solid $comment-border-top
-  padding-top: 20px
-
-em
-  font-style: italic
-
 blockquote
-  margin-left: 2em
-  background-color: darken($post-body-color, 5%)
-  border-left: 6px solid darken($post-body-color, 15%)
-
-blockquote + p
-  margin-top: 1em
+  margin-left: 1em
+  padding-left: 1em
+  //background-color: darken($body-background-color, 0.1%)
+  border-left: 6px solid darken($body-background-color, 4%)
