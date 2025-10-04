@@ -1,5 +1,8 @@
-source 'https://www.rubygems.org'
+source 'https://rubygems.org'
 
-gem 'jekyll'
+ruby '2.7.8'
+
+gem 'jekyll', '~> 4.3.0'
 gem 'rouge'
 gem 'classifier-reborn'
+gem 'webrick'
