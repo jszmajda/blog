@@ -19,19 +19,9 @@ site_title: Mens Sana
         </div>
         <div class="preview">
           {{ post.content | truncatewords: 60 | strip_html }}
-          <p><a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.url }}">Comments</a></p>
         </div>
       </li>
       {% endfor %}
     </ul>
   </div>
 </div>
-<script type="text/javascript">
-  var disqus_shortname = 'joshszmajda'; 
-  (function () {
-      var s = document.createElement('script'); s.async = true;
-      s.type = 'text/javascript';
-      s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
-      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-  }());
-</script>
