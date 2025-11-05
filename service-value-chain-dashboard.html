@@ -19,7 +19,7 @@
         }
 
         .dashboard {
-            max-width: 1600px;
+            max-width: 1800px;
             margin: 0 auto;
         }
 
@@ -42,10 +42,14 @@
             border-radius: 4px;
             padding: 20px;
             margin-bottom: 30px;
+            display: flex;
+            gap: 25px;
         }
 
-        .step-header {
-            margin-bottom: 20px;
+        .step-narrative {
+            flex: 0 0 220px;
+            padding-right: 25px;
+            border-right: 2px solid #3f4f5f;
         }
 
         .step-number {
@@ -56,14 +60,26 @@
             border-radius: 3px;
             font-size: 12px;
             font-weight: 700;
-            margin-right: 10px;
+            margin-bottom: 12px;
         }
 
         .step-title {
-            display: inline;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
             color: #ffffff;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .step-description {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #aab7b8;
+        }
+
+        .step-content {
+            flex: 1;
+            min-width: 0;
         }
 
         .graphs-container {
@@ -72,7 +88,7 @@
         }
 
         .hero-graph {
-            flex: 2;
+            flex: 0 0 45%;
             min-width: 0;
         }
 
@@ -80,7 +96,7 @@
             flex: 1;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            gap: 12px;
             min-width: 0;
         }
 
@@ -88,20 +104,20 @@
             background: #0f1419;
             border: 1px solid #2a3441;
             border-radius: 3px;
-            padding: 15px;
+            padding: 12px;
         }
 
         .graph-title {
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 700;
             color: #ffffff;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
 
         .graph-value {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 300;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .graph-value.healthy {
@@ -124,18 +140,18 @@
         }
 
         .hero-graph .graph-svg {
-            height: 300px;
+            height: 280px;
         }
 
         .dependency-graphs .graph-svg {
-            height: 120px;
+            height: 100px;
         }
 
         .legend {
             display: flex;
-            gap: 15px;
-            margin-top: 10px;
-            font-size: 11px;
+            gap: 12px;
+            margin-top: 8px;
+            font-size: 10px;
         }
 
         .legend-item {
@@ -145,7 +161,7 @@
         }
 
         .legend-line {
-            width: 20px;
+            width: 16px;
             height: 2px;
         }
 
@@ -170,11 +186,11 @@
 
         .axis-label {
             fill: #687078;
-            font-size: 10px;
+            font-size: 9px;
         }
 
         .threshold-label {
-            font-size: 9px;
+            font-size: 8px;
             font-weight: 600;
         }
 
@@ -192,172 +208,501 @@
         <h1>foo.com Operational Dashboard</h1>
         <div class="subtitle">Service Value Chain - Last 6 hours</div>
 
-        <!-- Step 2: Browse and Find Equipment -->
+        <!-- Step 1: Customer Discovery -->
         <div class="journey-step">
-            <div class="step-header">
-                <span class="step-number">STEP 2</span>
-                <h2 class="step-title">Browse and Find Equipment</h2>
+            <div class="step-narrative">
+                <div class="step-number">STEP 1</div>
+                <div class="step-title">Customer Discovery</div>
+                <div class="step-description">
+                    Customers discover foo.com through search engines, ads, or referrals. They land on our homepage or category pages and begin exploring our camping gear offerings.
+                </div>
             </div>
 
-            <div class="graphs-container">
-                <div class="hero-graph">
-                    <div class="graph-card">
-                        <div class="graph-title">Product Page Views</div>
-                        <div class="graph-value healthy">2,847 /min</div>
-                        <svg class="graph-svg" viewBox="0 0 600 300">
-                            <!-- Grid lines -->
-                            <line x1="50" y1="40" x2="580" y2="40" class="grid-line"/>
-                            <line x1="50" y1="90" x2="580" y2="90" class="grid-line"/>
-                            <line x1="50" y1="140" x2="580" y2="140" class="grid-line"/>
-                            <line x1="50" y1="190" x2="580" y2="190" class="grid-line"/>
-                            <line x1="50" y1="240" x2="580" y2="240" class="grid-line"/>
+            <div class="step-content">
+                <div class="graphs-container">
+                    <div class="hero-graph">
+                        <div class="graph-card">
+                            <div class="graph-title">Landing Page Traffic</div>
+                            <div class="graph-value healthy">4,127 /min</div>
+                            <svg class="graph-svg" viewBox="0 0 600 280">
+                                <line x1="50" y1="30" x2="580" y2="30" class="grid-line"/>
+                                <line x1="50" y1="80" x2="580" y2="80" class="grid-line"/>
+                                <line x1="50" y1="130" x2="580" y2="130" class="grid-line"/>
+                                <line x1="50" y1="180" x2="580" y2="180" class="grid-line"/>
+                                <line x1="50" y1="230" x2="580" y2="230" class="grid-line"/>
 
-                            <!-- Y-axis labels (2000-4000) -->
-                            <text x="45" y="245" text-anchor="end" class="axis-label">2000</text>
-                            <text x="45" y="195" text-anchor="end" class="axis-label">2400</text>
-                            <text x="45" y="145" text-anchor="end" class="axis-label">2800</text>
-                            <text x="45" y="95" text-anchor="end" class="axis-label">3200</text>
-                            <text x="45" y="45" text-anchor="end" class="axis-label">3600</text>
+                                <text x="45" y="235" text-anchor="end" class="axis-label">3000</text>
+                                <text x="45" y="185" text-anchor="end" class="axis-label">3600</text>
+                                <text x="45" y="135" text-anchor="end" class="axis-label">4200</text>
+                                <text x="45" y="85" text-anchor="end" class="axis-label">4800</text>
+                                <text x="45" y="35" text-anchor="end" class="axis-label">5400</text>
 
-                            <!-- Alert threshold at 2200/min -->
-                            <line x1="50" y1="230" x2="580" y2="230" class="alert-line" stroke-width="2"/>
-                            <text x="582" y="233" class="threshold-label alert-label">ALERT 2200</text>
+                                <line x1="50" y1="217" x2="580" y2="217" class="alert-line" stroke-width="2"/>
+                                <text x="582" y="220" class="threshold-label alert-label">ALERT 3200</text>
 
-                            <!-- Warn threshold at 2500/min -->
-                            <line x1="50" y1="203" x2="580" y2="203" class="warn-line" stroke-width="2"/>
-                            <text x="582" y="206" class="threshold-label warn-label">WARN 2500</text>
+                                <line x1="50" y1="192" x2="580" y2="192" class="warn-line" stroke-width="2"/>
+                                <text x="582" y="195" class="threshold-label warn-label">WARN 3600</text>
 
-                            <!-- Metric line (hovering around 2800-2900) -->
-                            <polyline
-                                fill="none"
-                                class="metric-line"
-                                stroke-width="2"
-                                points="50,155 80,148 110,152 140,145 170,150 200,147 230,153 260,149 290,146 320,151 350,148 380,152 410,147 440,150 470,148 500,151 530,149 560,152 580,150"
-                            />
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="50,138 80,132 110,136 140,130 170,135 200,132 230,138 260,134 290,131 320,137 350,133 380,138 410,133 440,136 470,132 500,137 530,135 560,138 580,136"/>
 
-                            <!-- X-axis time labels -->
-                            <text x="80" y="270" text-anchor="middle" class="axis-label">00:00</text>
-                            <text x="200" y="270" text-anchor="middle" class="axis-label">02:00</text>
-                            <text x="320" y="270" text-anchor="middle" class="axis-label">04:00</text>
-                            <text x="440" y="270" text-anchor="middle" class="axis-label">06:00</text>
-                            <text x="560" y="270" text-anchor="middle" class="axis-label">now</text>
-                        </svg>
-                        <div class="legend">
-                            <div class="legend-item">
-                                <div class="legend-line" style="background: #1d8102;"></div>
-                                <span>Current</span>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-line" style="background: #ff9900;"></div>
-                                <span>Warn Threshold</span>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-line" style="background: #d13212;"></div>
-                                <span>Alert Threshold</span>
+                                <text x="80" y="260" text-anchor="middle" class="axis-label">00:00</text>
+                                <text x="200" y="260" text-anchor="middle" class="axis-label">02:00</text>
+                                <text x="320" y="260" text-anchor="middle" class="axis-label">04:00</text>
+                                <text x="440" y="260" text-anchor="middle" class="axis-label">06:00</text>
+                                <text x="560" y="260" text-anchor="middle" class="axis-label">now</text>
+                            </svg>
+                            <div class="legend">
+                                <div class="legend-item">
+                                    <div class="legend-line" style="background: #1d8102;"></div>
+                                    <span>Current</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-line" style="background: #ff9900;"></div>
+                                    <span>Warn</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-line" style="background: #d13212;"></div>
+                                    <span>Alert</span>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="dependency-graphs">
+                        <div class="graph-card">
+                            <div class="graph-title">DNS Resolution Time</div>
+                            <div class="graph-value healthy">12ms P99</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+
+                                <text x="25" y="83" text-anchor="end" class="axis-label">8</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">18</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">28</text>
+
+                                <line x1="30" y1="38" x2="280" y2="38" class="alert-line"/>
+                                <text x="282" y="40" class="threshold-label alert-label">22</text>
+
+                                <line x1="30" y1="50" x2="280" y2="50" class="warn-line"/>
+                                <text x="282" y="52" class="threshold-label warn-label">18</text>
+
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,68 60,66 90,70 120,67 150,69 180,66 210,71 240,68 270,70"/>
+                            </svg>
+                        </div>
+
+                        <div class="graph-card">
+                            <div class="graph-title">Load Balancer Health</div>
+                            <div class="graph-value healthy">99.98%</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+
+                                <text x="25" y="83" text-anchor="end" class="axis-label">99.0</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">99.5</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">100</text>
+
+                                <line x1="30" y1="68" x2="280" y2="68" class="alert-line"/>
+                                <text x="282" y="70" class="threshold-label alert-label">99.3</text>
+
+                                <line x1="30" y1="44" x2="280" y2="44" class="warn-line"/>
+                                <text x="282" y="46" class="threshold-label warn-label">99.6</text>
+
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,21 60,20 90,22 120,21 150,22 180,20 210,22 240,21 270,22"/>
+                            </svg>
+                        </div>
+
+                        <div class="graph-card">
+                            <div class="graph-title">CDN Cache Hit Rate</div>
+                            <div class="graph-value healthy">94.2%</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+
+                                <text x="25" y="83" text-anchor="end" class="axis-label">80</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">90</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">100</text>
+
+                                <line x1="30" y1="65" x2="280" y2="65" class="alert-line"/>
+                                <text x="282" y="67" class="threshold-label alert-label">85</text>
+
+                                <line x1="30" y1="47" x2="280" y2="47" class="warn-line"/>
+                                <text x="282" y="49" class="threshold-label warn-label">90</text>
+
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,29 60,28 90,31 120,28 150,30 180,28 210,31 240,29 270,30"/>
+                            </svg>
+                        </div>
+
+                        <div class="graph-card">
+                            <div class="graph-title">Homepage Load Time</div>
+                            <div class="graph-value healthy">1.2s P99</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+
+                                <text x="25" y="83" text-anchor="end" class="axis-label">0.8</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">1.5</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">2.2</text>
+
+                                <line x1="30" y1="32" x2="280" y2="32" class="alert-line"/>
+                                <text x="282" y="34" class="threshold-label alert-label">2.0</text>
+
+                                <line x1="30" y1="43" x2="280" y2="43" class="warn-line"/>
+                                <text x="282" y="45" class="threshold-label warn-label">1.7</text>
+
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,63 60,61 90,65 120,62 150,64 180,61 210,66 240,63 270,65"/>
+                            </svg>
+                        </div>
+
+                        <div class="graph-card">
+                            <div class="graph-title">Web Server CPU</div>
+                            <div class="graph-value healthy">42%</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+
+                                <text x="25" y="83" text-anchor="end" class="axis-label">20</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">60</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">100</text>
+
+                                <line x1="30" y1="28" x2="280" y2="28" class="alert-line"/>
+                                <text x="282" y="30" class="threshold-label alert-label">90</text>
+
+                                <line x1="30" y1="38" x2="280" y2="38" class="warn-line"/>
+                                <text x="282" y="40" class="threshold-label warn-label">75</text>
+
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,64 60,62 90,66 120,63 150,65 180,62 210,67 240,64 270,66"/>
+                            </svg>
+                        </div>
+
+                        <div class="graph-card">
+                            <div class="graph-title">Database Connections</div>
+                            <div class="graph-value healthy">167</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+
+                                <text x="25" y="83" text-anchor="end" class="axis-label">100</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">225</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">350</text>
+
+                                <line x1="30" y1="30" x2="280" y2="30" class="alert-line"/>
+                                <text x="282" y="32" class="threshold-label alert-label">320</text>
+
+                                <line x1="30" y1="40" x2="280" y2="40" class="warn-line"/>
+                                <text x="282" y="42" class="threshold-label warn-label">280</text>
+
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,62 60,60 90,64 120,61 150,63 180,60 210,65 240,62 270,64"/>
+                            </svg>
+                        </div>
+
+                        <div class="graph-card">
+                            <div class="graph-title">Ad Network Response</div>
+                            <div class="graph-value healthy">187ms P99</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+
+                                <text x="25" y="83" text-anchor="end" class="axis-label">120</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">220</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">320</text>
+
+                                <line x1="30" y1="32" x2="280" y2="32" class="alert-line"/>
+                                <text x="282" y="34" class="threshold-label alert-label">280</text>
+
+                                <line x1="30" y1="43" x2="280" y2="43" class="warn-line"/>
+                                <text x="282" y="45" class="threshold-label warn-label">230</text>
+
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,56 60,54 90,58 120,55 150,57 180,54 210,59 240,56 270,58"/>
+                            </svg>
+                        </div>
+
+                        <div class="graph-card">
+                            <div class="graph-title">SSL Handshake Time</div>
+                            <div class="graph-value healthy">34ms P99</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+
+                                <text x="25" y="83" text-anchor="end" class="axis-label">20</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">50</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">80</text>
+
+                                <line x1="30" y1="33" x2="280" y2="33" class="alert-line"/>
+                                <text x="282" y="35" class="threshold-label alert-label">70</text>
+
+                                <line x1="30" y1="43" x2="280" y2="43" class="warn-line"/>
+                                <text x="282" y="45" class="threshold-label warn-label">55</text>
+
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,67 60,65 90,69 120,66 150,68 180,65 210,70 240,67 270,69"/>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
 
-                <div class="dependency-graphs">
-                    <div class="graph-card">
-                        <div class="graph-title">CDN Response Time</div>
-                        <div class="graph-value healthy">18ms P99</div>
-                        <svg class="graph-svg" viewBox="0 0 300 120">
-                            <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
-                            <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
-                            <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+        <!-- Step 2: Browse and Find Equipment -->
+        <div class="journey-step">
+            <div class="step-narrative">
+                <div class="step-number">STEP 2</div>
+                <div class="step-title">Browse and Find Equipment</div>
+                <div class="step-description">
+                    Customers navigate through product categories, use search functionality, and view product detail pages to find the camping equipment they need.
+                </div>
+            </div>
 
-                            <text x="25" y="83" text-anchor="end" class="axis-label">10</text>
-                            <text x="25" y="53" text-anchor="end" class="axis-label">25</text>
-                            <text x="25" y="23" text-anchor="end" class="axis-label">40</text>
+            <div class="step-content">
+                <div class="graphs-container">
+                    <div class="hero-graph">
+                        <div class="graph-card">
+                            <div class="graph-title">Product Page Views</div>
+                            <div class="graph-value healthy">2,847 /min</div>
+                            <svg class="graph-svg" viewBox="0 0 600 280">
+                                <line x1="50" y1="30" x2="580" y2="30" class="grid-line"/>
+                                <line x1="50" y1="80" x2="580" y2="80" class="grid-line"/>
+                                <line x1="50" y1="130" x2="580" y2="130" class="grid-line"/>
+                                <line x1="50" y1="180" x2="580" y2="180" class="grid-line"/>
+                                <line x1="50" y1="230" x2="580" y2="230" class="grid-line"/>
 
-                            <!-- Alert at 35ms -->
-                            <line x1="30" y1="30" x2="280" y2="30" class="alert-line"/>
-                            <text x="282" y="32" class="threshold-label alert-label">35</text>
+                                <text x="45" y="235" text-anchor="end" class="axis-label">2000</text>
+                                <text x="45" y="185" text-anchor="end" class="axis-label">2400</text>
+                                <text x="45" y="135" text-anchor="end" class="axis-label">2800</text>
+                                <text x="45" y="85" text-anchor="end" class="axis-label">3200</text>
+                                <text x="45" y="35" text-anchor="end" class="axis-label">3600</text>
 
-                            <!-- Warn at 25ms -->
-                            <line x1="30" y1="50" x2="280" y2="50" class="warn-line"/>
-                            <text x="282" y="52" class="threshold-label warn-label">25</text>
+                                <line x1="50" y1="217" x2="580" y2="217" class="alert-line" stroke-width="2"/>
+                                <text x="582" y="220" class="threshold-label alert-label">ALERT 2200</text>
 
-                            <polyline fill="none" class="metric-line" stroke-width="2"
-                                points="30,73 60,71 90,74 120,72 150,73 180,71 210,75 240,72 270,74"/>
-                        </svg>
+                                <line x1="50" y1="192" x2="580" y2="192" class="warn-line" stroke-width="2"/>
+                                <text x="582" y="195" class="threshold-label warn-label">WARN 2500</text>
+
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="50,138 80,132 110,136 140,130 170,135 200,132 230,138 260,134 290,131 320,137 350,133 380,138 410,133 440,136 470,132 500,137 530,135 560,138 580,136"/>
+
+                                <text x="80" y="260" text-anchor="middle" class="axis-label">00:00</text>
+                                <text x="200" y="260" text-anchor="middle" class="axis-label">02:00</text>
+                                <text x="320" y="260" text-anchor="middle" class="axis-label">04:00</text>
+                                <text x="440" y="260" text-anchor="middle" class="axis-label">06:00</text>
+                                <text x="560" y="260" text-anchor="middle" class="axis-label">now</text>
+                            </svg>
+                            <div class="legend">
+                                <div class="legend-item">
+                                    <div class="legend-line" style="background: #1d8102;"></div>
+                                    <span>Current</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-line" style="background: #ff9900;"></div>
+                                    <span>Warn</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-line" style="background: #d13212;"></div>
+                                    <span>Alert</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="graph-card">
-                        <div class="graph-title">Search API Latency</div>
-                        <div class="graph-value healthy">42ms P99</div>
-                        <svg class="graph-svg" viewBox="0 0 300 120">
-                            <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
-                            <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
-                            <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+                    <div class="dependency-graphs">
+                        <div class="graph-card">
+                            <div class="graph-title">CDN Response Time</div>
+                            <div class="graph-value healthy">18ms P99</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
 
-                            <text x="25" y="83" text-anchor="end" class="axis-label">20</text>
-                            <text x="25" y="53" text-anchor="end" class="axis-label">60</text>
-                            <text x="25" y="23" text-anchor="end" class="axis-label">100</text>
+                                <text x="25" y="83" text-anchor="end" class="axis-label">10</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">25</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">40</text>
 
-                            <!-- Alert at 80ms -->
-                            <line x1="30" y1="36" x2="280" y2="36" class="alert-line"/>
-                            <text x="282" y="38" class="threshold-label alert-label">80</text>
+                                <line x1="30" y1="30" x2="280" y2="30" class="alert-line"/>
+                                <text x="282" y="32" class="threshold-label alert-label">35</text>
 
-                            <!-- Warn at 60ms -->
-                            <line x1="30" y1="50" x2="280" y2="50" class="warn-line"/>
-                            <text x="282" y="52" class="threshold-label warn-label">60</text>
+                                <line x1="30" y1="50" x2="280" y2="50" class="warn-line"/>
+                                <text x="282" y="52" class="threshold-label warn-label">25</text>
 
-                            <polyline fill="none" class="metric-line" stroke-width="2"
-                                points="30,67 60,65 90,68 120,64 150,67 180,66 210,69 240,65 270,68"/>
-                        </svg>
-                    </div>
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,68 60,66 90,70 120,67 150,69 180,66 210,71 240,68 270,70"/>
+                            </svg>
+                        </div>
 
-                    <div class="graph-card">
-                        <div class="graph-title">Database Query Time</div>
-                        <div class="graph-value healthy">23ms P99</div>
-                        <svg class="graph-svg" viewBox="0 0 300 120">
-                            <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
-                            <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
-                            <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+                        <div class="graph-card">
+                            <div class="graph-title">Search API Latency</div>
+                            <div class="graph-value healthy">42ms P99</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
 
-                            <text x="25" y="83" text-anchor="end" class="axis-label">15</text>
-                            <text x="25" y="53" text-anchor="end" class="axis-label">30</text>
-                            <text x="25" y="23" text-anchor="end" class="axis-label">45</text>
+                                <text x="25" y="83" text-anchor="end" class="axis-label">20</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">60</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">100</text>
 
-                            <!-- Alert at 40ms -->
-                            <line x1="30" y1="30" x2="280" y2="30" class="alert-line"/>
-                            <text x="282" y="32" class="threshold-label alert-label">40</text>
+                                <line x1="30" y1="36" x2="280" y2="36" class="alert-line"/>
+                                <text x="282" y="38" class="threshold-label alert-label">80</text>
 
-                            <!-- Warn at 30ms -->
-                            <line x1="30" y1="50" x2="280" y2="50" class="warn-line"/>
-                            <text x="282" y="52" class="threshold-label warn-label">30</text>
+                                <line x1="30" y1="50" x2="280" y2="50" class="warn-line"/>
+                                <text x="282" y="52" class="threshold-label warn-label">60</text>
 
-                            <polyline fill="none" class="metric-line" stroke-width="2"
-                                points="30,67 60,65 90,69 120,66 150,68 180,64 210,67 240,66 270,68"/>
-                        </svg>
-                    </div>
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,67 60,65 90,68 120,64 150,67 180,66 210,69 240,65 270,68"/>
+                            </svg>
+                        </div>
 
-                    <div class="graph-card">
-                        <div class="graph-title">Image Service Availability</div>
-                        <div class="graph-value healthy">99.97%</div>
-                        <svg class="graph-svg" viewBox="0 0 300 120">
-                            <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
-                            <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
-                            <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+                        <div class="graph-card">
+                            <div class="graph-title">Database Query Time</div>
+                            <div class="graph-value healthy">23ms P99</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
 
-                            <text x="25" y="83" text-anchor="end" class="axis-label">99.0</text>
-                            <text x="25" y="53" text-anchor="end" class="axis-label">99.5</text>
-                            <text x="25" y="23" text-anchor="end" class="axis-label">100</text>
+                                <text x="25" y="83" text-anchor="end" class="axis-label">15</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">30</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">45</text>
 
-                            <!-- Alert at 99.3% -->
-                            <line x1="30" y1="68" x2="280" y2="68" class="alert-line"/>
-                            <text x="282" y="70" class="threshold-label alert-label">99.3</text>
+                                <line x1="30" y1="30" x2="280" y2="30" class="alert-line"/>
+                                <text x="282" y="32" class="threshold-label alert-label">40</text>
 
-                            <!-- Warn at 99.6% -->
-                            <line x1="30" y1="44" x2="280" y2="44" class="warn-line"/>
-                            <text x="282" y="46" class="threshold-label warn-label">99.6</text>
+                                <line x1="30" y1="50" x2="280" y2="50" class="warn-line"/>
+                                <text x="282" y="52" class="threshold-label warn-label">30</text>
 
-                            <polyline fill="none" class="metric-line" stroke-width="2"
-                                points="30,24 60,23 90,25 120,23 150,24 180,23 210,25 240,24 270,23"/>
-                        </svg>
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,67 60,65 90,69 120,66 150,68 180,64 210,67 240,66 270,68"/>
+                            </svg>
+                        </div>
+
+                        <div class="graph-card">
+                            <div class="graph-title">Image Service Avail</div>
+                            <div class="graph-value healthy">99.97%</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+
+                                <text x="25" y="83" text-anchor="end" class="axis-label">99.0</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">99.5</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">100</text>
+
+                                <line x1="30" y1="68" x2="280" y2="68" class="alert-line"/>
+                                <text x="282" y="70" class="threshold-label alert-label">99.3</text>
+
+                                <line x1="30" y1="44" x2="280" y2="44" class="warn-line"/>
+                                <text x="282" y="46" class="threshold-label warn-label">99.6</text>
+
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,24 60,23 90,25 120,23 150,24 180,23 210,25 240,24 270,23"/>
+                            </svg>
+                        </div>
+
+                        <div class="graph-card">
+                            <div class="graph-title">Product DB Read Ops</div>
+                            <div class="graph-value healthy">2,847 /sec</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+
+                                <text x="25" y="83" text-anchor="end" class="axis-label">2000</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">3200</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">4400</text>
+
+                                <line x1="30" y1="32" x2="280" y2="32" class="alert-line"/>
+                                <text x="282" y="34" class="threshold-label alert-label">4000</text>
+
+                                <line x1="30" y1="44" x2="280" y2="44" class="warn-line"/>
+                                <text x="282" y="46" class="threshold-label warn-label">3500</text>
+
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,61 60,59 90,63 120,60 150,62 180,59 210,64 240,61 270,63"/>
+                            </svg>
+                        </div>
+
+                        <div class="graph-card">
+                            <div class="graph-title">Cache Hit Ratio</div>
+                            <div class="graph-value healthy">87.3%</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+
+                                <text x="25" y="83" text-anchor="end" class="axis-label">70</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">85</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">100</text>
+
+                                <line x1="30" y1="68" x2="280" y2="68" class="alert-line"/>
+                                <text x="282" y="70" class="threshold-label alert-label">75</text>
+
+                                <line x1="30" y1="56" x2="280" y2="56" class="warn-line"/>
+                                <text x="282" y="58" class="threshold-label warn-label">80</text>
+
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,42 60,40 90,44 120,41 150,43 180,40 210,45 240,42 270,44"/>
+                            </svg>
+                        </div>
+
+                        <div class="graph-card">
+                            <div class="graph-title">Review Service API</div>
+                            <div class="graph-value healthy">52ms P99</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+
+                                <text x="25" y="83" text-anchor="end" class="axis-label">30</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">80</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">130</text>
+
+                                <line x1="30" y1="34" x2="280" y2="34" class="alert-line"/>
+                                <text x="282" y="36" class="threshold-label alert-label">110</text>
+
+                                <line x1="30" y1="44" x2="280" y2="44" class="warn-line"/>
+                                <text x="282" y="46" class="threshold-label warn-label">90</text>
+
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,64 60,62 90,66 120,63 150,65 180,62 210,67 240,64 270,66"/>
+                            </svg>
+                        </div>
+
+                        <div class="graph-card">
+                            <div class="graph-title">Recommendation Engine</div>
+                            <div class="graph-value healthy">127ms P99</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+
+                                <text x="25" y="83" text-anchor="end" class="axis-label">80</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">150</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">220</text>
+
+                                <line x1="30" y1="32" x2="280" y2="32" class="alert-line"/>
+                                <text x="282" y="34" class="threshold-label alert-label">200</text>
+
+                                <line x1="30" y1="43" x2="280" y2="43" class="warn-line"/>
+                                <text x="282" y="45" class="threshold-label warn-label">170</text>
+
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,61 60,59 90,63 120,60 150,62 180,59 210,64 240,61 270,63"/>
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -365,162 +710,226 @@
 
         <!-- Step 3: Add to Cart -->
         <div class="journey-step">
-            <div class="step-header">
-                <span class="step-number">STEP 3</span>
-                <h2 class="step-title">Add Equipment to Cart</h2>
+            <div class="step-narrative">
+                <div class="step-number">STEP 3</div>
+                <div class="step-title">Add Equipment to Cart</div>
+                <div class="step-description">
+                    Customers select product options (size, color, quantity) and add items to their shopping cart. The cart service validates inventory and maintains session state.
+                </div>
             </div>
 
-            <div class="graphs-container">
-                <div class="hero-graph">
-                    <div class="graph-card">
-                        <div class="graph-title">Add to Cart Events</div>
-                        <div class="graph-value healthy">487 /min</div>
-                        <svg class="graph-svg" viewBox="0 0 600 300">
-                            <line x1="50" y1="40" x2="580" y2="40" class="grid-line"/>
-                            <line x1="50" y1="90" x2="580" y2="90" class="grid-line"/>
-                            <line x1="50" y1="140" x2="580" y2="140" class="grid-line"/>
-                            <line x1="50" y1="190" x2="580" y2="190" class="grid-line"/>
-                            <line x1="50" y1="240" x2="580" y2="240" class="grid-line"/>
+            <div class="step-content">
+                <div class="graphs-container">
+                    <div class="hero-graph">
+                        <div class="graph-card">
+                            <div class="graph-title">Add to Cart Events</div>
+                            <div class="graph-value healthy">487 /min</div>
+                            <svg class="graph-svg" viewBox="0 0 600 280">
+                                <line x1="50" y1="30" x2="580" y2="30" class="grid-line"/>
+                                <line x1="50" y1="80" x2="580" y2="80" class="grid-line"/>
+                                <line x1="50" y1="130" x2="580" y2="130" class="grid-line"/>
+                                <line x1="50" y1="180" x2="580" y2="180" class="grid-line"/>
+                                <line x1="50" y1="230" x2="580" y2="230" class="grid-line"/>
 
-                            <text x="45" y="245" text-anchor="end" class="axis-label">350</text>
-                            <text x="45" y="195" text-anchor="end" class="axis-label">425</text>
-                            <text x="45" y="145" text-anchor="end" class="axis-label">500</text>
-                            <text x="45" y="95" text-anchor="end" class="axis-label">575</text>
-                            <text x="45" y="45" text-anchor="end" class="axis-label">650</text>
+                                <text x="45" y="235" text-anchor="end" class="axis-label">350</text>
+                                <text x="45" y="185" text-anchor="end" class="axis-label">425</text>
+                                <text x="45" y="135" text-anchor="end" class="axis-label">500</text>
+                                <text x="45" y="85" text-anchor="end" class="axis-label">575</text>
+                                <text x="45" y="35" text-anchor="end" class="axis-label">650</text>
 
-                            <!-- Alert threshold at 380/min -->
-                            <line x1="50" y1="226" x2="580" y2="226" class="alert-line" stroke-width="2"/>
-                            <text x="582" y="229" class="threshold-label alert-label">ALERT 380</text>
+                                <line x1="50" y1="213" x2="580" y2="213" class="alert-line" stroke-width="2"/>
+                                <text x="582" y="216" class="threshold-label alert-label">ALERT 380</text>
 
-                            <!-- Warn threshold at 420/min -->
-                            <line x1="50" y1="198" x2="580" y2="198" class="warn-line" stroke-width="2"/>
-                            <text x="582" y="201" class="threshold-label warn-label">WARN 420</text>
+                                <line x1="50" y1="185" x2="580" y2="185" class="warn-line" stroke-width="2"/>
+                                <text x="582" y="188" class="threshold-label warn-label">WARN 420</text>
 
-                            <polyline fill="none" class="metric-line" stroke-width="2"
-                                points="50,148 80,144 110,150 140,146 170,149 200,145 230,151 260,147 290,143 320,149 350,145 380,150 410,146 440,148 470,144 500,149 530,147 560,150 580,148"/>
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="50,131 80,128 110,133 140,129 170,132 200,128 230,134 260,130 290,127 320,132 350,129 380,133 410,129 440,131 470,128 500,132 530,130 560,133 580,131"/>
 
-                            <text x="80" y="270" text-anchor="middle" class="axis-label">00:00</text>
-                            <text x="200" y="270" text-anchor="middle" class="axis-label">02:00</text>
-                            <text x="320" y="270" text-anchor="middle" class="axis-label">04:00</text>
-                            <text x="440" y="270" text-anchor="middle" class="axis-label">06:00</text>
-                            <text x="560" y="270" text-anchor="middle" class="axis-label">now</text>
-                        </svg>
-                        <div class="legend">
-                            <div class="legend-item">
-                                <div class="legend-line" style="background: #1d8102;"></div>
-                                <span>Current</span>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-line" style="background: #ff9900;"></div>
-                                <span>Warn Threshold</span>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-line" style="background: #d13212;"></div>
-                                <span>Alert Threshold</span>
+                                <text x="80" y="260" text-anchor="middle" class="axis-label">00:00</text>
+                                <text x="200" y="260" text-anchor="middle" class="axis-label">02:00</text>
+                                <text x="320" y="260" text-anchor="middle" class="axis-label">04:00</text>
+                                <text x="440" y="260" text-anchor="middle" class="axis-label">06:00</text>
+                                <text x="560" y="260" text-anchor="middle" class="axis-label">now</text>
+                            </svg>
+                            <div class="legend">
+                                <div class="legend-item">
+                                    <div class="legend-line" style="background: #1d8102;"></div>
+                                    <span>Current</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-line" style="background: #ff9900;"></div>
+                                    <span>Warn</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-line" style="background: #d13212;"></div>
+                                    <span>Alert</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="dependency-graphs">
-                    <div class="graph-card">
-                        <div class="graph-title">Cart API Latency</div>
-                        <div class="graph-value healthy">67ms P99</div>
-                        <svg class="graph-svg" viewBox="0 0 300 120">
-                            <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
-                            <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
-                            <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+                    <div class="dependency-graphs">
+                        <div class="graph-card">
+                            <div class="graph-title">Cart API Latency</div>
+                            <div class="graph-value healthy">67ms P99</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
 
-                            <text x="25" y="83" text-anchor="end" class="axis-label">40</text>
-                            <text x="25" y="53" text-anchor="end" class="axis-label">80</text>
-                            <text x="25" y="23" text-anchor="end" class="axis-label">120</text>
+                                <text x="25" y="83" text-anchor="end" class="axis-label">40</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">80</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">120</text>
 
-                            <!-- Alert at 100ms -->
-                            <line x1="30" y1="35" x2="280" y2="35" class="alert-line"/>
-                            <text x="282" y="37" class="threshold-label alert-label">100</text>
+                                <line x1="30" y1="35" x2="280" y2="35" class="alert-line"/>
+                                <text x="282" y="37" class="threshold-label alert-label">100</text>
 
-                            <!-- Warn at 80ms -->
-                            <line x1="30" y1="50" x2="280" y2="50" class="warn-line"/>
-                            <text x="282" y="52" class="threshold-label warn-label">80</text>
+                                <line x1="30" y1="50" x2="280" y2="50" class="warn-line"/>
+                                <text x="282" y="52" class="threshold-label warn-label">80</text>
 
-                            <polyline fill="none" class="metric-line" stroke-width="2"
-                                points="30,66 60,64 90,68 120,65 150,67 180,64 210,69 240,66 270,67"/>
-                        </svg>
-                    </div>
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,64 60,62 90,66 120,63 150,65 180,62 210,67 240,64 270,66"/>
+                            </svg>
+                        </div>
 
-                    <div class="graph-card">
-                        <div class="graph-title">Session Store Latency</div>
-                        <div class="graph-value healthy">8ms P99</div>
-                        <svg class="graph-svg" viewBox="0 0 300 120">
-                            <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
-                            <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
-                            <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+                        <div class="graph-card">
+                            <div class="graph-title">Session Store Latency</div>
+                            <div class="graph-value healthy">8ms P99</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
 
-                            <text x="25" y="83" text-anchor="end" class="axis-label">5</text>
-                            <text x="25" y="53" text-anchor="end" class="axis-label">12</text>
-                            <text x="25" y="23" text-anchor="end" class="axis-label">20</text>
+                                <text x="25" y="83" text-anchor="end" class="axis-label">5</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">12</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">20</text>
 
-                            <!-- Alert at 15ms -->
-                            <line x1="30" y1="39" x2="280" y2="39" class="alert-line"/>
-                            <text x="282" y="41" class="threshold-label alert-label">15</text>
+                                <line x1="30" y1="39" x2="280" y2="39" class="alert-line"/>
+                                <text x="282" y="41" class="threshold-label alert-label">15</text>
 
-                            <!-- Warn at 12ms -->
-                            <line x1="30" y1="50" x2="280" y2="50" class="warn-line"/>
-                            <text x="282" y="52" class="threshold-label warn-label">12</text>
+                                <line x1="30" y1="50" x2="280" y2="50" class="warn-line"/>
+                                <text x="282" y="52" class="threshold-label warn-label">12</text>
 
-                            <polyline fill="none" class="metric-line" stroke-width="2"
-                                points="30,72 60,70 90,73 120,71 150,72 180,70 210,74 240,71 270,73"/>
-                        </svg>
-                    </div>
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,72 60,70 90,73 120,71 150,72 180,70 210,74 240,71 270,73"/>
+                            </svg>
+                        </div>
 
-                    <div class="graph-card">
-                        <div class="graph-title">Database Query Time</div>
-                        <div class="graph-value healthy">24ms P99</div>
-                        <svg class="graph-svg" viewBox="0 0 300 120">
-                            <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
-                            <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
-                            <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+                        <div class="graph-card">
+                            <div class="graph-title">Database Query Time</div>
+                            <div class="graph-value healthy">24ms P99</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
 
-                            <text x="25" y="83" text-anchor="end" class="axis-label">15</text>
-                            <text x="25" y="53" text-anchor="end" class="axis-label">30</text>
-                            <text x="25" y="23" text-anchor="end" class="axis-label">45</text>
+                                <text x="25" y="83" text-anchor="end" class="axis-label">15</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">30</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">45</text>
 
-                            <!-- Alert at 40ms -->
-                            <line x1="30" y1="30" x2="280" y2="30" class="alert-line"/>
-                            <text x="282" y="32" class="threshold-label alert-label">40</text>
+                                <line x1="30" y1="30" x2="280" y2="30" class="alert-line"/>
+                                <text x="282" y="32" class="threshold-label alert-label">40</text>
 
-                            <!-- Warn at 30ms -->
-                            <line x1="30" y1="50" x2="280" y2="50" class="warn-line"/>
-                            <text x="282" y="52" class="threshold-label warn-label">30</text>
+                                <line x1="30" y1="50" x2="280" y2="50" class="warn-line"/>
+                                <text x="282" y="52" class="threshold-label warn-label">30</text>
 
-                            <polyline fill="none" class="metric-line" stroke-width="2"
-                                points="30,66 60,64 90,68 120,65 150,67 180,65 210,69 240,66 270,68"/>
-                        </svg>
-                    </div>
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,66 60,64 90,68 120,65 150,67 180,65 210,69 240,66 270,68"/>
+                            </svg>
+                        </div>
 
-                    <div class="graph-card">
-                        <div class="graph-title">Inventory Service Avail</div>
-                        <div class="graph-value healthy">99.94%</div>
-                        <svg class="graph-svg" viewBox="0 0 300 120">
-                            <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
-                            <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
-                            <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+                        <div class="graph-card">
+                            <div class="graph-title">Inventory Service Avail</div>
+                            <div class="graph-value healthy">99.94%</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
 
-                            <text x="25" y="83" text-anchor="end" class="axis-label">99.0</text>
-                            <text x="25" y="53" text-anchor="end" class="axis-label">99.5</text>
-                            <text x="25" y="23" text-anchor="end" class="axis-label">100</text>
+                                <text x="25" y="83" text-anchor="end" class="axis-label">99.0</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">99.5</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">100</text>
 
-                            <!-- Alert at 99.3% -->
-                            <line x1="30" y1="68" x2="280" y2="68" class="alert-line"/>
-                            <text x="282" y="70" class="threshold-label alert-label">99.3</text>
+                                <line x1="30" y1="68" x2="280" y2="68" class="alert-line"/>
+                                <text x="282" y="70" class="threshold-label alert-label">99.3</text>
 
-                            <!-- Warn at 99.6% -->
-                            <line x1="30" y1="44" x2="280" y2="44" class="warn-line"/>
-                            <text x="282" y="46" class="threshold-label warn-label">99.6</text>
+                                <line x1="30" y1="44" x2="280" y2="44" class="warn-line"/>
+                                <text x="282" y="46" class="threshold-label warn-label">99.6</text>
 
-                            <polyline fill="none" class="metric-line" stroke-width="2"
-                                points="30,28 60,27 90,29 120,27 150,28 180,26 210,29 240,27 270,28"/>
-                        </svg>
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,28 60,27 90,29 120,27 150,28 180,26 210,29 240,27 270,28"/>
+                            </svg>
+                        </div>
+
+                        <div class="graph-card">
+                            <div class="graph-title">Pricing Service</div>
+                            <div class="graph-value healthy">34ms P99</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+
+                                <text x="25" y="83" text-anchor="end" class="axis-label">20</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">50</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">80</text>
+
+                                <line x1="30" y1="33" x2="280" y2="33" class="alert-line"/>
+                                <text x="282" y="35" class="threshold-label alert-label">70</text>
+
+                                <line x1="30" y1="43" x2="280" y2="43" class="warn-line"/>
+                                <text x="282" y="45" class="threshold-label warn-label">55</text>
+
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,67 60,65 90,69 120,66 150,68 180,65 210,70 240,67 270,69"/>
+                            </svg>
+                        </div>
+
+                        <div class="graph-card">
+                            <div class="graph-title">Product Options Cache</div>
+                            <div class="graph-value healthy">92.1%</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+
+                                <text x="25" y="83" text-anchor="end" class="axis-label">75</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">87</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">100</text>
+
+                                <line x1="30" y1="65" x2="280" y2="65" class="alert-line"/>
+                                <text x="282" y="67" class="threshold-label alert-label">80</text>
+
+                                <line x1="30" y1="50" x2="280" y2="50" class="warn-line"/>
+                                <text x="282" y="52" class="threshold-label warn-label">87</text>
+
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,31 60,29 90,33 120,30 150,32 180,29 210,34 240,31 270,33"/>
+                            </svg>
+                        </div>
+
+                        <div class="graph-card">
+                            <div class="graph-title">Auth Service Latency</div>
+                            <div class="graph-value healthy">15ms P99</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+
+                                <text x="25" y="83" text-anchor="end" class="axis-label">10</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">25</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">40</text>
+
+                                <line x1="30" y1="33" x2="280" y2="33" class="alert-line"/>
+                                <text x="282" y="35" class="threshold-label alert-label">35</text>
+
+                                <line x1="30" y1="43" x2="280" y2="43" class="warn-line"/>
+                                <text x="282" y="45" class="threshold-label warn-label">27</text>
+
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,70 60,68 90,72 120,69 150,71 180,68 210,73 240,70 270,72"/>
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -528,164 +937,272 @@
 
         <!-- Step 4: Complete Purchase -->
         <div class="journey-step">
-            <div class="step-header">
-                <span class="step-number">STEP 4</span>
-                <h2 class="step-title">Complete Purchase Flow</h2>
+            <div class="step-narrative">
+                <div class="step-number">STEP 4</div>
+                <div class="step-title">Complete Purchase Flow</div>
+                <div class="step-description">
+                    Customers review their cart, enter shipping and payment information, and complete the checkout process. Orders are created and payment is processed.
+                </div>
             </div>
 
-            <div class="graphs-container">
-                <div class="hero-graph">
-                    <div class="graph-card">
-                        <div class="graph-title">Completed Purchases</div>
-                        <div class="graph-value warning">201 /min</div>
-                        <svg class="graph-svg" viewBox="0 0 600 300">
-                            <line x1="50" y1="40" x2="580" y2="40" class="grid-line"/>
-                            <line x1="50" y1="90" x2="580" y2="90" class="grid-line"/>
-                            <line x1="50" y1="140" x2="580" y2="140" class="grid-line"/>
-                            <line x1="50" y1="190" x2="580" y2="190" class="grid-line"/>
-                            <line x1="50" y1="240" x2="580" y2="240" class="grid-line"/>
+            <div class="step-content">
+                <div class="graphs-container">
+                    <div class="hero-graph">
+                        <div class="graph-card">
+                            <div class="graph-title">Completed Purchases</div>
+                            <div class="graph-value warning">201 /min</div>
+                            <svg class="graph-svg" viewBox="0 0 600 280">
+                                <line x1="50" y1="30" x2="580" y2="30" class="grid-line"/>
+                                <line x1="50" y1="80" x2="580" y2="80" class="grid-line"/>
+                                <line x1="50" y1="130" x2="580" y2="130" class="grid-line"/>
+                                <line x1="50" y1="180" x2="580" y2="180" class="grid-line"/>
+                                <line x1="50" y1="230" x2="580" y2="230" class="grid-line"/>
 
-                            <text x="45" y="245" text-anchor="end" class="axis-label">150</text>
-                            <text x="45" y="195" text-anchor="end" class="axis-label">200</text>
-                            <text x="45" y="145" text-anchor="end" class="axis-label">250</text>
-                            <text x="45" y="95" text-anchor="end" class="axis-label">300</text>
-                            <text x="45" y="45" text-anchor="end" class="axis-label">350</text>
+                                <text x="45" y="235" text-anchor="end" class="axis-label">150</text>
+                                <text x="45" y="185" text-anchor="end" class="axis-label">200</text>
+                                <text x="45" y="135" text-anchor="end" class="axis-label">250</text>
+                                <text x="45" y="85" text-anchor="end" class="axis-label">300</text>
+                                <text x="45" y="35" text-anchor="end" class="axis-label">350</text>
 
-                            <!-- Alert threshold at 180/min -->
-                            <line x1="50" y1="220" x2="580" y2="220" class="alert-line" stroke-width="2"/>
-                            <text x="582" y="223" class="threshold-label alert-label">ALERT 180</text>
+                                <line x1="50" y1="207" x2="580" y2="207" class="alert-line" stroke-width="2"/>
+                                <text x="582" y="210" class="threshold-label alert-label">ALERT 180</text>
 
-                            <!-- Warn threshold at 200/min -->
-                            <line x1="50" y1="190" x2="580" y2="190" class="warn-line" stroke-width="2"/>
-                            <text x="582" y="193" class="threshold-label warn-label">WARN 200</text>
+                                <line x1="50" y1="180" x2="580" y2="180" class="warn-line" stroke-width="2"/>
+                                <text x="582" y="183" class="threshold-label warn-label">WARN 200</text>
 
-                            <!-- Metric showing degradation over time, hovering near warn threshold -->
-                            <polyline fill="none" class="metric-line" stroke-width="2"
-                                points="50,158 80,152 110,148 140,145 170,150 200,155 230,162 260,170 290,182 320,188 350,192 380,195 410,198 440,201 470,199 500,197 530,195 560,193 580,191"/>
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="50,145 80,140 110,137 140,134 170,138 200,143 230,150 260,158 290,170 320,176 350,180 380,183 410,186 440,189 470,187 500,185 530,183 560,181 580,180"/>
 
-                            <text x="80" y="270" text-anchor="middle" class="axis-label">00:00</text>
-                            <text x="200" y="270" text-anchor="middle" class="axis-label">02:00</text>
-                            <text x="320" y="270" text-anchor="middle" class="axis-label">04:00</text>
-                            <text x="440" y="270" text-anchor="middle" class="axis-label">06:00</text>
-                            <text x="560" y="270" text-anchor="middle" class="axis-label">now</text>
-                        </svg>
-                        <div class="legend">
-                            <div class="legend-item">
-                                <div class="legend-line" style="background: #1d8102;"></div>
-                                <span>Current</span>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-line" style="background: #ff9900;"></div>
-                                <span>Warn Threshold</span>
-                            </div>
-                            <div class="legend-item">
-                                <div class="legend-line" style="background: #d13212;"></div>
-                                <span>Alert Threshold</span>
+                                <text x="80" y="260" text-anchor="middle" class="axis-label">00:00</text>
+                                <text x="200" y="260" text-anchor="middle" class="axis-label">02:00</text>
+                                <text x="320" y="260" text-anchor="middle" class="axis-label">04:00</text>
+                                <text x="440" y="260" text-anchor="middle" class="axis-label">06:00</text>
+                                <text x="560" y="260" text-anchor="middle" class="axis-label">now</text>
+                            </svg>
+                            <div class="legend">
+                                <div class="legend-item">
+                                    <div class="legend-line" style="background: #1d8102;"></div>
+                                    <span>Current</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-line" style="background: #ff9900;"></div>
+                                    <span>Warn</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-line" style="background: #d13212;"></div>
+                                    <span>Alert</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="dependency-graphs">
-                    <div class="graph-card">
-                        <div class="graph-title">Payment Gateway Success</div>
-                        <div class="graph-value warning">98.7%</div>
-                        <svg class="graph-svg" viewBox="0 0 300 120">
-                            <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
-                            <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
-                            <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+                    <div class="dependency-graphs">
+                        <div class="graph-card">
+                            <div class="graph-title">Payment Gateway Success</div>
+                            <div class="graph-value warning">98.7%</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
 
-                            <text x="25" y="83" text-anchor="end" class="axis-label">97.0</text>
-                            <text x="25" y="53" text-anchor="end" class="axis-label">98.5</text>
-                            <text x="25" y="23" text-anchor="end" class="axis-label">100</text>
+                                <text x="25" y="83" text-anchor="end" class="axis-label">97.0</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">98.5</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">100</text>
 
-                            <!-- Alert at 98.0% -->
-                            <line x1="30" y1="63" x2="280" y2="63" class="alert-line"/>
-                            <text x="282" y="65" class="threshold-label alert-label">98.0</text>
+                                <line x1="30" y1="63" x2="280" y2="63" class="alert-line"/>
+                                <text x="282" y="65" class="threshold-label alert-label">98.0</text>
 
-                            <!-- Warn at 99.0% -->
-                            <line x1="30" y1="37" x2="280" y2="37" class="warn-line"/>
-                            <text x="282" y="39" class="threshold-label warn-label">99.0</text>
+                                <line x1="30" y1="37" x2="280" y2="37" class="warn-line"/>
+                                <text x="282" y="39" class="threshold-label warn-label">99.0</text>
 
-                            <!-- Metric showing degraded state -->
-                            <polyline fill="none" stroke="#ff9900" stroke-width="2"
-                                points="30,30 60,32 90,35 120,40 150,43 180,46 210,48 240,50 270,49"/>
-                        </svg>
-                    </div>
+                                <polyline fill="none" stroke="#ff9900" stroke-width="2"
+                                    points="30,30 60,32 90,35 120,40 150,43 180,46 210,48 240,50 270,49"/>
+                            </svg>
+                        </div>
 
-                    <div class="graph-card">
-                        <div class="graph-title">Order Service Latency</div>
-                        <div class="graph-value healthy">156ms P99</div>
-                        <svg class="graph-svg" viewBox="0 0 300 120">
-                            <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
-                            <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
-                            <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+                        <div class="graph-card">
+                            <div class="graph-title">Order Service Latency</div>
+                            <div class="graph-value healthy">156ms P99</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
 
-                            <text x="25" y="83" text-anchor="end" class="axis-label">100</text>
-                            <text x="25" y="53" text-anchor="end" class="axis-label">175</text>
-                            <text x="25" y="23" text-anchor="end" class="axis-label">250</text>
+                                <text x="25" y="83" text-anchor="end" class="axis-label">100</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">175</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">250</text>
 
-                            <!-- Alert at 220ms -->
-                            <line x1="30" y1="32" x2="280" y2="32" class="alert-line"/>
-                            <text x="282" y="34" class="threshold-label alert-label">220</text>
+                                <line x1="30" y1="32" x2="280" y2="32" class="alert-line"/>
+                                <text x="282" y="34" class="threshold-label alert-label">220</text>
 
-                            <!-- Warn at 180ms -->
-                            <line x1="30" y1="47" x2="280" y2="47" class="warn-line"/>
-                            <text x="282" y="49" class="threshold-label warn-label">180</text>
+                                <line x1="30" y1="47" x2="280" y2="47" class="warn-line"/>
+                                <text x="282" y="49" class="threshold-label warn-label">180</text>
 
-                            <polyline fill="none" class="metric-line" stroke-width="2"
-                                points="30,59 60,57 90,61 120,58 150,60 180,57 210,62 240,59 270,61"/>
-                        </svg>
-                    </div>
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,59 60,57 90,61 120,58 150,60 180,57 210,62 240,59 270,61"/>
+                            </svg>
+                        </div>
 
-                    <div class="graph-card">
-                        <div class="graph-title">Database Query Time</div>
-                        <div class="graph-value healthy">26ms P99</div>
-                        <svg class="graph-svg" viewBox="0 0 300 120">
-                            <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
-                            <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
-                            <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+                        <div class="graph-card">
+                            <div class="graph-title">Database Query Time</div>
+                            <div class="graph-value healthy">26ms P99</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
 
-                            <text x="25" y="83" text-anchor="end" class="axis-label">15</text>
-                            <text x="25" y="53" text-anchor="end" class="axis-label">30</text>
-                            <text x="25" y="23" text-anchor="end" class="axis-label">45</text>
+                                <text x="25" y="83" text-anchor="end" class="axis-label">15</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">30</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">45</text>
 
-                            <!-- Alert at 40ms -->
-                            <line x1="30" y1="30" x2="280" y2="30" class="alert-line"/>
-                            <text x="282" y="32" class="threshold-label alert-label">40</text>
+                                <line x1="30" y1="30" x2="280" y2="30" class="alert-line"/>
+                                <text x="282" y="32" class="threshold-label alert-label">40</text>
 
-                            <!-- Warn at 30ms -->
-                            <line x1="30" y1="50" x2="280" y2="50" class="warn-line"/>
-                            <text x="282" y="52" class="threshold-label warn-label">30</text>
+                                <line x1="30" y1="50" x2="280" y2="50" class="warn-line"/>
+                                <text x="282" y="52" class="threshold-label warn-label">30</text>
 
-                            <polyline fill="none" class="metric-line" stroke-width="2"
-                                points="30,64 60,62 90,66 120,63 150,65 180,63 210,67 240,64 270,66"/>
-                        </svg>
-                    </div>
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,64 60,62 90,66 120,63 150,65 180,63 210,67 240,64 270,66"/>
+                            </svg>
+                        </div>
 
-                    <div class="graph-card">
-                        <div class="graph-title">Email Service Avail</div>
-                        <div class="graph-value healthy">99.98%</div>
-                        <svg class="graph-svg" viewBox="0 0 300 120">
-                            <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
-                            <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
-                            <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+                        <div class="graph-card">
+                            <div class="graph-title">Email Service Avail</div>
+                            <div class="graph-value healthy">99.98%</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
 
-                            <text x="25" y="83" text-anchor="end" class="axis-label">99.0</text>
-                            <text x="25" y="53" text-anchor="end" class="axis-label">99.5</text>
-                            <text x="25" y="23" text-anchor="end" class="axis-label">100</text>
+                                <text x="25" y="83" text-anchor="end" class="axis-label">99.0</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">99.5</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">100</text>
 
-                            <!-- Alert at 99.3% -->
-                            <line x1="30" y1="68" x2="280" y2="68" class="alert-line"/>
-                            <text x="282" y="70" class="threshold-label alert-label">99.3</text>
+                                <line x1="30" y1="68" x2="280" y2="68" class="alert-line"/>
+                                <text x="282" y="70" class="threshold-label alert-label">99.3</text>
 
-                            <!-- Warn at 99.6% -->
-                            <line x1="30" y1="44" x2="280" y2="44" class="warn-line"/>
-                            <text x="282" y="46" class="threshold-label warn-label">99.6</text>
+                                <line x1="30" y1="44" x2="280" y2="44" class="warn-line"/>
+                                <text x="282" y="46" class="threshold-label warn-label">99.6</text>
 
-                            <polyline fill="none" class="metric-line" stroke-width="2"
-                                points="30,21 60,20 90,22 120,21 150,22 180,20 210,22 240,21 270,22"/>
-                        </svg>
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,21 60,20 90,22 120,21 150,22 180,20 210,22 240,21 270,22"/>
+                            </svg>
+                        </div>
+
+                        <div class="graph-card">
+                            <div class="graph-title">Tax Calculation API</div>
+                            <div class="graph-value healthy">89ms P99</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+
+                                <text x="25" y="83" text-anchor="end" class="axis-label">60</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">120</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">180</text>
+
+                                <line x1="30" y1="35" x2="280" y2="35" class="alert-line"/>
+                                <text x="282" y="37" class="threshold-label alert-label">160</text>
+
+                                <line x1="30" y1="45" x2="280" y2="45" class="warn-line"/>
+                                <text x="282" y="47" class="threshold-label warn-label">130</text>
+
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,64 60,62 90,66 120,63 150,65 180,62 210,67 240,64 270,66"/>
+                            </svg>
+                        </div>
+
+                        <div class="graph-card">
+                            <div class="graph-title">Shipping Calculator</div>
+                            <div class="graph-value healthy">112ms P99</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+
+                                <text x="25" y="83" text-anchor="end" class="axis-label">70</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">140</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">210</text>
+
+                                <line x1="30" y1="34" x2="280" y2="34" class="alert-line"/>
+                                <text x="282" y="36" class="threshold-label alert-label">180</text>
+
+                                <line x1="30" y1="44" x2="280" y2="44" class="warn-line"/>
+                                <text x="282" y="46" class="threshold-label warn-label">150</text>
+
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,60 60,58 90,62 120,59 150,61 180,58 210,63 240,60 270,62"/>
+                            </svg>
+                        </div>
+
+                        <div class="graph-card">
+                            <div class="graph-title">Fraud Detection</div>
+                            <div class="graph-value healthy">234ms P99</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+
+                                <text x="25" y="83" text-anchor="end" class="axis-label">150</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">300</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">450</text>
+
+                                <line x1="30" y1="32" x2="280" y2="32" class="alert-line"/>
+                                <text x="282" y="34" class="threshold-label alert-label">400</text>
+
+                                <line x1="30" y1="42" x2="280" y2="42" class="warn-line"/>
+                                <text x="282" y="44" class="threshold-label warn-label">330</text>
+
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,64 60,62 90,66 120,63 150,65 180,62 210,67 240,64 270,66"/>
+                            </svg>
+                        </div>
+
+                        <div class="graph-card">
+                            <div class="graph-title">Address Validation</div>
+                            <div class="graph-value healthy">67ms P99</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+
+                                <text x="25" y="83" text-anchor="end" class="axis-label">40</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">80</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">120</text>
+
+                                <line x1="30" y1="35" x2="280" y2="35" class="alert-line"/>
+                                <text x="282" y="37" class="threshold-label alert-label">105</text>
+
+                                <line x1="30" y1="47" x2="280" y2="47" class="warn-line"/>
+                                <text x="282" y="49" class="threshold-label warn-label">85</text>
+
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,66 60,64 90,68 120,65 150,67 180,64 210,69 240,66 270,68"/>
+                            </svg>
+                        </div>
+
+                        <div class="graph-card">
+                            <div class="graph-title">Promo Code Service</div>
+                            <div class="graph-value healthy">45ms P99</div>
+                            <svg class="graph-svg" viewBox="0 0 300 100">
+                                <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
+                                <line x1="30" y1="50" x2="280" y2="50" class="grid-line"/>
+                                <line x1="30" y1="80" x2="280" y2="80" class="grid-line"/>
+
+                                <text x="25" y="83" text-anchor="end" class="axis-label">25</text>
+                                <text x="25" y="53" text-anchor="end" class="axis-label">60</text>
+                                <text x="25" y="23" text-anchor="end" class="axis-label">95</text>
+
+                                <line x1="30" y1="34" x2="280" y2="34" class="alert-line"/>
+                                <text x="282" y="36" class="threshold-label alert-label">80</text>
+
+                                <line x1="30" y1="45" x2="280" y2="45" class="warn-line"/>
+                                <text x="282" y="47" class="threshold-label warn-label">65</text>
+
+                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                    points="30,65 60,63 90,67 120,64 150,66 180,63 210,68 240,65 270,67"/>
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
