@@ -46,6 +46,8 @@ sense to group dependencies together, but I've found that repeating dependency
 graphs across step dashboards can help operators put data in context and drill
 quickly into problems with the context of the business in mind.
 
+[View an interactive dashboard mockup](/service-value-chain-dashboard.html) showing what this might look like in practice for the foo.com example, with hero metrics, dependency graphs, alert thresholds, and deployment markers across multiple customer journey steps.
+
 Monitoring service value chains helps operators understand the "why" behind the
 graphs, and helps non-operators (product managers, etc) understand the "why"
 behind the operations. This shared understanding helps develop a shared empathy
