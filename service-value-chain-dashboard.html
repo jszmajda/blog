@@ -207,6 +207,101 @@
             stroke-width: 2;
             opacity: 0.7;
         }
+
+        /* Light mode styles */
+        @media (prefers-color-scheme: light) {
+            body {
+                background: #f0f2f5;
+                color: #1a1a1a;
+            }
+
+            h1 {
+                color: #232f3e;
+            }
+
+            .subtitle {
+                color: #5a6c7d;
+            }
+
+            .journey-step {
+                background: #ffffff;
+                border: 1px solid #d5dbdb;
+            }
+
+            .step-narrative {
+                border-right: 2px solid #d5dbdb;
+            }
+
+            .step-title {
+                color: #232f3e;
+            }
+
+            .step-description {
+                color: #5a6c7d;
+            }
+
+            .graph-card {
+                background: #fafbfc;
+                border: 1px solid #d5dbdb;
+            }
+
+            .graph-title {
+                color: #232f3e;
+            }
+
+            .graph-value.healthy {
+                color: #0d6002;
+            }
+
+            .graph-value.warning {
+                color: #dd6b10;
+            }
+
+            .graph-value.alert {
+                color: #a41e11;
+            }
+
+            .graph-svg {
+                background: #ffffff;
+                border: 1px solid #d5dbdb;
+            }
+
+            .grid-line {
+                stroke: #e3e8e8;
+                stroke-width: 1;
+            }
+
+            .axis-label {
+                fill: #5a6c7d;
+                font-size: 9px;
+            }
+
+            .metric-line {
+                stroke: #0d6002;
+            }
+
+            .warn-line {
+                stroke: #dd6b10;
+            }
+
+            .alert-line {
+                stroke: #a41e11;
+            }
+
+            .warn-label {
+                fill: #dd6b10;
+            }
+
+            .alert-label {
+                fill: #a41e11;
+            }
+
+            .deployment-line {
+                stroke: #0073bb;
+                stroke-width: 2;
+                opacity: 0.6;
+            }
+        }
     </style>
 </head>
 <body>
