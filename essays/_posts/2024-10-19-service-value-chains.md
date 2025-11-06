@@ -40,13 +40,11 @@ might show a count of _add to cart_ interactions and their
 latency, along with perhaps metrics on CDN status (response latency), database
 metrics (query latency), count of late-funnel pageviews by time (e.g. high
 likelihood to add to cart), web server health metrics (green/yellow/red light,
-latency), load balancer health metrics (tri-color light, latency), etc. . If a
+latency), load balancer health metrics (tri-color light, latency), etc. If a
 dashboard page is showing multiple steps in the value chain then it could make
 sense to group dependencies together, but I've found that repeating dependency
 graphs across step dashboards can help operators put data in context and drill
 quickly into problems with the context of the business in mind.
-
-[View an interactive dashboard mockup](/service-value-chain-dashboard.html) showing what this might look like in practice for the foo.com example, with hero metrics, dependency graphs, alert thresholds, and deployment markers across multiple customer journey steps.
 
 Monitoring service value chains helps operators understand the "why" behind the
 graphs, and helps non-operators (product managers, etc) understand the "why"
@@ -63,3 +61,6 @@ Also - I've seen that when you put the operations health of a service into
 context like this you get better questions from reviewers. Folks are more
 engaged in the review, we can more effectively learn and understand your
 domain, and we can better help raise the bar on total outcomes for customers.
+
+**Pictures tell a thousand words**, so [here's a mock dashboard](/service-value-chain-dashboard.html) showing what
+this might look like in practice for the foo.com example.
