@@ -53,6 +53,13 @@
         }
 
         .step-number {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .step-badge {
             display: inline-block;
             background: #ec7211;
             color: white;
@@ -60,7 +67,6 @@
             border-radius: 3px;
             font-size: 12px;
             font-weight: 700;
-            margin-bottom: 12px;
         }
 
         .step-title {
@@ -208,6 +214,93 @@
             opacity: 0.7;
         }
 
+        .traffic-light {
+            display: inline-flex;
+            gap: 3px;
+            align-items: center;
+            padding: 4px 6px;
+            background: #0f1419;
+            border: 1px solid #3f4f5f;
+            border-radius: 3px;
+        }
+
+        .traffic-light-circle {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border: 1px solid #3f4f5f;
+            opacity: 0.3;
+        }
+
+        .traffic-light-circle.red {
+            background: #d13212;
+        }
+
+        .traffic-light-circle.yellow {
+            background: #ff9900;
+        }
+
+        .traffic-light-circle.green {
+            background: #1d8102;
+        }
+
+        .traffic-light-circle.active {
+            opacity: 1;
+            box-shadow: 0 0 4px currentColor;
+        }
+
+        .architecture-description {
+            font-size: 13px;
+            line-height: 1.5;
+            color: #aab7b8;
+            margin: 15px 0;
+            padding: 12px;
+            background: #0f1419;
+            border-left: 3px solid #ec7211;
+            border-radius: 3px;
+        }
+
+        .architecture-diagram {
+            margin: 15px 0;
+            padding: 15px;
+            background: #0f1419;
+            border-radius: 3px;
+        }
+
+        .architecture-diagram rect {
+            fill: #0f1419;
+            fill-opacity: 0.8;
+        }
+
+        .metric-description {
+            font-size: 10px;
+            font-style: italic;
+            color: #687078;
+            margin-top: 2px;
+            line-height: 1.3;
+        }
+
+        .recent-events {
+            margin: 15px 0;
+            padding: 12px;
+            background: #0f1419;
+            border: 1px solid #2a3441;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 11px;
+            line-height: 1.6;
+            color: #aab7b8;
+            white-space: pre-line;
+        }
+
+        .recent-events-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            font-family: 'Amazon Ember', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
         /* Light mode styles */
         @media (prefers-color-scheme: light) {
             body {
@@ -301,18 +394,75 @@
                 stroke-width: 2;
                 opacity: 0.6;
             }
+
+            .traffic-light-circle {
+                border: 1px solid #d5dbdb;
+            }
+
+            .traffic-light-circle.red {
+                background: #a41e11;
+            }
+
+            .traffic-light-circle.yellow {
+                background: #f9c74f;
+            }
+
+            .traffic-light-circle.green {
+                background: #0d6002;
+            }
+
+            .architecture-description {
+                color: #5a6c7d;
+                background: #fafbfc;
+                border-left: 3px solid #d5dbdb;
+            }
+
+            .architecture-diagram {
+                background: #fafbfc;
+            }
+
+            .architecture-diagram rect {
+                fill: #fafbfc;
+                fill-opacity: 0.8;
+            }
+
+            .metric-description {
+                color: #5a6c7d;
+            }
+
+            .traffic-light {
+                background: #fafbfc;
+                border: 1px solid #d5dbdb;
+            }
+
+            .recent-events {
+                background: #fafbfc;
+                border: 1px solid #d5dbdb;
+                color: #5a6c7d;
+            }
+
+            .recent-events-title {
+                color: #232f3e;
+            }
         }
     </style>
 </head>
 <body>
     <div class="dashboard">
         <h1>foo.com Operational Dashboard</h1>
-        <div class="subtitle">Service Value Chain - Last 6 hours</div>
+        <div class="subtitle">Service Value Chain - Last 6 hours - US-EAST-2</div>
 
         <!-- Step 1: Customer Discovery -->
         <div class="journey-step">
             <div class="step-narrative">
-                <div class="step-number">STEP 1</div>
+                <div class="step-number">
+                    <span class="step-badge">STEP 1</span>
+                    <div class="traffic-light">
+                        <div class="traffic-light-circle red"></div>
+                        <div class="traffic-light-circle yellow"></div>
+                        <div class="traffic-light-circle green active"></div>
+                    </div>
+                </div>
                 <div class="step-title">Customer Discovery</div>
                 <div class="step-description">
                     Customers discover foo.com through search engines, ads, or referrals. They land on our homepage or category pages and begin exploring our camping gear offerings.
@@ -339,10 +489,10 @@
                                 <text x="45" y="35" text-anchor="end" class="axis-label">5400</text>
 
                                 <line x1="50" y1="217" x2="580" y2="217" class="alert-line" stroke-width="2"/>
-                                <text x="582" y="220" class="threshold-label alert-label">ALERT 3200</text>
+                                <text x="582" y="220" class="threshold-label alert-label">3200</text>
 
                                 <line x1="50" y1="192" x2="580" y2="192" class="warn-line" stroke-width="2"/>
-                                <text x="582" y="195" class="threshold-label warn-label">WARN 3600</text>
+                                <text x="582" y="195" class="threshold-label warn-label">3600</text>
 
                                 <polyline fill="none" class="metric-line" stroke-width="2"
                                     points="50,138 80,132 110,136 140,130 170,135 200,132 230,138 260,134 290,131 320,137 350,133 380,138 410,133 440,136 470,132 500,137 530,135 560,138 580,136"/>
@@ -376,11 +526,61 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="architecture-description">
+                            <strong>Architecture:</strong> Customer traffic enters through Route53 DNS, hitting CloudFront CDN for static assets. Requests flow through Application Load Balancers to a fleet of EC2 web servers, which query RDS PostgreSQL read replicas for dynamic content. Ad network integration tracks attribution for paid traffic sources.
+                        </div>
+
+                        <div class="architecture-diagram">
+                            <svg width="100%" height="120" viewBox="0 0 640 120">
+                                <defs>
+                                    <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                                        <polygon points="0 0, 6 3, 0 6" fill="#687078" />
+                                    </marker>
+                                </defs>
+
+                                <!-- Arrows (render first, behind boxes) -->
+                                <line x1="80" y1="60" x2="110" y2="60" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+                                <line x1="190" y1="60" x2="220" y2="60" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+                                <line x1="300" y1="60" x2="330" y2="60" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+                                <line x1="400" y1="60" x2="430" y2="60" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+                                <line x1="510" y1="53" x2="540" y2="38" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+                                <line x1="510" y1="67" x2="540" y2="82" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+                                <!-- Boxes -->
+                                <rect x="10" y="45" width="70" height="30" fill="none" stroke="#3f4f5f" stroke-width="2" rx="3"/>
+                                <text x="45" y="65" text-anchor="middle" fill="#aab7b8" font-size="10">Browser</text>
+
+                                <rect x="110" y="45" width="80" height="30" fill="none" stroke="#3f4f5f" stroke-width="2" rx="3"/>
+                                <text x="150" y="65" text-anchor="middle" fill="#aab7b8" font-size="10">DNS (Route53)</text>
+
+                                <rect x="220" y="45" width="80" height="30" fill="none" stroke="#3f4f5f" stroke-width="2" rx="3"/>
+                                <text x="260" y="65" text-anchor="middle" fill="#aab7b8" font-size="10">CDN (CF)</text>
+
+                                <rect x="330" y="45" width="70" height="30" fill="none" stroke="#ec7211" stroke-width="2" rx="3"/>
+                                <text x="365" y="65" text-anchor="middle" fill="#ec7211" font-size="10">ALB</text>
+
+                                <rect x="430" y="45" width="80" height="30" fill="none" stroke="#ec7211" stroke-width="2" rx="3"/>
+                                <text x="470" y="65" text-anchor="middle" fill="#ec7211" font-size="10">Web Tier (EC2)</text>
+
+                                <rect x="540" y="15" width="90" height="30" fill="none" stroke="#3f4f5f" stroke-width="2" rx="3"/>
+                                <text x="585" y="35" text-anchor="middle" fill="#aab7b8" font-size="10">Database (RDS)</text>
+
+                                <rect x="540" y="75" width="90" height="30" fill="none" stroke="#3f4f5f" stroke-width="2" rx="3"/>
+                                <text x="585" y="95" text-anchor="middle" fill="#aab7b8" font-size="10">Ad Network (API)</text>
+                            </svg>
+                        </div>
+
+                        <div class="recent-events-title">Recent Events:</div>
+                        <div class="recent-events">10/19, 2:15a - 2:47a - CloudFront cache hit ratio degraded to 72% due to edge location capacity, RCA-201487
+10/16, 3:00a - 3:25a - RDS read replica lag increased to 8s during backup window, RCA-201461
+10/15, 9:30p - 10:05p - Route53 health checks intermittent in us-east-2b, no customer impact, RCA-201455</div>
                     </div>
 
                     <div class="dependency-graphs">
                         <div class="graph-card">
                             <div class="graph-title">DNS Resolution Time</div>
+                            <div class="metric-description">Route53 DNS query resolution time from authoritative nameservers in us-east-2, P99 latency, alert threshold 22ms</div>
                             <div class="graph-value healthy">12ms P99</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -408,6 +608,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">Load Balancer Health</div>
+                            <div class="metric-description">Rate of HTTP 200 responses vs non-200 status codes on ALB target groups aggregated across us-east-2a/b/c, target >99.6%</div>
                             <div class="graph-value healthy">99.98%</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -424,8 +625,21 @@
                                 <line x1="30" y1="44" x2="280" y2="44" class="warn-line"/>
                                 <text x="282" y="46" class="threshold-label warn-label">99.6</text>
 
-                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                <!-- Per-AZ lines -->
+                                <polyline fill="none" stroke="#3b82f6" stroke-width="1.5" opacity="0.8"
+                                    points="30,22 60,21 90,23 120,22 150,24 180,21 210,23 240,22 270,23"/>
+                                <polyline fill="none" stroke="#10b981" stroke-width="1.5" opacity="0.8"
                                     points="30,21 60,20 90,22 120,21 150,22 180,20 210,22 240,21 270,22"/>
+                                <polyline fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0.8"
+                                    points="30,20 60,19 90,21 120,20 150,21 180,19 210,21 240,20 270,21"/>
+
+                                <!-- Legend -->
+                                <line x1="32" y1="90" x2="42" y2="90" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="45" y="92" class="axis-label" font-size="8">2a</text>
+                                <line x1="62" y1="90" x2="72" y2="90" stroke="#10b981" stroke-width="1.5"/>
+                                <text x="75" y="92" class="axis-label" font-size="8">2b</text>
+                                <line x1="92" y1="90" x2="102" y2="90" stroke="#f59e0b" stroke-width="1.5"/>
+                                <text x="105" y="92" class="axis-label" font-size="8">2c</text>
 
                                 <!-- Deployment markers -->
                                 <line x1="134" y1="20" x2="134" y2="80" class="deployment-line"/>
@@ -435,6 +649,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">CDN Cache Hit Rate</div>
+                            <div class="metric-description">CloudFront cache hit ratio (hits/[hits+misses]) for CSS/JS/images across 40+ edge locations, target >90%</div>
                             <div class="graph-value healthy">94.2%</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -462,6 +677,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">Homepage Load Time</div>
+                            <div class="metric-description">P99 time-to-interactive from CloudWatch RUM JavaScript beacon, measures DOMContentLoaded + JS execution, target <1.7s</div>
                             <div class="graph-value healthy">1.2s P99</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -489,6 +705,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">Web Server CPU</div>
+                            <div class="metric-description">CPU utilization % averaged across 48 EC2 c5.2xlarge instances in Auto Scaling Group, scales out at 75% threshold</div>
                             <div class="graph-value healthy">42%</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -505,8 +722,21 @@
                                 <line x1="30" y1="38" x2="280" y2="38" class="warn-line"/>
                                 <text x="282" y="40" class="threshold-label warn-label">75</text>
 
-                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                <!-- Per-AZ lines -->
+                                <polyline fill="none" stroke="#3b82f6" stroke-width="1.5" opacity="0.8"
+                                    points="30,66 60,64 90,68 120,65 150,67 180,64 210,69 240,66 270,68"/>
+                                <polyline fill="none" stroke="#10b981" stroke-width="1.5" opacity="0.8"
                                     points="30,64 60,62 90,66 120,63 150,65 180,62 210,67 240,64 270,66"/>
+                                <polyline fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0.8"
+                                    points="30,62 60,60 90,64 120,61 150,63 180,60 210,65 240,62 270,64"/>
+
+                                <!-- Legend -->
+                                <line x1="32" y1="90" x2="42" y2="90" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="45" y="92" class="axis-label" font-size="8">2a</text>
+                                <line x1="62" y1="90" x2="72" y2="90" stroke="#10b981" stroke-width="1.5"/>
+                                <text x="75" y="92" class="axis-label" font-size="8">2b</text>
+                                <line x1="92" y1="90" x2="102" y2="90" stroke="#f59e0b" stroke-width="1.5"/>
+                                <text x="105" y="92" class="axis-label" font-size="8">2c</text>
 
                                 <!-- Deployment markers -->
                                 <line x1="134" y1="20" x2="134" y2="80" class="deployment-line"/>
@@ -516,6 +746,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">Database Connections</div>
+                            <div class="metric-description">Active PostgreSQL connections to 3 RDS read replicas (max_connections=500 per instance), PgBouncer connection pooling enabled</div>
                             <div class="graph-value healthy">167</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -543,6 +774,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">Ad Network Response</div>
+                            <div class="metric-description">P99 API response time from Google Ads/Facebook Pixel attribution endpoints, timeout configured at 2000ms</div>
                             <div class="graph-value healthy">187ms P99</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -570,6 +802,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">SSL Handshake Time</div>
+                            <div class="metric-description">P99 TLS 1.3 handshake duration at ALB using ACM-managed certificates, includes session resumption optimization</div>
                             <div class="graph-value healthy">34ms P99</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -602,7 +835,14 @@
         <!-- Step 2: Browse and Find Equipment -->
         <div class="journey-step">
             <div class="step-narrative">
-                <div class="step-number">STEP 2</div>
+                <div class="step-number">
+                    <span class="step-badge">STEP 2</span>
+                    <div class="traffic-light">
+                        <div class="traffic-light-circle red"></div>
+                        <div class="traffic-light-circle yellow"></div>
+                        <div class="traffic-light-circle green active"></div>
+                    </div>
+                </div>
                 <div class="step-title">Browse and Find Equipment</div>
                 <div class="step-description">
                     Customers navigate through product categories, use search functionality, and view product detail pages to find the camping equipment they need.
@@ -629,10 +869,10 @@
                                 <text x="45" y="35" text-anchor="end" class="axis-label">3600</text>
 
                                 <line x1="50" y1="217" x2="580" y2="217" class="alert-line" stroke-width="2"/>
-                                <text x="582" y="220" class="threshold-label alert-label">ALERT 2200</text>
+                                <text x="582" y="220" class="threshold-label alert-label">2200</text>
 
                                 <line x1="50" y1="192" x2="580" y2="192" class="warn-line" stroke-width="2"/>
-                                <text x="582" y="195" class="threshold-label warn-label">WARN 2500</text>
+                                <text x="582" y="195" class="threshold-label warn-label">2500</text>
 
                                 <polyline fill="none" class="metric-line" stroke-width="2"
                                     points="50,138 80,132 110,136 140,130 170,135 200,132 230,138 260,134 290,131 320,137 350,133 380,138 410,133 440,136 470,132 500,137 530,135 560,138 580,136"/>
@@ -666,11 +906,66 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="architecture-description">
+                            <strong>Architecture:</strong> Product browsing adds Elasticsearch clusters for search, S3-backed image service with CloudFront distribution, and a recommendation engine (SageMaker endpoint). Product catalog heavily cached in Redis to minimize database load. Review service provides ratings and customer feedback.
+                        </div>
+
+                        <div class="architecture-diagram">
+                            <svg width="100%" height="140" viewBox="0 0 650 140">
+                                <defs>
+                                    <marker id="arrowhead2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                                        <polygon points="0 0, 6 3, 0 6" fill="#687078" />
+                                    </marker>
+                                </defs>
+
+                                <!-- Arrows (render first, behind boxes) -->
+                                <line x1="100" y1="63" x2="130" y2="27" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead2)"/>
+                                <line x1="100" y1="70" x2="130" y2="70" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead2)"/>
+                                <line x1="100" y1="77" x2="130" y2="113" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead2)"/>
+                                <line x1="110" y1="70" x2="260" y2="25" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead2)"/>
+                                <line x1="110" y1="70" x2="260" y2="70" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead2)"/>
+                                <line x1="110" y1="70" x2="260" y2="115" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead2)"/>
+                                <line x1="370" y1="25" x2="400" y2="25" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead2)"/>
+
+                                <!-- Boxes -->
+                                <rect x="10" y="55" width="90" height="30" fill="none" stroke="#3f4f5f" stroke-width="2" rx="3"/>
+                                <text x="55" y="75" text-anchor="middle" fill="#aab7b8" font-size="10">Web Tier (EC2)</text>
+
+                                <rect x="130" y="10" width="100" height="30" fill="none" stroke="#ec7211" stroke-width="2" rx="3"/>
+                                <text x="180" y="30" text-anchor="middle" fill="#ec7211" font-size="10">Search (ES)</text>
+
+                                <rect x="130" y="55" width="100" height="30" fill="none" stroke="#3f4f5f" stroke-width="2" rx="3"/>
+                                <text x="180" y="75" text-anchor="middle" fill="#aab7b8" font-size="10">Product DB (RDS)</text>
+
+                                <rect x="130" y="100" width="100" height="30" fill="none" stroke="#3f4f5f" stroke-width="2" rx="3"/>
+                                <text x="180" y="120" text-anchor="middle" fill="#aab7b8" font-size="10">Cache (ElastiCache)</text>
+
+                                <rect x="260" y="10" width="110" height="30" fill="none" stroke="#3f4f5f" stroke-width="2" rx="3"/>
+                                <text x="315" y="30" text-anchor="middle" fill="#aab7b8" font-size="10">Image Svc (S3)</text>
+
+                                <rect x="260" y="55" width="110" height="30" fill="none" stroke="#3f4f5f" stroke-width="2" rx="3"/>
+                                <text x="315" y="75" text-anchor="middle" fill="#aab7b8" font-size="10">Review Svc (DynamoDB)</text>
+
+                                <rect x="260" y="100" width="110" height="30" fill="none" stroke="#3f4f5f" stroke-width="2" rx="3"/>
+                                <text x="315" y="120" text-anchor="middle" fill="#aab7b8" font-size="10">Recommend (SageMaker)</text>
+
+                                <rect x="400" y="10" width="90" height="30" fill="none" stroke="#3f4f5f" stroke-width="2" rx="3"/>
+                                <text x="445" y="30" text-anchor="middle" fill="#aab7b8" font-size="10">CDN (CloudFront)</text>
+                            </svg>
+                        </div>
+
+                        <div class="recent-events-title">Recent Events:</div>
+                        <div class="recent-events">10/22, 4:20p - 4:55p - Elasticsearch cluster us-east-2c experienced elevated search latency (500ms+ P99), RCA-201501
+10/18, 11:45a - 12:30p - Redis eviction rate spike due to memory pressure, added 2 cache nodes, RCA-201472
+10/17, 8:00p - 8:15p - Deployment d-2024101700 caused brief increased latency across product and cart services, RCA-201470
+10/16, 3:00a - 3:25a - RDS read replica lag increased to 8s during backup window, RCA-201461</div>
                     </div>
 
                     <div class="dependency-graphs">
                         <div class="graph-card">
                             <div class="graph-title">CDN Response Time</div>
+                            <div class="metric-description">P99 CloudFront response time for S3-backed product images (JPEG/WebP) across edge locations, origin shield enabled</div>
                             <div class="graph-value healthy">18ms P99</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -698,6 +993,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">Search API Latency</div>
+                            <div class="metric-description">P99 Elasticsearch search query latency across 6-node r5.xlarge cluster (18 shards, 2 replicas), includes faceting and highlighting</div>
                             <div class="graph-value healthy">42ms P99</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -714,8 +1010,21 @@
                                 <line x1="30" y1="50" x2="280" y2="50" class="warn-line"/>
                                 <text x="282" y="52" class="threshold-label warn-label">60</text>
 
-                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                <!-- Per-AZ lines -->
+                                <polyline fill="none" stroke="#3b82f6" stroke-width="1.5" opacity="0.8"
+                                    points="30,69 60,67 90,70 120,66 150,69 180,68 210,71 240,67 270,70"/>
+                                <polyline fill="none" stroke="#10b981" stroke-width="1.5" opacity="0.8"
                                     points="30,67 60,65 90,68 120,64 150,67 180,66 210,69 240,65 270,68"/>
+                                <polyline fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0.8"
+                                    points="30,65 60,63 90,66 120,62 150,65 180,64 210,67 240,63 270,66"/>
+
+                                <!-- Legend -->
+                                <line x1="32" y1="90" x2="42" y2="90" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="45" y="92" class="axis-label" font-size="8">2a</text>
+                                <line x1="62" y1="90" x2="72" y2="90" stroke="#10b981" stroke-width="1.5"/>
+                                <text x="75" y="92" class="axis-label" font-size="8">2b</text>
+                                <line x1="92" y1="90" x2="102" y2="90" stroke="#f59e0b" stroke-width="1.5"/>
+                                <text x="105" y="92" class="axis-label" font-size="8">2c</text>
 
                                 <!-- Deployment markers -->
                                 <line x1="134" y1="20" x2="134" y2="80" class="deployment-line"/>
@@ -725,6 +1034,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">Database Query Time</div>
+                            <div class="metric-description">P99 PostgreSQL SELECT query time on product_catalog table (22M rows) against read replicas, PgBouncer connection pooling</div>
                             <div class="graph-value healthy">23ms P99</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -752,6 +1062,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">Image Service Avail</div>
+                            <div class="metric-description">S3 GET request success rate for product-images bucket (Standard-IA storage class), versioning enabled, target 99.99%</div>
                             <div class="graph-value healthy">99.97%</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -779,6 +1090,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">Product DB Read Ops</div>
+                            <div class="metric-description">RDS db.r5.2xlarge read IOPS consumed per second, provisioned IOPS = 5000, includes index scans on product_catalog</div>
                             <div class="graph-value healthy">2,847 /sec</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -806,6 +1118,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">Cache Hit Ratio</div>
+                            <div class="metric-description">ElastiCache Redis 6.2 cache hit rate (hits/[hits+misses]) on 3-node r6g.large cluster, TTL=3600s, target >95%</div>
                             <div class="graph-value healthy">87.3%</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -833,6 +1146,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">Review Service API</div>
+                            <div class="metric-description">P99 API response time for review service (ECS Fargate) querying DynamoDB reviews table (on-demand capacity), includes pagination</div>
                             <div class="graph-value healthy">52ms P99</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -860,6 +1174,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">Recommendation Engine</div>
+                            <div class="metric-description">P99 SageMaker real-time inference latency for collaborative-filtering recommendation model (ml.m5.xlarge endpoint), batch size=1</div>
                             <div class="graph-value healthy">127ms P99</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -892,7 +1207,14 @@
         <!-- Step 3: Add to Cart -->
         <div class="journey-step">
             <div class="step-narrative">
-                <div class="step-number">STEP 3</div>
+                <div class="step-number">
+                    <span class="step-badge">STEP 3</span>
+                    <div class="traffic-light">
+                        <div class="traffic-light-circle red"></div>
+                        <div class="traffic-light-circle yellow"></div>
+                        <div class="traffic-light-circle green active"></div>
+                    </div>
+                </div>
                 <div class="step-title">Add Equipment to Cart</div>
                 <div class="step-description">
                     Customers select product options (size, color, quantity) and add items to their shopping cart. The cart service validates inventory and maintains session state.
@@ -919,10 +1241,10 @@
                                 <text x="45" y="35" text-anchor="end" class="axis-label">650</text>
 
                                 <line x1="50" y1="213" x2="580" y2="213" class="alert-line" stroke-width="2"/>
-                                <text x="582" y="216" class="threshold-label alert-label">ALERT 380</text>
+                                <text x="582" y="216" class="threshold-label alert-label">380</text>
 
                                 <line x1="50" y1="185" x2="580" y2="185" class="warn-line" stroke-width="2"/>
-                                <text x="582" y="188" class="threshold-label warn-label">WARN 420</text>
+                                <text x="582" y="188" class="threshold-label warn-label">420</text>
 
                                 <polyline fill="none" class="metric-line" stroke-width="2"
                                     points="50,131 80,128 110,133 140,129 170,132 200,128 230,134 260,130 290,127 320,132 350,129 380,133 410,129 440,131 470,128 500,132 530,130 560,133 580,131"/>
@@ -956,11 +1278,70 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="architecture-description">
+                            <strong>Architecture:</strong> Cart service uses Redis/ElastiCache for session storage (sub-10ms latency) with RDS for cart persistence. Each cart operation validates against the inventory service (separate microservice with its own database), calls the pricing service for real-time price calculations including promotions, and authenticates via the auth service before modifying cart state.
+                        </div>
+
+                        <div class="architecture-diagram">
+                            <svg width="100%" height="130" viewBox="0 0 620 130">
+                                <defs>
+                                    <marker id="arrowhead3" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                                        <polygon points="0 0, 6 3, 0 6" fill="#687078" />
+                                    </marker>
+                                </defs>
+
+                                <!-- Arrows (render first, behind boxes) -->
+                                <line x1="100" y1="65" x2="130" y2="65" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead3)"/>
+                                <line x1="220" y1="58" x2="250" y2="28" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead3)"/>
+                                <line x1="220" y1="65" x2="250" y2="65" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead3)"/>
+                                <line x1="220" y1="72" x2="250" y2="102" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead3)"/>
+                                <line x1="235" y1="65" x2="390" y2="25" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead3)"/>
+                                <line x1="235" y1="65" x2="390" y2="65" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead3)"/>
+                                <line x1="500" y1="25" x2="530" y2="25" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead3)"/>
+                                <line x1="500" y1="65" x2="530" y2="65" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead3)"/>
+
+                                <!-- Boxes -->
+                                <rect x="10" y="50" width="90" height="30" fill="none" stroke="#3f4f5f" stroke-width="2" rx="3"/>
+                                <text x="55" y="70" text-anchor="middle" fill="#aab7b8" font-size="10">Web Tier (EC2)</text>
+
+                                <rect x="130" y="50" width="90" height="30" fill="none" stroke="#ec7211" stroke-width="2" rx="3"/>
+                                <text x="175" y="70" text-anchor="middle" fill="#ec7211" font-size="10">Cart Svc (ECS)</text>
+
+                                <rect x="250" y="10" width="110" height="30" fill="none" stroke="#3f4f5f" stroke-width="2" rx="3"/>
+                                <text x="305" y="30" text-anchor="middle" fill="#aab7b8" font-size="10">Session (ElastiCache)</text>
+
+                                <rect x="250" y="50" width="110" height="30" fill="none" stroke="#3f4f5f" stroke-width="2" rx="3"/>
+                                <text x="305" y="70" text-anchor="middle" fill="#aab7b8" font-size="10">Cart DB (RDS)</text>
+
+                                <rect x="250" y="90" width="110" height="30" fill="none" stroke="#3f4f5f" stroke-width="2" rx="3"/>
+                                <text x="305" y="110" text-anchor="middle" fill="#aab7b8" font-size="10">Auth Svc (Lambda)</text>
+
+                                <rect x="390" y="10" width="110" height="30" fill="none" stroke="#3f4f5f" stroke-width="2" rx="3"/>
+                                <text x="445" y="30" text-anchor="middle" fill="#aab7b8" font-size="10">Inventory Svc (ECS)</text>
+
+                                <rect x="390" y="50" width="110" height="30" fill="none" stroke="#3f4f5f" stroke-width="2" rx="3"/>
+                                <text x="445" y="70" text-anchor="middle" fill="#aab7b8" font-size="10">Pricing Svc (Lambda)</text>
+
+                                <rect x="530" y="10" width="90" height="30" fill="none" stroke="#3f4f5f" stroke-width="2" rx="3"/>
+                                <text x="575" y="30" text-anchor="middle" fill="#aab7b8" font-size="10">Inv DB (RDS)</text>
+
+                                <rect x="530" y="50" width="90" height="30" fill="none" stroke="#3f4f5f" stroke-width="2" rx="3"/>
+                                <text x="575" y="70" text-anchor="middle" fill="#aab7b8" font-size="10">Price (ElastiCache)</text>
+                            </svg>
+                        </div>
+
+                        <div class="recent-events-title">Recent Events:</div>
+                        <div class="recent-events">10/20, 6:10p - 6:35p - Cart service connection pool exhausted during flash sale, increased pool size, RCA-201489
+10/17, 8:00p - 8:15p - Deployment d-2024101700 caused brief increased latency across product and cart services, RCA-201470
+10/17, 1:20a - 1:55a - Auth service Lambda cold starts elevated (800ms+) after deployment, RCA-201468
+10/16, 3:00a - 3:25a - RDS read replica lag increased to 8s during backup window, RCA-201461</div>
                     </div>
 
                     <div class="dependency-graphs">
                         <div class="graph-card">
                             <div class="graph-title">Cart API Latency</div>
+                            <div class="metric-description">P99 REST API latency for cart operations (POST/PUT/DELETE) on ECS Fargate tasks, includes Redis and RDS round trips</div>
                             <div class="graph-value healthy">67ms P99</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -988,6 +1369,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">Session Store Latency</div>
+                            <div class="metric-description">P99 ElastiCache Redis GET/SET command latency on 3-node r6g.xlarge cluster with cluster mode enabled, cross-AZ replication</div>
                             <div class="graph-value healthy">8ms P99</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -1004,8 +1386,21 @@
                                 <line x1="30" y1="50" x2="280" y2="50" class="warn-line"/>
                                 <text x="282" y="52" class="threshold-label warn-label">12</text>
 
-                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                <!-- Per-AZ lines -->
+                                <polyline fill="none" stroke="#3b82f6" stroke-width="1.5" opacity="0.8"
+                                    points="30,74 60,72 90,75 120,73 150,74 180,72 210,76 240,73 270,75"/>
+                                <polyline fill="none" stroke="#10b981" stroke-width="1.5" opacity="0.8"
                                     points="30,72 60,70 90,73 120,71 150,72 180,70 210,74 240,71 270,73"/>
+                                <polyline fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0.8"
+                                    points="30,70 60,68 90,71 120,69 150,70 180,68 210,72 240,69 270,71"/>
+
+                                <!-- Legend -->
+                                <line x1="32" y1="90" x2="42" y2="90" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="45" y="92" class="axis-label" font-size="8">2a</text>
+                                <line x1="62" y1="90" x2="72" y2="90" stroke="#10b981" stroke-width="1.5"/>
+                                <text x="75" y="92" class="axis-label" font-size="8">2b</text>
+                                <line x1="92" y1="90" x2="102" y2="90" stroke="#f59e0b" stroke-width="1.5"/>
+                                <text x="105" y="92" class="axis-label" font-size="8">2c</text>
 
                                 <!-- Deployment markers -->
                                 <line x1="134" y1="20" x2="134" y2="80" class="deployment-line"/>
@@ -1015,6 +1410,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">Database Query Time</div>
+                            <div class="metric-description">P99 PostgreSQL INSERT/UPDATE latency on cart_items table to RDS primary (db.r5.xlarge), synchronous replication to Multi-AZ standby</div>
                             <div class="graph-value healthy">24ms P99</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -1042,6 +1438,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">Inventory Service Avail</div>
+                            <div class="metric-description">P99 inventory check API latency (ECS Fargate) querying warehouse_stock table (RDS), includes reservation locking mechanism</div>
                             <div class="graph-value healthy">99.94%</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -1069,6 +1466,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">Pricing Service</div>
+                            <div class="metric-description">P99 Lambda function duration for pricing calculation including promotional rules engine, 1GB memory, Python 3.11 runtime</div>
                             <div class="graph-value healthy">34ms P99</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -1096,6 +1494,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">Product Options Cache</div>
+                            <div class="metric-description">ElastiCache Redis cache hit rate for product variant data (size/color/SKU mappings), TTL=7200s, eviction policy=allkeys-lru</div>
                             <div class="graph-value healthy">92.1%</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -1123,6 +1522,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">Auth Service Latency</div>
+                            <div class="metric-description">P99 Lambda JWT token validation latency (RS256 algorithm), public key cached in ElastiCache, 512MB memory allocation</div>
                             <div class="graph-value healthy">15ms P99</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -1155,7 +1555,14 @@
         <!-- Step 4: Complete Purchase -->
         <div class="journey-step">
             <div class="step-narrative">
-                <div class="step-number">STEP 4</div>
+                <div class="step-number">
+                    <span class="step-badge">STEP 4</span>
+                    <div class="traffic-light">
+                        <div class="traffic-light-circle red"></div>
+                        <div class="traffic-light-circle yellow active"></div>
+                        <div class="traffic-light-circle green"></div>
+                    </div>
+                </div>
                 <div class="step-title">Complete Purchase Flow</div>
                 <div class="step-description">
                     Customers review their cart, enter shipping and payment information, and complete the checkout process. Orders are created and payment is processed.
@@ -1182,10 +1589,10 @@
                                 <text x="45" y="35" text-anchor="end" class="axis-label">350</text>
 
                                 <line x1="50" y1="207" x2="580" y2="207" class="alert-line" stroke-width="2"/>
-                                <text x="582" y="210" class="threshold-label alert-label">ALERT 180</text>
+                                <text x="582" y="210" class="threshold-label alert-label">180</text>
 
                                 <line x1="50" y1="180" x2="580" y2="180" class="warn-line" stroke-width="2"/>
-                                <text x="582" y="183" class="threshold-label warn-label">WARN 200</text>
+                                <text x="582" y="183" class="threshold-label warn-label">200</text>
 
                                 <polyline fill="none" class="metric-line" stroke-width="2"
                                     points="50,145 80,140 110,137 140,134 170,138 200,143 230,150 260,158 290,170 320,176 350,180 380,183 410,186 440,189 470,187 500,185 530,183 560,181 580,180"/>
@@ -1219,11 +1626,70 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="architecture-description">
+                            <strong>Architecture:</strong> Checkout orchestrates multiple services: Order service coordinates the transaction, calling external payment gateway (Stripe/Braintree), tax calculation API (Avalara), shipping rate calculator, fraud detection ML service, address validation, email confirmation (SES), and promo code validation. Payment gateway degradation impacts overall checkout health.
+                        </div>
+
+                        <div class="architecture-diagram">
+                            <svg width="100%" height="160" viewBox="0 0 650 160">
+                                <defs>
+                                    <marker id="arrowhead4" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                                        <polygon points="0 0, 6 3, 0 6" fill="#687078" />
+                                    </marker>
+                                </defs>
+
+                                <!-- Arrows (render first, behind boxes) -->
+                                <line x1="110" y1="72" x2="140" y2="20" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead4)"/>
+                                <line x1="110" y1="75" x2="140" y2="60" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead4)"/>
+                                <line x1="110" y1="82" x2="140" y2="100" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead4)"/>
+                                <line x1="110" y1="88" x2="140" y2="140" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead4)"/>
+                                <line x1="110" y1="76" x2="280" y2="40" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead4)"/>
+                                <line x1="110" y1="80" x2="280" y2="80" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead4)"/>
+                                <line x1="110" y1="84" x2="280" y2="120" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead4)"/>
+                                <line x1="110" y1="80" x2="430" y2="80" stroke="#687078" stroke-width="1.5" marker-end="url(#arrowhead4)"/>
+
+                                <!-- Boxes -->
+                                <rect x="10" y="65" width="100" height="30" fill="none" stroke="#ec7211" stroke-width="2" rx="3"/>
+                                <text x="60" y="85" text-anchor="middle" fill="#ec7211" font-size="10">Order Svc (Lambda)</text>
+
+                                <rect x="140" y="5" width="110" height="30" fill="none" stroke="#ff9900" stroke-width="2" rx="3"/>
+                                <text x="195" y="25" text-anchor="middle" fill="#ff9900" font-size="10">Payment (Stripe API)</text>
+
+                                <rect x="140" y="45" width="110" height="30" fill="none" stroke="#3f4f5f" stroke-width="2" rx="3"/>
+                                <text x="195" y="65" text-anchor="middle" fill="#aab7b8" font-size="10">Tax (Avalara API)</text>
+
+                                <rect x="140" y="85" width="110" height="30" fill="none" stroke="#3f4f5f" stroke-width="2" rx="3"/>
+                                <text x="195" y="105" text-anchor="middle" fill="#aab7b8" font-size="10">Shipping (Lambda)</text>
+
+                                <rect x="140" y="125" width="110" height="30" fill="none" stroke="#3f4f5f" stroke-width="2" rx="3"/>
+                                <text x="195" y="145" text-anchor="middle" fill="#aab7b8" font-size="10">Fraud (SageMaker)</text>
+
+                                <rect x="280" y="25" width="120" height="30" fill="none" stroke="#3f4f5f" stroke-width="2" rx="3"/>
+                                <text x="340" y="45" text-anchor="middle" fill="#aab7b8" font-size="10">Address (USPS API)</text>
+
+                                <rect x="280" y="65" width="120" height="30" fill="none" stroke="#3f4f5f" stroke-width="2" rx="3"/>
+                                <text x="340" y="85" text-anchor="middle" fill="#aab7b8" font-size="10">Email (SES)</text>
+
+                                <rect x="280" y="105" width="120" height="30" fill="none" stroke="#3f4f5f" stroke-width="2" rx="3"/>
+                                <text x="340" y="125" text-anchor="middle" fill="#aab7b8" font-size="10">Promo Svc (DynamoDB)</text>
+
+                                <rect x="430" y="65" width="90" height="30" fill="none" stroke="#3f4f5f" stroke-width="2" rx="3"/>
+                                <text x="475" y="85" text-anchor="middle" fill="#aab7b8" font-size="10">Order DB (RDS)</text>
+                            </svg>
+                        </div>
+
+                        <div class="recent-events-title">Recent Events:</div>
+                        <div class="recent-events">11/06, 8:45a - ONGOING - Stripe API elevated error rate (4.2% vs baseline 0.8%), order completion at 96.1%, monitoring
+10/23, 11:05a - 2:32p - Avalara outage reduced order completion by 5%, RCA-201510
+10/21, 5:15p - 7:40p - Fraud detection SageMaker endpoint timeout spike (3s+), orders delayed, RCA-201495
+10/14, 2:00a - 2:45a - Order service DynamoDB throttling during deployment, RCA-201448</div>
                     </div>
 
                     <div class="dependency-graphs">
                         <div class="graph-card">
                             <div class="graph-title">Payment Gateway Success</div>
+                            <div class="metric-description">Stripe Payment Intents API success rate (HTTP 2xx / total requests), currently elevated 4xx error rate, baseline target >99.2%</div>
                             <div class="graph-value warning">98.7%</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -1251,6 +1717,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">Order Service Latency</div>
+                            <div class="metric-description">P99 Lambda order processing function duration (Node.js 18.x, 2GB memory), orchestrates payment/tax/fraud/shipping calls with circuit breakers</div>
                             <div class="graph-value healthy">156ms P99</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -1267,8 +1734,21 @@
                                 <line x1="30" y1="47" x2="280" y2="47" class="warn-line"/>
                                 <text x="282" y="49" class="threshold-label warn-label">180</text>
 
-                                <polyline fill="none" class="metric-line" stroke-width="2"
+                                <!-- Per-AZ lines -->
+                                <polyline fill="none" stroke="#3b82f6" stroke-width="1.5" opacity="0.8"
+                                    points="30,61 60,59 90,63 120,60 150,62 180,59 210,64 240,61 270,63"/>
+                                <polyline fill="none" stroke="#10b981" stroke-width="1.5" opacity="0.8"
                                     points="30,59 60,57 90,61 120,58 150,60 180,57 210,62 240,59 270,61"/>
+                                <polyline fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0.8"
+                                    points="30,57 60,55 90,59 120,56 150,58 180,55 210,60 240,57 270,59"/>
+
+                                <!-- Legend -->
+                                <line x1="32" y1="90" x2="42" y2="90" stroke="#3b82f6" stroke-width="1.5"/>
+                                <text x="45" y="92" class="axis-label" font-size="8">2a</text>
+                                <line x1="62" y1="90" x2="72" y2="90" stroke="#10b981" stroke-width="1.5"/>
+                                <text x="75" y="92" class="axis-label" font-size="8">2b</text>
+                                <line x1="92" y1="90" x2="102" y2="90" stroke="#f59e0b" stroke-width="1.5"/>
+                                <text x="105" y="92" class="axis-label" font-size="8">2c</text>
 
                                 <!-- Deployment markers -->
                                 <line x1="134" y1="20" x2="134" y2="80" class="deployment-line"/>
@@ -1278,6 +1758,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">Database Query Time</div>
+                            <div class="metric-description">P99 PostgreSQL INSERT latency on orders table (RDS primary db.r5.xlarge), includes transaction commit with ACID guarantees, Multi-AZ</div>
                             <div class="graph-value healthy">26ms P99</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -1305,6 +1786,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">Email Service Avail</div>
+                            <div class="metric-description">SES email delivery success rate for order confirmations, SQS queue buffering, includes bounce/complaint tracking, target >99.5%</div>
                             <div class="graph-value healthy">99.98%</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -1332,6 +1814,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">Tax Calculation API</div>
+                            <div class="metric-description">P99 Avalara AvaTax REST API response time for tax calculation requests, includes jurisdiction lookup and rate calculation</div>
                             <div class="graph-value healthy">89ms P99</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -1359,6 +1842,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">Shipping Calculator</div>
+                            <div class="metric-description">P99 Lambda shipping calculator duration calling UPS/FedEx/USPS rate APIs in parallel, returns lowest rate, 1.5GB memory</div>
                             <div class="graph-value healthy">112ms P99</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -1386,6 +1870,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">Fraud Detection</div>
+                            <div class="metric-description">P99 SageMaker fraud detection model inference latency (XGBoost classifier, ml.c5.xlarge endpoint), risk score 0-1000</div>
                             <div class="graph-value healthy">234ms P99</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -1413,6 +1898,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">Address Validation</div>
+                            <div class="metric-description">P99 USPS Address Validation API response time for address standardization and ZIP+4 lookup, timeout=1500ms</div>
                             <div class="graph-value healthy">67ms P99</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
@@ -1440,6 +1926,7 @@
 
                         <div class="graph-card">
                             <div class="graph-title">Promo Code Service</div>
+                            <div class="metric-description">P99 promo code validation latency querying DynamoDB promo_codes table (GSI on code field), Redis cache for active codes</div>
                             <div class="graph-value healthy">45ms P99</div>
                             <svg class="graph-svg" viewBox="0 0 300 100">
                                 <line x1="30" y1="20" x2="280" y2="20" class="grid-line"/>
