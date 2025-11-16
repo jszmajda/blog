@@ -7,7 +7,7 @@ I sing in a choir! I also have a fairly wide range, and sufficient vanity that I
 
 I also wanted to have a relatively simple project to showcase the development process I've been using with Claude Code.
 
-The result is a browser-based multi-track audio recorder called SATB (Soprano, Alto, Tenor, Bass) that lets me record myself singing all four voice parts, overdub multiple takes, mix them with individual track controls, and export the final harmony to WAV or MP3. The entire app runs locally in the browser using the Web Audio API - no server required. It's backed by 685 passing tests, all written using test-driven development with Claude Code, and **it took me just about 8 hours of paying attention to Claude to build it.**
+The result is a browser-based multi-track audio recorder called SATB (Soprano, Alto, Tenor, Bass) that lets me record myself singing all four voice parts, overdub multiple takes, mix them with individual track controls, and export the final harmony to WAV or MP3. The entire app runs locally in the browser using the Web Audio API - no server required. It's backed by 685 passing tests, all written using test-driven development with Claude Code, and **it took me just about 8-10 hours of paying attention to Claude to build it.**
 
 ![screenshot of the SATB app](/img/satb-screenshot-small.jpg)
 
