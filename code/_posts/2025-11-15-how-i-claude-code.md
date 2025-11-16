@@ -7,7 +7,7 @@ I sing in a choir! I also have a fairly wide range, and sufficient vanity that I
 
 I also wanted to have a relatively simple project to showcase the development process I've been using with Claude Code.
 
-The result is a browser-based multi-track audio recorder called SATB (Soprano, Alto, Tenor, Bass) that lets me record myself singing all four voice parts, overdub multiple takes, mix them with individual track controls, and export the final harmony to WAV or MP3. The entire app runs locally in the browser using the Web Audio API - no server required. It's backed by 685 passing tests, all written using test-driven development with Claude Code, and **it took me just about 8-10 hours of paying attention to Claude to build it.**
+The result is a [browser-based multi-track audio recorder called SATB](https://github.com/jszmajda/satb_recorder) (Soprano, Alto, Tenor, Bass) that lets me record myself singing all four voice parts, overdub multiple takes, mix them with individual track controls, and export the final harmony to WAV or MP3. The entire app runs locally in the browser using the Web Audio API - no server required. It's backed by 685 passing tests, all written using test-driven development with Claude Code, and **it took me just about 8-10 hours of paying attention to Claude to build it.**
 
 ![screenshot of the SATB app](/img/satb-screenshot-small.jpg)
 
@@ -15,9 +15,9 @@ But the app itself isn't the point of this post - it's *how* we built it togethe
 
 I've been working on building a side project ([Threadkeeper](https://threadkeeper.app) - AI-powered journaling and summarization!), and in the course of working on that project I've developed some techniques for working with Claude Code that I think have been really effective.
 
-## The Process
+#### The Process
 
-### 1. Start with High-Level Vision
+**1. Start with High-Level Vision**
 
 Start by writing a high-level description of what I want the app to be, then work with Claude to refine until it's fully clear - no more questions. Document this in the repo.
 
@@ -42,17 +42,15 @@ Claude responded with some questions, I answered them, and also included:
 
 We eventually wrote [this design file](https://github.com/jszmajda/satb_recorder/blob/main/docs/DESIGN.md).
 
-### 2. Design Before Code
+**2. Design Before Code**
 
-For each component:
+From there, I apply a general process. For each component:
 
 * Ask Claude to write a detailed technical and product design doc - describing how the component should work, the architecture, how the parts function, key technical decisions with reasoning, and how to handle edge cases
 * Review and give _detailed_ feedback (numbered, bullet-pointed!)
 * Refine until "good"
 * Ask Claude to generate [EARS](https://alistairmavin.com/ears/) specs for the component
 * Create an implementation plan with checkboxes and EARS references that Claude uses during implementation
-
-#### Example: Giving Detailed Feedback
 
 How I give feedback might be something many folks are unaccustomed to. Here's an example:
 
@@ -77,7 +75,7 @@ How I give feedback might be something many folks are unaccustomed to. Here's an
 
 I find that numbering feedback items, and being thorough and precise helps a lot.
 
-#### File Organization
+**File Organization**
 
 All of this goes into docs in the repo. For this SATB project, as it was simple enough, I used the [top level design file](https://github.com/jszmajda/satb_recorder/blob/main/docs/DESIGN.md) for the low-level design too. But Threadkeeper has many complex components, so each of those gets a doc (in `docs/llds/` in that project).
 
@@ -87,7 +85,7 @@ Then for the implementation plan, in SATB it's just that one IMPLEMENTATION.md, 
 
 I like keeping all this stuff _in_ the repo. it makes it way easier for Claude to find what it needs locally, and Claude can stumble across it during file searches.
 
-### 3. Mandate TDD with Red-Green-Refactor
+**3. Mandate TDD with Red-Green-Refactor**
 
 This is critical. I put this demand directly into CLAUDE.md:
 
@@ -103,7 +101,7 @@ This is critical. I put this demand directly into CLAUDE.md:
 
 This is how I've always preferred to write code (well, after I learned about it). When working without AI, I'd write a spike to figure things out, then delete it and [TDD](https://en.wikipedia.org/wiki/Test-driven_development) my way to success using a [red-green-refactor loop](https://www.codecademy.com/article/tdd-red-green-refactor). With Claude, I rarely need those spikes - the AI handles the general knowledge - but I still write them for particularly hairy problems.
 
-### 4. Use EARS IDs as Context Handles
+**4. Use EARS IDs as Context Handles**
 
 I ask Claude to label code with EARS spec IDs in comments. For example:
 
@@ -117,7 +115,7 @@ async enumerateDevices() {
 
 This way, as Claude's context window turns over, the IDs give it easy handles to look up how things should work and tie tests back to functionality back to documentation. It helps the model build up the right context more quickly.
 
-## What Makes This Work
+#### What Makes This Work
 
 A lot of my success with Claude comes from how I review documents in detail and provide _very_ detailed feedback - numbered lists, bullet points, specific technical direction. I iterate on the design documents first and foremost to get that part right.
 
@@ -125,7 +123,7 @@ The investment pays off - once I have a solid low-level design, the implementati
 
 The detailed feedback loop on design docs prevents those issues from becoming expensive rewrites.
 
-## Check It Out
+#### Check It Out
 
 I asked Claude to document our complete process in [the SATB Recorder README](https://github.com/jszmajda/satb_recorder/blob/main/README.md), including the actual prompts I used at each phase. If you're building with AI, I hope you find it helpful!
 
