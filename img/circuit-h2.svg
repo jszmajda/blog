@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 55" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Layer 1: Top traces -->
+  <path d="M0 6 L25 6 L32 13 L55 13"/>
+  <path d="M55 13 L75 13 L82 6 L110 6 L117 13 L145 13"/>
+  <path d="M145 13 L165 13 L172 6 L200 6"/>
+  <path d="M200 6 L215 6 L222 13 L240 13"/>
+  <circle cx="55" cy="13" r="2.5" fill="none"/>
+  <circle cx="110" cy="6" r="2" fill="currentColor"/>
+  <circle cx="145" cy="13" r="3" fill="none"/>
+  <circle cx="200" cy="6" r="2" fill="currentColor"/>
+
+  <!-- Layer 2: Upper-mid traces -->
+  <path d="M15 22 L40 22"/>
+  <path d="M40 22 L60 22 L67 29 L95 29"/>
+  <path d="M95 29 L120 29 L127 22 L160 22"/>
+  <path d="M160 22 L180 22 L187 29 L220 29"/>
+  <circle cx="40" cy="22" r="2" fill="currentColor"/>
+  <circle cx="95" cy="29" r="2.5" fill="none"/>
+  <circle cx="160" cy="22" r="2.5" fill="currentColor"/>
+  <circle cx="220" cy="29" r="3" fill="none"/>
+
+  <!-- Layer 3: Lower-mid traces -->
+  <path d="M5 38 L30 38 L37 31 L60 31"/>
+  <path d="M80 38 L105 38"/>
+  <path d="M105 38 L130 38 L137 45 L165 45"/>
+  <path d="M165 45 L190 45 L197 38 L240 38"/>
+  <circle cx="60" cy="31" r="2" fill="none"/>
+  <circle cx="80" cy="38" r="2.5" fill="currentColor"/>
+  <circle cx="105" cy="38" r="2" fill="none"/>
+  <circle cx="165" cy="45" r="3" fill="none"/>
+  <circle cx="240" cy="38" r="2" fill="currentColor"/>
+
+  <!-- Layer 4: Bottom traces -->
+  <path d="M20 50 L50 50 L57 43 L85 43"/>
+  <path d="M115 50 L145 50"/>
+  <path d="M145 50 L175 50 L182 43 L210 43"/>
+  <circle cx="50" cy="50" r="2.5" fill="none"/>
+  <circle cx="85" cy="43" r="2" fill="currentColor"/>
+  <circle cx="115" cy="50" r="2" fill="currentColor"/>
+  <circle cx="145" cy="50" r="2.5" fill="none"/>
+  <circle cx="210" cy="43" r="2.5" fill="none"/>
+
+  <!-- Vertical vias connecting layers -->
+  <path d="M55 13 L55 22"/>
+  <path d="M105 29 L105 38"/>
+  <path d="M160 22 L160 38"/>
+  <path d="M200 6 L200 22"/>
+  <circle cx="55" cy="22" r="1.5" fill="currentColor"/>
+  <circle cx="105" cy="29" r="1.5" fill="currentColor"/>
+  <circle cx="200" cy="22" r="1.5" fill="currentColor"/>
+
+  <!-- Additional small vias -->
+  <circle cx="25" cy="6" r="1.5" fill="currentColor"/>
+  <circle cx="130" cy="38" r="1.5" fill="currentColor"/>
+  <circle cx="175" cy="50" r="1.5" fill="currentColor"/>
+</svg>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 45" fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Layer 1: y=8 continuous (enters y=8, exits y=8) -->
+  <path d="M0 8 L40 8 L47 15 L90 15 L97 8 L160 8 L167 15 L210 15 L217 8 L300 8"/>
+
+  <!-- Layer 2: y=22 continuous (enters y=22, exits y=22) -->
+  <path d="M0 22 L55 22 L62 29 L115 29 L122 22 L185 22 L192 29 L245 29 L252 22 L300 22"/>
+
+  <!-- Layer 3: y=38 continuous (enters y=38, exits y=38) -->
+  <path d="M0 38 L70 38 L77 31 L130 31 L137 38 L200 38 L207 31 L260 31 L267 38 L300 38"/>
+
+  <!-- Internal traces (don't touch edges) -->
+  <path d="M30 15 L30 22"/>
+  <path d="M90 15 L90 29"/>
+  <path d="M150 8 L150 22"/>
+  <path d="M210 15 L210 31"/>
+  <path d="M270 8 L270 22"/>
+
+  <path d="M60 29 L60 38"/>
+  <path d="M120 22 L120 38"/>
+  <path d="M180 22 L180 31"/>
+  <path d="M240 29 L240 38"/>
+
+  <!-- Hollow pads -->
+  <circle cx="90" cy="15" r="2" fill="none"/>
+  <circle cx="210" cy="15" r="1.75" fill="none"/>
+  <circle cx="115" cy="29" r="2" fill="none"/>
+  <circle cx="245" cy="29" r="1.75" fill="none"/>
+  <circle cx="70" cy="38" r="1.75" fill="none"/>
+  <circle cx="200" cy="38" r="2" fill="none"/>
+  <circle cx="130" cy="31" r="1.75" fill="none"/>
+  <circle cx="260" cy="31" r="1.75" fill="none"/>
+
+  <!-- Filled vias -->
+  <circle cx="40" cy="8" r="1.25" fill="currentColor"/>
+  <circle cx="160" cy="8" r="1.25" fill="currentColor"/>
+  <circle cx="55" cy="22" r="1.25" fill="currentColor"/>
+  <circle cx="185" cy="22" r="1.25" fill="currentColor"/>
+  <circle cx="137" cy="38" r="1.25" fill="currentColor"/>
+  <circle cx="267" cy="38" r="1.25" fill="currentColor"/>
+
+  <!-- Junction dots at vias -->
+  <circle cx="30" cy="15" r="1" fill="currentColor"/>
+  <circle cx="30" cy="22" r="1" fill="currentColor"/>
+  <circle cx="90" cy="29" r="1" fill="currentColor"/>
+  <circle cx="150" cy="8" r="1" fill="currentColor"/>
+  <circle cx="150" cy="22" r="1" fill="currentColor"/>
+  <circle cx="210" cy="31" r="1" fill="currentColor"/>
+  <circle cx="270" cy="8" r="1" fill="currentColor"/>
+  <circle cx="270" cy="22" r="1" fill="currentColor"/>
+  <circle cx="60" cy="29" r="1" fill="currentColor"/>
+  <circle cx="60" cy="38" r="1" fill="currentColor"/>
+  <circle cx="120" cy="22" r="1" fill="currentColor"/>
+  <circle cx="120" cy="38" r="1" fill="currentColor"/>
+  <circle cx="180" cy="22" r="1" fill="currentColor"/>
+  <circle cx="180" cy="31" r="1" fill="currentColor"/>
+  <circle cx="240" cy="29" r="1" fill="currentColor"/>
+  <circle cx="240" cy="38" r="1" fill="currentColor"/>
+</svg>

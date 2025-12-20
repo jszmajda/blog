@@ -1,70 +1,107 @@
 ---
-# make sure Jekyll reads this properly?
+# Jekyll frontmatter for Sass processing
 ---
 
-// Enhanced Pastel Watercolor Theme inspired by Gris
-$pastel-purple: #E8E0F0
-$pastel-pink: #FAF3F5
-$deep-purple: darken(#8C7A99, 10%)
-$light-blue: #D8E8EA
-$soft-white: #FFFCFA
-$accent-rose: #F0E0E5
+// ============================================
+// CSS Custom Properties (Design Tokens)
+// ============================================
 
-$header-background-color: $pastel-purple
-$body-background-color: $pastel-pink
-$text-color: $deep-purple
-$link-color: darken($deep-purple, 2%)
-$accent-color: $light-blue
+\:root
+  // Dark mode (default)
+  --bg-primary: #0D0D14
+  --bg-surface: #151520
+  --text-primary: #E8E8F0
+  --text-secondary: #A0A0B0
+  --accent-fuchsia: #FF2D95
+  --accent-cyan: #00E5FF
+  --accent-yellow: #FFD166
+  --accent-fuchsia-dim: #B8206A
+  --accent-cyan-dim: #00A5B8
+  --bg-code: #1A1A28
+  --border-color: #2A2A3A
 
-// Mixins for watercolor effects
-@mixin watercolor-blotch($size, $blur: 30px)
-  content: ''
-  position: absolute
-  width: $size
-  height: $size
-  border-radius: 50%
-  filter: blur($blur)
-  opacity: 0.6
-  pointer-events: none
+  // Typography
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif
+  --font-code: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace
+  --line-height: 1.7
 
-@mixin random-position
-  $top: random(300) - 150 + px
-  $left: random(300) - 150 + px
-  top: $top
-  left: $left
+@media (prefers-color-scheme: light)
+  \:root
+    --bg-primary: #F8F7FA
+    --bg-surface: #FFFFFF
+    --text-primary: #1A1A24
+    --text-secondary: #606070
+    --accent-fuchsia: #D91A78
+    --accent-cyan: #0099AA
+    --accent-yellow: #E6A800
+    --accent-fuchsia-dim: #A01560
+    --accent-cyan-dim: #007788
+    --bg-code: #F0F0F5
+    --border-color: #E0E0E8
 
-// Base styles
+// ============================================
+// Base Styles
+// ============================================
+
 body
-  font-family: 'Lora', serif
-  background-color: $body-background-color
-  color: $text-color
-  line-height: 1.6
-  position: relative
-  overflow-x: hidden
+  font-family: var(--font-body)
+  background-color: var(--bg-primary)
+  color: var(--text-primary)
+  line-height: var(--line-height)
+  font-size: 1.05rem
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
 
-// Header styles
+// ============================================
+// Header with chunky diagonal color bands
+// ============================================
+
 #header
-  background: linear-gradient(135deg, $pastel-purple, $pastel-pink)
-  padding: 0.7rem
-  text-align: center
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
   position: relative
+  padding: 0
   overflow: hidden
+  background: var(--accent-fuchsia)
 
+  // Chunky diagonal band structure: fuchsia → yellow → cyan → surface
   &::before
     content: ''
-    @include watercolor-blotch(200px)
-    top: -50px
-    right: -50px
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: linear-gradient(135deg, var(--accent-fuchsia) 0%, var(--accent-fuchsia) 30%, var(--accent-yellow) 30%, var(--accent-yellow) 45%, var(--accent-cyan) 45%, var(--accent-cyan) 60%, var(--bg-surface) 60%, var(--bg-surface) 100%)
+    z-index: 0
 
   h1
-    font-family: 'Tangerine', cursive
-    font-size: 1.3rem
-    color: $deep-purple
-    text-shadow: 2px 2px 4px rgba($soft-white, 0.6)
     position: relative
+    z-index: 1
+    font-family: var(--font-body)
+    font-size: 2.5rem
+    font-weight: 700
+    letter-spacing: 0.08em
+    text-transform: uppercase
+    margin: 0
+    padding: 0
+    text-align: left
+    line-height: 0.72
+    transform: translate(-0.15em, 0.04em)
 
-// Layout container
+    a
+      color: var(--bg-primary)
+      text-decoration: none
+      transition: opacity 0.2s ease
+
+      &:hover
+        opacity: 0.8
+
+      &:visited
+        color: var(--bg-primary)
+
+// ============================================
+// Layout Container
+// ============================================
+
 .container
   max-width: 1100px
   margin: 0 auto
@@ -75,13 +112,15 @@ body
   @media screen and (min-width: 768px)
     flex-direction: row-reverse
 
-// Navigation styles
+// ============================================
+// Navigation Sidebar
+// ============================================
+
 .nav
-  background-color: rgba($soft-white, 0.7)
-  border-radius: 10px
-  padding: 1rem
+  background-color: var(--bg-surface)
+  border-radius: 8px
+  padding: 1.5rem
   margin-top: 2rem
-  position: relative
   flex: 1
   order: 2
 
@@ -91,205 +130,357 @@ body
     max-width: 300px
     order: 0
 
-  &::after
-    content: ''
-    @include watercolor-blotch(150px)
-    bottom: -50px
-    left: -50px
-
   .navblock
     margin-bottom: 2rem
 
+    &:last-child
+      margin-bottom: 0
+
     h3
-      font-family: 'Tangerine', cursive
-      color: $deep-purple
-      font-size: 2.5rem
-      border-bottom: 2px solid $accent-color
+      font-family: var(--font-body)
+      color: var(--accent-cyan)
+      font-size: 1.1rem
+      font-weight: 600
+      text-transform: uppercase
+      letter-spacing: 0.05em
+      border-bottom: 1px solid var(--border-color)
       padding-bottom: 0.5rem
       margin-bottom: 1rem
 
     ul
       list-style-type: none
       padding-left: 0
+      margin: 0
 
       li
-        margin-bottom: 0.8rem
+        margin-bottom: 0.6rem
+        font-size: 0.95rem
 
     img
-      border-radius: 50%
+      border-radius: 8px
       margin-right: 15px
       margin-bottom: 10px
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
 
-a
-  color: $link-color
-  text-decoration: underline
-  transition: color 0.3s ease
+  .abtme
+    color: var(--text-secondary)
+    line-height: 1.6
 
-  &:visited
-    color: lighten($link-color, 10%)
+  .contacto
+    margin-top: 1rem
+    display: flex
+    gap: 0.75rem
 
-  &:hover
-    color: darken($link-color, 15%)
+    a
+      opacity: 0.8
+      transition: opacity 0.2s ease
 
-// Main content styles
+      &:hover
+        opacity: 1
+
+    img[alt="Github"]
+      filter: invert(1)
+
+      @media (prefers-color-scheme: light)
+        filter: none
+
+  // Archive list
+  &.archive, .archive
+    ul.posts
+      li
+        margin-bottom: 0.5rem
+
+        span
+          color: var(--text-secondary)
+          font-size: 0.85rem
+          font-weight: 500
+
+        a
+          font-size: 0.9rem
+
+// ============================================
+// Main Content Area
+// ============================================
+
 #main
-  background-color: rgba($soft-white, 0.9)
-  border-radius: 10px
+  background-color: var(--bg-surface)
+  border-radius: 8px
   padding: 2rem
   margin-top: 2rem
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
-  position: relative
-  overflow: hidden
   flex: 2
   order: 1
+  overflow: hidden
+  min-width: 0
 
   @media screen and (min-width: 768px)
     margin-top: 0
     order: 0
 
-  &::before
-    content: ''
-    @include watercolor-blotch(250px)
-    top: -100px
-    right: -100px
+// ============================================
+// Links
+// ============================================
 
-  &::after
-    content: ''
-    @include watercolor-blotch(200px)
-    bottom: -80px
-    left: -80px
+a
+  color: var(--accent-fuchsia)
+  text-decoration: underline
+  text-decoration-thickness: 1px
+  text-underline-offset: 2px
+  transition: color 0.2s ease
 
-// Post styles
+  &:visited
+    color: var(--accent-fuchsia-dim)
+
+  &:hover
+    color: var(--accent-cyan)
+
+// ============================================
+// Post Content
+// ============================================
+
 #post
-  position: relative
-
-  h2, h3, h4, h5, h6
-    position: relative
-    z-index: 1
-
-    &::before, &::after
-      @include watercolor-blotch(100px, 20px)
-      @include random-position
-      z-index: -1
-
-  // Add this new class
-  .watercolor-blotch
-    position: absolute
-    z-index: -10
-    @include watercolor-blotch(600px)
-
+  // Post title (h2) with exposed circuit effect
   h2
-    font-family: 'Tangerine', cursive
-    color: $deep-purple
-    font-size: 3rem
-    text-shadow: 1px 1px 2px rgba($pastel-pink, 0.6)
+    font-family: var(--font-body)
+    color: var(--accent-fuchsia)
+    font-size: 2rem
+    font-weight: 600
+    letter-spacing: -0.01em
     margin-bottom: 1.5rem
+    margin-top: 0
+    position: relative
+    padding-left: 3.5rem
+    margin-left: -0.5rem
+    isolation: isolate
 
+    // Circuit traces (visible on left, extends behind text)
     &::before
-      @include watercolor-blotch(150px, 25px)
+      content: ''
+      position: absolute
+      left: 0
+      top: 50%
+      transform: translateY(-50%)
+      width: 10rem
+      height: 2.5rem
+      background-color: var(--accent-fuchsia)
+      -webkit-mask-image: url('/img/circuit-h2.svg')
+      mask-image: url('/img/circuit-h2.svg')
+      -webkit-mask-size: 100% 100%
+      mask-size: 100% 100%
+      -webkit-mask-repeat: no-repeat
+      mask-repeat: no-repeat
+      z-index: -2
+      pointer-events: none
 
+    // Gradient overlay that fades circuit into bg, then covers text area
     &::after
-      @include watercolor-blotch(120px, 22px)
+      content: ''
+      position: absolute
+      left: 1.5rem
+      top: 0
+      bottom: 0
+      right: 0
+      background: linear-gradient(90deg, transparent 0%, var(--bg-surface) 2rem, var(--bg-surface) 100%)
+      opacity: 0.7
+      z-index: -1
+      pointer-events: none
 
+  // Section headings (h3) with exposed circuit effect
   h3
-    font-family: 'Lora', serif
-    color: darken($deep-purple, 10%)
-    font-size: 1.8rem
-    margin-top: 2rem
+    font-family: var(--font-body)
+    color: var(--accent-cyan)
+    font-size: 1.5rem
+    font-weight: 600
+    margin-top: 2.5rem
     margin-bottom: 1rem
-    border-bottom: 1px solid $accent-color
-    padding-bottom: 0.5rem
+    position: relative
+    padding-left: 2.75rem
+    margin-left: -0.25rem
+    isolation: isolate
 
+    // Circuit traces
     &::before
-      @include watercolor-blotch(120px, 22px)
+      content: ''
+      position: absolute
+      left: 0
+      top: 50%
+      transform: translateY(-50%)
+      width: 7rem
+      height: 1.75rem
+      background-color: var(--accent-cyan)
+      -webkit-mask-image: url('/img/circuit-h3.svg')
+      mask-image: url('/img/circuit-h3.svg')
+      -webkit-mask-size: 100% 100%
+      mask-size: 100% 100%
+      -webkit-mask-repeat: no-repeat
+      mask-repeat: no-repeat
+      z-index: -2
+      pointer-events: none
 
+    // Gradient overlay that fades circuit into bg, then covers text area
     &::after
-      @include watercolor-blotch(100px, 20px)
-
-  h4, h5, h6
-    font-family: 'Lora', serif
-    color: darken($deep-purple, 5%)
-    margin-top: 1.5rem
-    margin-bottom: 0.8rem
+      content: ''
+      position: absolute
+      left: 1rem
+      top: 0
+      bottom: 0
+      right: 0
+      background: linear-gradient(90deg, transparent 0%, var(--bg-surface) 1.75rem, var(--bg-surface) 100%)
+      opacity: 0.7
+      z-index: -1
+      pointer-events: none
 
   h4
-    font-size: 1.5rem
-    text-decoration: underline
+    font-family: var(--font-body)
+    color: var(--text-primary)
+    font-size: 1.25rem
+    font-weight: 600
+    margin-top: 2rem
+    margin-bottom: 0.75rem
+
+  h5
+    font-family: var(--font-body)
+    color: var(--text-secondary)
+    font-size: 1.1rem
+    font-weight: 600
+    margin-top: 1.5rem
+    margin-bottom: 0.5rem
+
+  h6
+    font-family: var(--font-body)
+    color: var(--text-secondary)
+    font-size: 1rem
+    font-weight: 600
+    text-transform: uppercase
+    letter-spacing: 0.05em
+    margin-top: 1.5rem
+    margin-bottom: 0.5rem
 
   p
-    position: relative
-    z-index: 1
     margin-bottom: 1.5rem
-    font-size: 1.1rem
+    font-size: 1.05rem
 
   img
     max-width: 100%
     height: auto
     display: block
-    margin: 1rem 0
+    margin: 1.5rem 0
+    border-radius: 4px
 
-// Code block styles
-.highlight
-  background-color: rgba($pastel-purple, 0.2)
-  border-radius: 5px
-  padding: 1rem
-  margin-bottom: 1.5rem
+  ul, ol
+    margin-bottom: 1.5rem
+    padding-left: 1.5rem
 
-  pre
-    font-family: 'Droid Sans Mono', monospace
-    font-size: 0.9rem
-    overflow-x: auto
+  ul > li
+    list-style-type: disc
+    margin-bottom: 0.5rem
+    padding-left: 0.25rem
 
-// Watercolor background effect
-body::before
-  content: ''
-  position: fixed
-  top: 0
-  left: 0
-  right: 0
-  bottom: 0
-  background: radial-gradient(circle at 10% 20%, rgba($pastel-pink, 0.2) 0%, transparent 50%), radial-gradient(circle at 90% 80%, rgba($pastel-purple, 0.2) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba($light-blue, 0.15) 0%, transparent 50%)
-  pointer-events: none
+  ol > li
+    list-style-type: decimal
+    margin-bottom: 0.5rem
+    padding-left: 0.25rem
 
-ul.index-posts li
-  margin-bottom: 20px
-  list-style-type: none
+// ============================================
+// Blockquotes
+// ============================================
 
-.preview
-  padding-left: 10px
-  line-height: 1.5em
+blockquote
+  margin: 1.5rem 0
+  padding: 0.75rem 1.25rem
+  border-left: 3px solid
+  border-image: linear-gradient(180deg, var(--accent-fuchsia), var(--accent-cyan)) 1
+  background-color: var(--bg-code)
+  border-radius: 0 4px 4px 0
 
-#post ol
-  margin-bottom: 1em
+  p
+    margin-bottom: 0
+    color: var(--text-secondary)
+    font-style: italic
+
+// ============================================
+// Horizontal Rules
+// ============================================
 
 hr
-  margin: 2em
+  border: none
+  height: 2px
+  margin: 3rem 0
+  background: linear-gradient(90deg, transparent 0%, var(--accent-fuchsia) 15%, var(--accent-yellow) 50%, var(--accent-cyan) 85%, transparent 100%)
+
+// ============================================
+// Code Blocks
+// ============================================
+
+.highlight
+  background-color: var(--bg-code)
+  border-radius: 6px
+  padding: 1.25rem
+  margin-bottom: 1.5rem
+  overflow-x: auto
+  max-width: 100%
+
+  pre
+    font-family: var(--font-code)
+    font-size: 0.9rem
+    line-height: 1.5
+    margin: 0
+    overflow-x: auto
+    white-space: pre
+
+  code
+    white-space: pre
+
+code
+  font-family: var(--font-code)
+  font-size: 0.9em
+  background-color: var(--bg-code)
+  padding: 0.15rem 0.4rem
+  border-radius: 3px
+
+pre code
+  background: none
+  padding: 0
+
+// ============================================
+// Index Page
+// ============================================
+
+ul.index-posts
+  list-style-type: none
+  padding-left: 0
+
+  li
+    margin-bottom: 2rem
+    padding-bottom: 1.5rem
+    border-bottom: 1px solid var(--border-color)
+
+    &:last-child
+      border-bottom: none
+
+.preview
+  padding-left: 0
+  line-height: 1.6
+  color: var(--text-secondary)
+  margin-top: 0.5rem
+
+.posts span
+  font-weight: 500
+  color: var(--text-secondary)
+
+// ============================================
+// Text Styles
+// ============================================
+
+strong
+  font-weight: 600
+  color: var(--text-primary)
 
 em
   font-style: italic
 
-ol > li
-  list-style-type: decimal
-  list-style-position: outside
-  margin-left: 30px
-  padding-top: 10px
+// ============================================
+// Utilities
+// ============================================
 
-#post ul > li
-  list-style-type: disc
-  list-style-position: outside
-  margin-left: 30px
-  padding-top: 10px
-
-#post ul
-  margin-bottom: 2em
-
-blockquote
-  margin-left: 1em
-  padding-left: 1em
-  //background-color: darken($body-background-color, 0.1%)
-  border-left: 6px solid darken($body-background-color, 4%)
-
-strong
-  font-weight: bolder
-  color: darken($text-color, 20%)
+.deco
+  color: var(--text-secondary)
+  margin: 0 0.25rem

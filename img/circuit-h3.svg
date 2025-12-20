@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Layer 1: Top traces -->
+  <path d="M0 8 L20 8 L27 15 L50 15"/>
+  <path d="M50 15 L75 15 L82 8 L105 8"/>
+  <path d="M105 8 L125 8 L132 15 L160 15"/>
+  <circle cx="50" cy="15" r="2.5" fill="none"/>
+  <circle cx="75" cy="15" r="2" fill="currentColor"/>
+  <circle cx="105" cy="8" r="2" fill="none"/>
+
+  <!-- Layer 2: Middle traces -->
+  <path d="M10 24 L35 24"/>
+  <path d="M35 24 L55 24 L62 31 L90 31"/>
+  <path d="M90 31 L115 31 L122 24 L150 24"/>
+  <circle cx="35" cy="24" r="2" fill="currentColor"/>
+  <circle cx="90" cy="31" r="2.5" fill="none"/>
+  <circle cx="115" cy="31" r="2" fill="currentColor"/>
+  <circle cx="150" cy="24" r="2.5" fill="none"/>
+
+  <!-- Layer 3: Bottom traces -->
+  <path d="M25 38 L55 38 L62 31"/>
+  <path d="M80 38 L110 38"/>
+  <path d="M110 38 L135 38 L142 31 L160 31"/>
+  <circle cx="25" cy="38" r="2" fill="none"/>
+  <circle cx="80" cy="38" r="2.5" fill="currentColor"/>
+  <circle cx="110" cy="38" r="2" fill="none"/>
+  <circle cx="160" cy="31" r="2" fill="currentColor"/>
+
+  <!-- Vertical vias -->
+  <path d="M50 15 L50 24"/>
+  <path d="M105 8 L105 24"/>
+  <circle cx="50" cy="24" r="1.5" fill="currentColor"/>
+  <circle cx="105" cy="24" r="1.5" fill="currentColor"/>
+
+  <!-- Extra small vias -->
+  <circle cx="20" cy="8" r="1.5" fill="currentColor"/>
+  <circle cx="135" cy="38" r="1.5" fill="currentColor"/>
+</svg>
