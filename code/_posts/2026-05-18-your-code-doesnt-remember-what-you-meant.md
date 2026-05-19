@@ -7,7 +7,7 @@ A few months ago I wrote about [the arrow of intent](/code/2026/01/25/the-arrow-
 
 In one paragraph: with LID you keep what you want the system to do in design docs and one-line specs, and every spec carries a short ID. The code and tests that satisfy a spec cite its ID in a comment. The agent maintains those links as it works, so at any point you can walk from a line of code back to the decision that asked for it—or the other way around. That's the whole mechanism.
 
-## A bug I caught last week
+### A bug I caught last week
 
 I've been building a paper trading system using LID (like everyone else right now, lol). I asked the agent a maintenance question: find anything in the codebase that doesn't trace back to a written-down intent—code that exists but that no design doc or spec ever asked for. Because every behavior is supposed to have a spec and every implementation cites one.
 
@@ -21,7 +21,7 @@ And the disagreement isn't a bug to go fix. It's a question only I can answer: s
 
 That's the idea in one bug. The rest of this post is why it works.
 
-## Spec-driven development has a semantic diffusion problem
+### Spec-driven development has a semantic diffusion problem
 
 With agentic coding, everyone is talking about spec-driven development—it's the box LID would get filed under—so let me share why I think the box is broken.
 
@@ -31,7 +31,7 @@ The promise of SDD is that you can specify your intent better before you make a 
 
 Code is detailed, low-level, and—when an agent is producing thousands of lines of it per session—largely unread. Each unreviewed decision is a small bet that the agent guessed what you meant. String enough of those together and you don't have a bug; you have a codebase that runs and doesn't do what you need, an intent core that has rotted, one reasonable-looking decision at a time.
 
-## What intent actually is
+### What intent actually is
 
 Intent is whatever you actually want the code to do—usually to solve a problem for a person or a business.
 
@@ -41,13 +41,13 @@ When you describe what you want to an agent, you are leaning—constantly, invis
 
 So intent has two parts. There's **direct intent**—the things you say to the agent—and there's **latent intent**—the things you didn't know you needed to say in order to get what you actually wanted out the other end.
 
-## The two things most SDD systems miss
+### The two things most SDD systems miss
 
 Most SDD systems miss two things. First, they don't *extract* your latent intent in the first place—they take the prompt you gave and run with it. Addy Osmani makes the same point in his [guide to writing specs for agents](https://addyosmani.com/blog/good-spec/): a foggy prompt doesn't fail loudly, it produces polished, confident, wrong output. Second, they don't *maintain* that intent over time, so that every later change is made in the context of everything the system is already supposed to be.
 
 Without those two things, the agent does what agents do: it edits the codebase, and each edit encodes a decision that may or may not have matched your latent intent. Rely on the code to carry your complete intent forward and you've chosen a substrate that records every decision and remembers the reason for none of them. That's the rotting intent core. It accumulates quietly, and nothing flags it.
 
-## How LID closes the gap
+### How LID closes the gap
 
 LID treats the agent like a compiler for English: specifications are the source, code is the output. It's a lossy, non-deterministic compiler—it guesses whenever the English is ambiguous, and the guesses are where intent gaps come from. The whole job is to leave it less to guess. (That cuts the other way too: vague input doesn't just produce one bad guess, it compounds into drift across sessions.)
 
@@ -72,7 +72,7 @@ Now a grep for `PRICE-ROUND-014` turns up the rule, the code that implements it,
 
 The payoff shows up when intent *changes*. You don't start in the code. You start by changing the intent in the documents—and because it's expressed there, the change lands in the context of all the rest of the system's intent. It has to make sense against everything else you've already said you wanted. Most of the difficulty of using LID well is exactly this: getting your complete intent out of your head and into a form where you can trust the agent to make the same kinds of choices you would have made. It is real work, every change, not a one-time setup.
 
-## Tenets: deciding what you'd decide
+### Tenets: deciding what you'd decide
 
 None of this is new thinking for me—it predates agents by years. Before this I was a GM at AWS, running a product organization: teams of people shipping real things, most of the decisions getting made when I wasn't in the room. That's the actual job—not making the calls yourself, but making sure your teams make the calls you would have. Amazon has a tool built for exactly that: **tenets** (if "principles" lands better for you, read it that way—I'll say tenet). A tenet isn't a value and it isn't a rule—it's a tie-breaker. In one line, it says which way to lean when a decision has two defensible answers and no policy covers it.
 
@@ -80,13 +80,13 @@ The test of a real tenet is that its opposite is also reasonable. "We optimize f
 
 LID builds tenets into the HLD for the same reason Amazon does: so the call gets made the same way when the decider isn't in the room. With an agent the decider is *rarely* in the room—it's effectively a new teammate every session, holding none of yesterday's context. Tenets are how you hand it your priorities for the decisions you didn't know to anticipate, so it leans the way you would instead of guessing. The rounding question—half-to-even or half-up—is exactly the shape of decision a tenet is supposed to have already answered.
 
-## A note on personas
+### A note on personas
 
 One more thing about other SDD systems. A lot of them pre-encode current human team structure into your environment—the agent role-plays a product manager, then a program manager, then a QA engineer, then a developer, passing the intent between them. That presupposes the way human teams are organized is the right structure for an agent to follow.
 
 But that's not how agents work. It's one model wearing different hats—the same underlying thing, thinking the same way, just started from a different position each time. The research bears this out: assigning a persona to a model is a [double-edged sword](https://arxiv.org/abs/2408.08631)—it doesn't reliably improve reasoning, and on plenty of tasks it does nothing or makes it worse. So LID takes no position on team structure. Let the agent use whatever scaffolding helps it; LID is only about expressing and maintaining intent over time.
 
-## But won't the docs rot too?
+### But won't the docs rot too?
 
 This is the obvious objection, and it's the right one. Everything I said about code—records the decision, forgets the reason, drifts silently, goes unread—is exactly what killed every prior version of this idea. Requirements traceability matrices rotted. The executable specifications of [Specification by Example](https://en.wikipedia.org/wiki/Specification_by_example) drifted from the systems they specified. Design-by-contract assertions went stale. It's a large graveyard and I'm not the first to walk into it.
 
@@ -102,13 +102,13 @@ I won't oversell it: none of this makes drift impossible. It makes drift *detect
 
 This started on one project—[Threadkeeper](https://threadkeeper.app), my side project for voice journaling. It's spreading though: I know of a couple dozen codebases running LID, and the reports coming back are that it does what it claims. That's encouraging, but not a benchmark—I'm excited to understand where it breaks for other people.
 
-## Correctness comes back from correct intent
+### Correctness comes back from correct intent
 
 The models we use for coding generally write good code. It compiles, it works, it usually doesn't have errors in the way we used to mean "errors." What it has instead are places where the agent assumed the wrong thing. Those aren't bugs—they're *intent gaps*, and I'm not the only one who's found this. Microsoft Research's [work on intent formalization](https://arxiv.org/abs/2603.17150) frames the core question the same way: not whether the generated code runs, but whether it does what the user actually intended. Plausible output is not the same as correct output, and the plausibility is what makes the gap easy to miss.
 
 If you write tests for code that does the wrong thing for your users, the tests pass and the software is still wrong: green suite, broken product. In a world where the agent writes correct code on demand, correctness stops being a property of the code. It comes back from correct intent, and from the correct expression of it. That's the thing LID exists to protect.
 
-## Try it
+### Try it
 
 [LID](https://linked-intent.dev) ships as two Claude Code plugins. If you want to try it:
 
